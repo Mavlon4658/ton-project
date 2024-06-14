@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+// Colors
+$color-main: #000000;
+$color-active: #326BFF;
+$color-bg: #FFFFFF;
+$color-shade-1: rgba(44, 44, 44, 0.05);
+$color-shade-2: rgba(44, 44, 44, 0.15);
+$color-shade-3: rgba(44, 44, 44, 0.35);
+$color-shade-4: rgba(44, 44, 44, 0.65);
+$color-green: #6ACE47;
+$color-orange: #FFB800;
+$color-red: #F83C3C;
+// Colors end
+
+// Shadow
+@mixin shadow-dropdown () {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+// Shadow end
+
+@mixin media($value) {
+    @if ($value < 0) {
+        @media screen and (min-width: calc($value * (-1)) + 'px') {
+            @content;
+        }
+
+    } @else {
+        @media screen and (max-width: $value + 'px') {
+            @content;
+        }
+    }
+}

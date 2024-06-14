@@ -1,0 +1,47 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 30px 16px 20px;
+    border-bottom: 1px solid $color-shade-2;
+
+    @include media(576) {
+        display: none;
+    }
+
+    &__account {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .logo_icon {
+            width: 34px;
+            flex-shrink: 0;
+        }
+
+        &_text {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                &:nth-child(1) {
+                    font-weight: 500;
+                }
+
+                &:nth-child(2) {
+                    color: $color-shade-4;
+                }
+            }
+        }
+    }
+
+    &__navs {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+
+        a {
+            font-weight: 500;
+        }
+    }
+}
