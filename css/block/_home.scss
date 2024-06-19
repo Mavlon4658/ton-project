@@ -8,6 +8,11 @@
     left: 0;
     top: 0;
 
+    @include media(576) {
+        background: $color-bg;
+        z-index: 3;
+    }
+
     &__content {
         width: 300px;
         display: flex;

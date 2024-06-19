@@ -1,0 +1,80 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // background: $color-bg;
+    height: 40px;
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px 20px;
+    border: 1px solid $color-shade-2;
+
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .progress {
+            width: 115px;
+            border-radius: 6px;
+            height: 6px;
+            overflow: hidden;
+            background: $color-shade-2;
+
+            span {
+                display: block;
+                height: 6px;
+                width: 20%;
+                background: $color-main;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 43px;
+    }
+
+    &__messages {
+        color: $color-shade-4;
+    }
+
+    &__msg_pagination {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+
+            svg {
+                path, line {
+                    stroke: $color-main
+                }
+            }
+
+            &:disabled {
+                cursor: default;
+
+                svg {
+                    path, line {
+                        stroke: $color-shade-4;
+                    }
+                }
+            }
+        }
+
+        p {
+
+        }
+    }
+}

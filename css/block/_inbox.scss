@@ -1,0 +1,21 @@
+.inbox_home {
+    padding: 72px 20px 40px 260px;
+    
+    &__empty {
+        min-height: calc(100svh - 112px);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+
+        img {
+            width: 236px;
+        }
+
+        p {
+            color: $color-shade-4;
+        }
+    }
+}

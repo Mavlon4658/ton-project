@@ -2,11 +2,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 30px 16px 20px;
+    padding: 0 30px 0 20px;
     border-bottom: 1px solid $color-shade-2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    z-index: 3;
+    // background: $color-bg;
 
-    @include media(576) {
-        display: none;
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
 
     &__account {
@@ -22,6 +31,8 @@
         &_text {
             display: flex;
             flex-direction: column;
+            width: 152px;
+            flex-shrink: 0;
 
             p {
                 &:nth-child(1) {
@@ -33,15 +44,117 @@
                 }
             }
         }
+
+        &_dropdown {
+            flex-shrink: 0;
+            position: relative;
+
+            &__btn {
+                width: 46px;
+                height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &__list {
+                position: absolute;
+                bottom: -6px;
+                left: 50%;
+                transform: translate(-50%, 100%);
+                border: 1px solid $color-shade-2;
+                background: $color-bg;
+                border-radius: 12px;
+                padding: 6px;
+                width: 209px;
+                box-shadow: 0 4px 8px rgba(14, 28, 79, 0.05);
+                display: none;
+
+                .before_icon {
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    transform: translate(-50%, -100%);
+                    width: 12px;
+                }
+
+                .line {
+                    height: 1px;
+                    width: 100%;
+                    background: $color-shade-1;
+                    margin: 2px 0;
+                }
+
+                @keyframes accountDropdownActive {
+                    from {
+                        opacity: 0;
+                    }
+
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                &.active {
+                    display: block;
+                    animation: .2s accountDropdownActive linear 1;
+                }
+
+                @keyframes accountDropdownEndActive {
+                    from {
+                        opacity: 1;
+                    }
+                    
+                    to {
+                        opacity: 0;
+                    }
+                }
+
+                &.end-active {
+                    display: block;
+                    opacity: 0;
+                    animation: .2s accountDropdownEndActive linear 1;
+                }
+            }
+
+            .dropdown_close {
+                width: 100%;
+                height: 40px;
+                color: $color-red;
+                font-weight: 500;
+                border-radius: 8px;
+                transition: .3s ease all;
+
+                &:hover {
+                    background: $color-shade-1;
+                }
+
+                &:active {
+                    background: $color-shade-2;
+                }
+            }
+        }
     }
 
     &__navs {
         display: flex;
         align-items: center;
-        gap: 26px;
+        gap: 2px;
 
         a {
-            font-weight: 500;
+            font-weight: 600;
+            padding: 7px 12px;
+        }
+
+        &.auth__navs {
+            a:not(.active) {
+                color: $color-shade-4;
+                transition: .3s ease all;
+
+                &:hover {
+                    color: $color-main;
+                }
+            }
         }
     }
 }

@@ -1,0 +1,114 @@
+.left_nav {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 72px;
+    width: 260px;
+    height: calc(100svh - 112px);
+    padding: 0px 10px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // background: $color-bg;
+
+    &__title {
+        font-weight: 600;
+        color: $color-shade-4;
+        padding: 16px 0px 12px;
+    }
+
+    &__links {
+        position: absolute;
+        left: 20px;
+        top: 48px;
+        width: calc(100% - 30px);
+        max-height: calc(100% - 185px);
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        a {
+            padding: 10px 14px 10px 10px;
+            transition: .3s ease all;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            border-radius: 10px;
+            font-weight: 600;
+            position: relative;
+
+            &:hover {
+                background: $color-shade-1;
+            }
+
+            &:active {
+                background: $color-shade-2;
+            }
+
+            &.active {
+                background: rgba(50, 108, 255, 0.1);
+                
+                &:hover {
+                    background: rgba(50, 108, 255, 0.15);
+                }
+                
+                &:active {
+                    background: rgba(50, 108, 255, 0.2);
+                }
+            }
+
+            img {
+                flex-shrink: 0;
+            }
+
+            span:not(.icon) {
+                width: 100%;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .icon {
+                position: absolute;
+                font-weight: 600;
+                right: 14px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: $color-shade-1;
+                padding: 2px 6px;
+                border-radius: 10px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: -12px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 6px;
+                    height: 6px;
+                    background: $color-orange;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    &__child {
+        padding-left: 20px;
+    }
+
+    .btn_blue {
+        font-weight: 600;
+    }
+}
