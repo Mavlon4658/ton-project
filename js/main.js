@@ -140,6 +140,102 @@ if (search.length) {
     })
 }
 
+let checkBox = document.querySelectorAll('.checkbox');
+if (checkBox.length) {
+    checkBox.forEach(el => {
+        let inp = el.querySelector('input[type="checkbox"]');
+
+        if (inp.checked) {
+            el.classList.add('active');
+        } else {
+            el.classList.remove('active');
+        }
+
+        el.onclick = () => {
+            inp.click();
+
+            if (inp.checked) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        };
+    })
+}
+
+let msgItems = document.querySelectorAll('.msg_list .msg_item');
+let inboxNavSelect = document.querySelector('.inbox__nav_left .checkbox input[type="checkbox"]');
+if (msgItems.length) {
+    msgItems.forEach(item => {
+        let select = item.querySelector('.checkbox input[type="checkbox"]'),
+            unreadIcon = item.querySelector('.unread_icon'),
+            unreadInp = item.querySelector('.unread_icon input[type="checkbox"]'),
+            markIcon = item.querySelector('.mark_icon'),
+            markInp = item.querySelector('.mark_icon input');
+
+        if (select.checked) {
+            item.classList.add('selected');
+        } else {
+            item.classList.remove('selected')
+        }
+        
+        select.onchange = () => {
+            if (select.checked) {
+                item.classList.add('selected');
+            } else {
+                item.classList.remove('selected')
+            }
+        }
+
+        if (unreadInp.checked) {
+            item.classList.add('unread');
+        } else {
+            item.classList.remove('unread');
+        }
+
+        unreadIcon.onclick = () => {
+            unreadInp.click();
+            if (unreadInp.checked) {
+                item.classList.add('unread');
+            } else {
+                item.classList.remove('unread');
+            }
+        }
+
+        markIcon.onclick = () => markInp.click();
+    })
+
+    const selectedAll = () => {
+        msgItems.forEach(item => {
+            let select = item.querySelector('.checkbox input[type="checkbox"]');
+
+            if (!select.checked) select.click();
+        })
+    }
+
+    const unSelectedAll = () => {
+        msgItems.forEach(item => {
+            let select = item.querySelector('.checkbox input[type="checkbox"]');
+
+            if (select.checked) select.click();
+        })
+    }
+
+    if (inboxNavSelect) {
+        if (inboxNavSelect.checked) {
+            selectedAll();
+        }
+
+        inboxNavSelect.onchange = () => {
+            if (inboxNavSelect.checked) {
+                selectedAll();
+            } else {
+                unSelectedAll();
+            }
+        }
+    }
+}
+
 document.addEventListener('click', (event) => {
     if (accountDropdown && accountDropdownList.classList.contains('active')) {
         const t1 = event.composedPath().includes(accountDropdown)
