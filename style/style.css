@@ -164,6 +164,16 @@ body {
   background: rgba(44, 44, 44, 0.65);
   color: rgba(44, 44, 44, 0.65);
 }
+.btn_red {
+  background: #F83C3C;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 10px;
+  width: 100%;
+}
 
 .inp_light {
   background: rgba(44, 44, 44, 0.05);
@@ -1386,4 +1396,245 @@ body {
 }
 .inbox .msg_item.selected:hover {
   background: rgba(50, 108, 255, 0.15);
+}
+
+.modal {
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 44, 44, 0.65);
+}
+.modal__content {
+  background: #FFFFFF;
+  width: 356px;
+  position: relative;
+  border-radius: 20px;
+}
+.modal__close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  position: absolute;
+  top: 0;
+  right: -50px;
+}
+.modal__delete {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F83C3C;
+  position: absolute;
+  right: -50px;
+  top: 50px;
+}
+.modal__head {
+  text-align: center;
+  border-bottom: 1px solid rgba(44, 44, 44, 0.15);
+  padding: 20px 0 16px;
+}
+.modal__body {
+  padding: 20px;
+}
+.modal__foot {
+  padding: 20px;
+  border-top: 1px solid rgba(44, 44, 44, 0.15);
+}
+@keyframes modalActive {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.modal.active {
+  display: flex;
+  animation: modalActive 0.2s linear 1;
+}
+@keyframes modalEndActive {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.modal.end-active {
+  display: flex;
+  opacity: 0;
+  animation: modalEndActive 0.2s linear 1;
+}
+
+.modal_delete .modal__body {
+  color: rgba(44, 44, 44, 0.65);
+}
+
+.preference {
+  padding: 82px 10px 80px 290px;
+}
+.preference__nav {
+  position: fixed;
+  z-index: 2;
+  top: 82px;
+  left: 10px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.preference__nav a {
+  padding: 10px 10px 10px 14px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-radius: 8px;
+  transition: 0.3s ease all;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.preference__nav a:hover {
+  background: rgba(44, 44, 44, 0.05);
+}
+.preference__nav a.active {
+  background: rgba(44, 44, 44, 0.05);
+}
+@media screen and (max-width: 992px) {
+  .preference__body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background: #FFFFFF;
+    min-height: 100svh;
+  }
+}
+.preference__title {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  position: relative;
+}
+@media screen and (max-width: 992px) {
+  .preference__title {
+    padding-top: 0;
+    border-bottom: 1px solid rgba(44, 44, 44, 0.15);
+    margin-bottom: 0;
+  }
+}
+.preference__title h2 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+@media screen and (max-width: 992px) {
+  .preference__title h2 {
+    text-align: center;
+    padding: 20px 0;
+    height: 60px;
+  }
+}
+.preference__title a {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .preference__title a {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.preference__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 0 20px;
+}
+@media screen and (max-width: 992px) {
+  .preference__content {
+    max-width: 100%;
+    padding: 16px;
+    height: calc(100svh - 60px - 73px);
+    overflow-y: scroll;
+  }
+  .preference__content::-webkit-scrollbar {
+    display: none;
+  }
+}
+.preference__content .form_control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 300px;
+}
+@media screen and (max-width: 768px) {
+  .preference__content .form_control {
+    max-width: 100%;
+  }
+}
+.preference__content .form_control label {
+  color: rgba(44, 44, 44, 0.65);
+}
+.preference__content .radio_wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.preference__content h3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.preference__foot {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-top: 1px solid rgba(44, 44, 44, 0.15);
+  background: #FFFFFF;
+}
+@media screen and (max-width: 992px) {
+  .preference__foot {
+    z-index: 3;
+    height: 73px;
+    padding: 0 16px;
+  }
+}
+.preference__foot button {
+  font-weight: 600;
+}
+@media screen and (max-width: 992px) {
+  .preference__foot button {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

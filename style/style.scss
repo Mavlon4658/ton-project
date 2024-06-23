@@ -127,6 +127,17 @@ body {
             color: $color-shade-4;
         }
     }
+
+    &_red {
+        background: $color-red;
+        color: #FFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        border-radius: 10px;
+        width: 100%;
+    }
 }
 
 .inp {
@@ -614,3 +625,5 @@ body {
 @import './block/footer';
 @import './block/home';
 @import './block/inbox';
+@import './block/modals';
+@import './block/preference';

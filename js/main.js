@@ -236,6 +236,34 @@ if (msgItems.length) {
     }
 }
 
+let modal = document.querySelectorAll('.modal'),
+    modalClose = document.querySelectorAll('.modal__close'),
+    deleteModal = document.querySelector('.modal_delete'),
+    deleteModalOpen = document.querySelectorAll('.modal_delete__open');
+
+if (modalClose.length) {
+    modalClose.forEach(el => {
+        el.onclick = () => {
+            modal.forEach(m => {
+                m.classList.remove('active');
+                m.classList.add('end-active');
+                setTimeout(() => {
+                    m.classList.remove('end-active');
+                }, 300);
+            })
+        }
+    })
+}
+
+if (deleteModalOpen.length) {
+    deleteModalOpen.forEach(el => {
+        el.onclick = e => {
+            e.preventDefault();
+            deleteModal.classList.add('active');
+        }
+    })
+}
+
 document.addEventListener('click', (event) => {
     if (accountDropdown && accountDropdownList.classList.contains('active')) {
         const t1 = event.composedPath().includes(accountDropdown)

@@ -7,7 +7,7 @@
     <title>TON Mail Protocol</title>
 
     <!-- CSS file -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
     
@@ -273,11 +273,26 @@
         <!-- Modals -->
 
         <!-- Delete modal -->
-        <div class="modal modal_delete active">
+        <div class="modal modal_delete">
             <div class="modal__bg"></div>
-            <div class="modal__conetent">
-                <div class="modal__head"></div>
-                <div class="modal__body"></div>
+            <div class="modal__content">
+                <button type="button" class="modal__close">
+                    <img src="./images/times.svg" alt="">
+                </button>
+                <!-- <button type="button" class="modal__delete">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.41635 1.85636C3.41635 0.941147 4.15828 0.199219 5.07349 0.199219H8.92983C9.84505 0.199219 10.587 0.941147 10.587 1.85636V4.01277H12.9992C13.441 4.01277 13.7992 4.37094 13.7992 4.81277C13.7992 5.25459 13.441 5.61277 12.9992 5.61277H12.011V10.999C12.011 12.5454 10.7574 13.799 9.21102 13.799H4.79166C3.24527 13.799 1.99167 12.5454 1.99167 10.999V5.61277H0.999219C0.557391 5.61277 0.199219 5.25459 0.199219 4.81277C0.199219 4.37094 0.557391 4.01277 0.999219 4.01277H3.41635V1.85636ZM3.59167 5.61277H10.411V10.999C10.411 11.6618 9.87376 12.199 9.21102 12.199H4.79166C4.12892 12.199 3.59167 11.6618 3.59167 10.999V5.61277ZM8.98698 4.01277H5.01635V1.85636C5.01635 1.8248 5.04193 1.79922 5.07349 1.79922H8.92983C8.96139 1.79922 8.98698 1.8248 8.98698 1.85636V4.01277Z" fill="white"/>
+                    </svg>
+                </button> -->
+                <div class="modal__head">
+                    <h2 class="text-h6">Empty folder</h2>
+                </div>
+                <div class="modal__body">
+                    <p class="text-p5">Do you really want to delete all messages in this folder?</p>
+                </div>
+                <div class="modal__foot">
+                    <button class="btn_red">Delete</button>
+                </div>
             </div>
         </div>
         <!-- Delete modal end -->
@@ -321,7 +336,7 @@
                             </svg>
                             <span class="inbox__nav_link__text">Forward</span>
                         </a>
-                        <a href="#" class="text-p5 inbox__nav_link">
+                        <a href="#" class="text-p5 inbox__nav_link modal_delete__open">
                             <span class="inbox__nav_link__icon">
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M3.41635 1.85636C3.41635 0.941147 4.15828 0.199219 5.07349 0.199219H8.92983C9.84505 0.199219 10.587 0.941147 10.587 1.85636V4.01277H12.9992C13.441 4.01277 13.7992 4.37094 13.7992 4.81277C13.7992 5.25459 13.441 5.61277 12.9992 5.61277H12.011V10.999C12.011 12.5454 10.7574 13.799 9.21102 13.799H4.79166C3.24527 13.799 1.99167 12.5454 1.99167 10.999V5.61277H0.999219C0.557391 5.61277 0.199219 5.25459 0.199219 4.81277C0.199219 4.37094 0.557391 4.01277 0.999219 4.01277H3.41635V1.85636ZM3.59167 5.61277H10.411V10.999C10.411 11.6618 9.87376 12.199 9.21102 12.199H4.79166C4.12892 12.199 3.59167 11.6618 3.59167 10.999V5.61277ZM8.98698 4.01277H5.01635V1.85636C5.01635 1.8248 5.04193 1.79922 5.07349 1.79922H8.92983C8.96139 1.79922 8.98698 1.8248 8.98698 1.85636V4.01277Z" fill="#2C2C2C" fill-opacity="0.65"/>
