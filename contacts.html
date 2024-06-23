@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+    <title>TON Mail Protocol</title>
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header__left">
+                <div class="header__account">
+                    <img src="./images/logotip.svg" class="logo_icon" alt="">
+                    <div class="header__account_text">
+                        <p class="text-p5">whale@ton.pro</p>
+                        <p class="text-p5">EQDvh...mZ5Xe</p>
+                    </div>
+                    <div class="header__account_dropdown">
+                        <button class="header__account_dropdown__btn">
+                            <img src="./images/arrow-down.svg" alt="">
+                        </button>
+                        <div class="header__account_dropdown__list">
+                            <img src="./images/dropdown-icon.svg" alt="" class="before_icon">
+                            <ul class="dropdown_radio">
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" checked name="account">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">whale@ton.pro</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" name="account">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">nex@ton.pro</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" name="account">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">nex@ton.pro</p>
+                                </li>
+                            </ul>
+                            <div class="line"></div>
+                            <button class="text-p5 dropdown_close">Disconnect</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="search">
+                    <div class="search_inp">
+                        <img src="./images/search.svg" class="icon" alt="">
+                        <input type="text" placeholder="Search">
+                    </div>
+
+                    <div class="search_result">
+                        <ul class="search_result__settings">
+                            <li>
+                                <p class="text-p5">Subject</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Sender</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Recipient</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Body</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Entire message</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="search_result__dropdowns">
+                            <div class="dropdown">
+                                <div class="dropdown_inp">
+                                    <input type="text" disabled value="">
+                                    <button>
+                                        <img src="./images/arrow-down.svg" alt="">
+                                    </button>
+                                </div>
+                                <ul class="dropdown_list">
+                                    <li class="dropdown_list__item checked">Unread</li>
+                                    <li class="dropdown_list__item">Item 1</li>
+                                    <li class="dropdown_list__item">Item 2</li>
+                                    <li class="dropdown_list__item">Item 3</li>
+                                    <li class="dropdown_list__item">Item 4</li>
+                                    <li class="dropdown_list__item">Item 5</li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <div class="dropdown_inp">
+                                    <input type="text" disabled value="">
+                                    <button>
+                                        <img src="./images/arrow-down.svg" alt="">
+                                    </button>
+                                </div>
+                                <ul class="dropdown_list">
+                                    <li class="dropdown_list__item checked">Older than week</li>
+                                    <li class="dropdown_list__item">Item 1</li>
+                                    <li class="dropdown_list__item">Item 2</li>
+                                    <li class="dropdown_list__item">Item 3</li>
+                                    <li class="dropdown_list__item">Item 4</li>
+                                    <li class="dropdown_list__item">Item 5</li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <div class="dropdown_inp">
+                                    <input type="text" disabled value="">
+                                    <button>
+                                        <img src="./images/arrow-down.svg" alt="">
+                                    </button>
+                                </div>
+                                <ul class="dropdown_list">
+                                    <li class="dropdown_list__item checked">Current folder</li>
+                                    <li class="dropdown_list__item">Item 1</li>
+                                    <li class="dropdown_list__item">Item 2</li>
+                                    <li class="dropdown_list__item">Item 3</li>
+                                    <li class="dropdown_list__item">Item 4</li>
+                                    <li class="dropdown_list__item">Item 5</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="btn_blue">Search</button>
+                    </div>
+                </div>
+            </div>
+            <ul class="header__navs auth__navs">
+                <li>
+                    <a href="./inbox.html" class="text-p5 active">Email</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Preferences</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Contacts</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Folders</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Indentities</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Responses</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Security</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Filters</a>
+                </li>
+            </ul>
+        </header>
+        <!-- Header end -->
+
+        <!-- Modals -->
+
+        <!-- Delete modal -->
+        <div class="modal modal_delete contact_delete">
+            <div class="modal__bg"></div>
+            <div class="modal__content">
+                <button type="button" class="modal__close">
+                    <img src="./images/times.svg" alt="">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                    </svg>
+                </button>
+                <div class="modal__head">
+                    <h2 class="text-h6">Delete contact</h2>
+                </div>
+                <div class="modal__body">
+                    <p class="text-p6">Are you sure want to delete selected contact?</p>
+                </div>
+                <div class="modal__foot">
+                    <button class="btn_red">Delete</button>
+                </div>
+            </div>
+        </div>
+        <!-- Delete modal end -->
+
+        <!-- Contact add modal -->
+        <div class="modal contact_add">
+            <div class="modal__bg"></div>
+            <div class="modal__content">
+                <button type="button" class="modal__close">
+                    <img src="./images/times.svg" alt="">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                    </svg>
+                </button>
+                <div class="modal__head">
+                    <h2 class="text-h6">New contact</h2>
+                </div>
+                <div class="modal__body">
+                    <div class="form_inp">
+                        <label for="">
+                            Name <span>*</span>
+                        </label>
+                        <input type="text">
+                        <p class="error_text">This field is required</p>
+                    </div>
+                    <div class="form_inp">
+                        <label for="">
+                            Email <span>*</span>
+                        </label>
+                        <input type="email">
+                        <p class="error_text">This field is required</p>
+                    </div>
+                    <div class="form_inp">
+                        <label for="">
+                            Wallet
+                        </label>
+                        <input type="text">
+                        <p class="error_text">This field is required</p>
+                    </div>
+                    <div class="form_inp">
+                        <label for="">
+                            Telegram
+                        </label>
+                        <input type="text">
+                        <p class="error_text">This field is required</p>
+                    </div>
+                </div>
+                <div class="modal__foot">
+                    <button class="btn_blue">Confirm</button>
+                </div>
+            </div>
+        </div>
+        <!-- Contact add modal end -->
+
+        <!-- Contact edit modal -->
+        <div class="modal contact_edit">
+            <div class="modal__bg"></div>
+            <div class="modal__content">
+                <button type="button" class="modal__close">
+                    <img src="./images/times.svg" alt="">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                    </svg>
+                </button>
+                <button type="button" class="modal__delete modal_delete__open">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.41635 1.85636C3.41635 0.941147 4.15828 0.199219 5.07349 0.199219H8.92983C9.84505 0.199219 10.587 0.941147 10.587 1.85636V4.01277H12.9992C13.441 4.01277 13.7992 4.37094 13.7992 4.81277C13.7992 5.25459 13.441 5.61277 12.9992 5.61277H12.011V10.999C12.011 12.5454 10.7574 13.799 9.21102 13.799H4.79166C3.24527 13.799 1.99167 12.5454 1.99167 10.999V5.61277H0.999219C0.557391 5.61277 0.199219 5.25459 0.199219 4.81277C0.199219 4.37094 0.557391 4.01277 0.999219 4.01277H3.41635V1.85636ZM3.59167 5.61277H10.411V10.999C10.411 11.6618 9.87376 12.199 9.21102 12.199H4.79166C4.12892 12.199 3.59167 11.6618 3.59167 10.999V5.61277ZM8.98698 4.01277H5.01635V1.85636C5.01635 1.8248 5.04193 1.79922 5.07349 1.79922H8.92983C8.96139 1.79922 8.98698 1.8248 8.98698 1.85636V4.01277Z" fill="white"/>
+                    </svg>
+                </button>
+                <div class="modal__head">
+                    <h2 class="text-h6">New contact</h2>
+                </div>
+                <div class="modal__body">
+                    <div class="form_inp">
+                        <label for="">
+                            Name <span>*</span>
+                        </label>
+                        <input type="text" value="Whale">
+                        <p class="error_text">This field is required</p>
+                    </div>
+                    <div class="form_inp">
+                        <label for="">
+                            Email <span>*</span>
+                        </label>
+                        <input type="email" value="whale@ton.pro">
+                        <p class="error_text">This field is required</p>
+                    </div>
+                    <div class="form_inp">
+                        <label for="">
+                            Wallet
+                        </label>
+                        <input type="text" value="EQB82tBQxpmm_BNXRQ4QNeZryHX7woHtGemhh-qNbcN3RrJj">
+                        <p class="error_text">This field is required</p>
+                    </div>
+                    <div class="form_inp">
+                        <label for="">
+                            Telegram
+                        </label>
+                        <input type="text" value="https://t.me/whale">
+                        <p class="error_text">This field is required</p>
+                    </div>
+                </div>
+                <div class="modal__foot">
+                    <button class="btn_blue">Save</button>
+                </div>
+            </div>
+        </div>
+        <!-- Contact edit modal end -->
+
+        <!-- Modals end -->
+
+        <main>
+
+            <section class="contact">
+                <div class="nav_head">
+                    <a href="./inbox.html">
+                        <img src="./images/back-icon.svg" alt="">
+                    </a>
+                    <h3>Contacts</h3>
+                </div>
+
+                <!-- Contact empty -->
+                <!-- <div class="contact__empty">
+                    <img src="./images/empty-icon.png" alt="">
+                    <p class="text-p5">No contacts</p>
+                </div> -->
+                <!-- Contact empty end -->
+
+                <!-- Contact not empty -->
+                <div class="contact__list">
+                    <button class="contact_edit__open">
+                        <span class="text_left">
+                            <img src="./images/user-icon.svg" alt="">
+                            <span>
+                                <b>SatoshiSeeker</b> seeker@ton.pro 
+                            </span>
+                        </span>
+                        <img src="./images/chevron-right-dark.svg" alt="">
+                    </button>
+
+                    <button class="contact_edit__open">
+                        <span class="text_left">
+                            <img src="./images/user-icon.svg" alt="">
+                            <span>
+                                <b>Whale</b> whale@ton.pro 
+                            </span>
+                        </span>
+                        <img src="./images/chevron-right-dark.svg" alt="">
+                    </button>
+
+                    <button class="contact_edit__open">
+                        <span class="text_left">
+                            <img src="./images/user-icon.svg" alt="">
+                            <span>
+                                <b>Cipher</b> cipher@ton.pro 
+                            </span>
+                        </span>
+                        <img src="./images/chevron-right-dark.svg" alt="">
+                    </button>
+
+                    <button class="contact_edit__open">
+                        <span class="text_left">
+                            <img src="./images/user-icon.svg" alt="">
+                            <span>
+                                <b>CryptoNomad</b> nomad@ton.pro 
+                            </span>
+                        </span>
+                        <img src="./images/chevron-right-dark.svg" alt="">
+                    </button>
+
+                    <button class="contact_edit__open">
+                        <span class="text_left">
+                            <img src="./images/user-icon.svg" alt="">
+                            <span>
+                                <b>Tima</b> tima@ton.pro 
+                            </span>
+                        </span>
+                        <img src="./images/chevron-right-dark.svg" alt="">
+                    </button>
+
+                    <button class="contact_edit__open">
+                        <span class="text_left">
+                            <img src="./images/user-icon.svg" alt="">
+                            <span>
+                                <b>StellarNavigator</b> navigator@ton.pro  
+                            </span>
+                        </span>
+                        <img src="./images/chevron-right-dark.svg" alt="">
+                    </button>
+
+                    <button class="contact_edit__open">
+                        <span class="text_left">
+                            <img src="./images/user-icon.svg" alt="">
+                            <span>
+                                <b>seeker@Bitwise</b> navigator@ton.pro
+                            </span>
+                        </span>
+                        <img src="./images/chevron-right-dark.svg" alt="">
+                    </button>
+
+                    <button class="contact_edit__open">
+                        <span class="text_left">
+                            <img src="./images/user-icon.svg" alt="">
+                            <span>
+                                <b>SatoshiSeeker</b> seeker@ton.pro 
+                            </span>
+                        </span>
+                        <img src="./images/chevron-right-dark.svg" alt="">
+                    </button>
+
+                </div>
+                <!-- Contact not empty end -->
+
+                <div class="nav_foot">
+                    <button class="text-p5 btn_blue contact_add__open">Add contact</button>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- JS file -->
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

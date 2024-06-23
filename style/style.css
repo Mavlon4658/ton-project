@@ -217,6 +217,54 @@ body {
   letter-spacing: 10px;
 }
 
+.form_inp {
+  display: flex;
+  flex-direction: column;
+}
+.form_inp label {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: rgba(44, 44, 44, 0.65);
+}
+.form_inp label span {
+  color: #F83C3C;
+}
+.form_inp input {
+  width: 100%;
+  height: 40px;
+  background: rgba(44, 44, 44, 0.05);
+  border-radius: 10px;
+  margin: 6px 0 2px;
+  border: 1px solid transparent;
+  transition: 0.3s ease all;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0px 14px;
+}
+.form_inp input:hover {
+  border-color: rgba(44, 44, 44, 0.15);
+}
+.form_inp input:focus {
+  border-color: #326BFF;
+  box-shadow: 0 0 8px rgba(67, 151, 229, 0.2);
+  background: #FFFFFF;
+}
+.form_inp .error_text {
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.2px;
+  color: #F83C3C;
+  display: none;
+}
+.form_inp.error input {
+  border-color: #F83C3C;
+  box-shadow: 0 0 8px rgba(248, 60, 60, 0.2);
+}
+.form_inp.error .error_text {
+  display: block;
+}
+
 .checkbox {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -581,6 +629,61 @@ body {
   display: block;
   opacity: 0;
   animation: 0.2s searchResultEnd linear 1;
+}
+
+.nav_head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(44, 44, 44, 0.15);
+}
+@media screen and (min-width: 992px) {
+  .nav_head {
+    display: none !important;
+  }
+}
+.nav_head a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav_foot {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid rgba(44, 44, 44, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  background: #FFFFFF;
+  padding: 0px 16px;
+}
+@media screen and (max-width: 992px) {
+  .nav_foot {
+    height: 73px;
+  }
+}
+.nav_foot button {
+  font-weight: 600;
+}
+@media screen and (max-width: 992px) {
+  .nav_foot button {
+    width: 100%;
+  }
 }
 
 .header {
@@ -1423,6 +1526,13 @@ body {
   position: relative;
   border-radius: 20px;
 }
+@media screen and (max-width: 768px) {
+  .modal__content {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
 .modal__close {
   width: 40px;
   height: 40px;
@@ -1434,6 +1544,27 @@ body {
   position: absolute;
   top: 0;
   right: -50px;
+}
+.modal__close svg {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .modal__close {
+    right: auto;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    border-radius: 0;
+    background: transparent;
+  }
+  .modal__close img {
+    display: none;
+  }
+  .modal__close svg {
+    display: block;
+  }
 }
 .modal__delete {
   width: 40px;
@@ -1447,42 +1578,125 @@ body {
   right: -50px;
   top: 50px;
 }
+@media screen and (max-width: 768px) {
+  .modal__delete {
+    right: 0;
+    top: 0;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    border-radius: 0;
+    background: transparent;
+  }
+  .modal__delete svg path {
+    fill: #F83C3C;
+  }
+}
 .modal__head {
   text-align: center;
   border-bottom: 1px solid rgba(44, 44, 44, 0.15);
   padding: 20px 0 16px;
 }
+@media screen and (max-width: 768px) {
+  .modal__head {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #FFFFFF;
+    padding: 20px 0;
+    height: 60px;
+  }
+  .modal__head h2 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
 .modal__body {
   padding: 20px;
+}
+@media screen and (max-width: 768px) {
+  .modal__body {
+    padding-top: 74px;
+    max-height: calc(100svh - 74px);
+    overflow-y: scroll;
+  }
+  .modal__body::-webkit-scrollbar {
+    display: none;
+  }
 }
 .modal__foot {
   padding: 20px;
   border-top: 1px solid rgba(44, 44, 44, 0.15);
 }
-@keyframes modalActive {
-  from {
+@media screen and (max-width: 768px) {
+  .modal__foot {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 14px 16px 19px;
+    background-color: #FFFFFF;
+  }
+}
+.modal__foot button {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  @keyframes modalActive {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .modal.active {
+    display: flex;
+    animation: modalActive 0.2s linear 1;
+  }
+  @keyframes modalEndActive {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  .modal.end-active {
+    display: flex;
     opacity: 0;
-  }
-  to {
-    opacity: 1;
+    animation: modalEndActive 0.2s linear 1;
   }
 }
-.modal.active {
-  display: flex;
-  animation: modalActive 0.2s linear 1;
-}
-@keyframes modalEndActive {
-  from {
-    opacity: 1;
+@media screen and (max-width: 992px) {
+  @keyframes modalActive {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
   }
-  to {
+  .modal.active {
+    display: flex;
+    animation: modalActive 0.2s linear 1;
+  }
+  @keyframes modalEndActive {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 1;
+    }
+  }
+  .modal.end-active {
+    display: flex;
     opacity: 0;
+    animation: modalEndActive 0.2s linear 1;
   }
-}
-.modal.end-active {
-  display: flex;
-  opacity: 0;
-  animation: modalEndActive 0.2s linear 1;
 }
 
 .modal_delete .modal__body {
@@ -1636,5 +1850,103 @@ body {
 @media screen and (max-width: 992px) {
   .preference__foot button {
     width: 100%;
+  }
+}
+
+.contact {
+  background: #FFFFFF;
+}
+@media screen and (max-width: 992px) {
+  .contact {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    height: calc(100svh - 133px);
+    overflow-y: scroll;
+  }
+  .contact::-webkit-scrollbar {
+    display: none;
+  }
+}
+.contact__empty {
+  height: calc(100svh - 152px);
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+@media screen and (max-width: 992px) {
+  .contact__empty {
+    height: 100%;
+    margin-top: 0;
+  }
+}
+.contact__empty img {
+  width: 126px;
+}
+.contact__empty p {
+  color: rgba(44, 44, 44, 0.65);
+  font-weight: 600;
+}
+.contact__list {
+  padding: 82px 10px 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+@media screen and (min-width: 992px) {
+  .contact__list {
+    min-height: 100svh;
+  }
+}
+@media screen and (max-width: 992px) {
+  .contact__list {
+    padding: 0px 10px;
+  }
+}
+.contact__list button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s ease all;
+  gap: 10px;
+}
+.contact__list button:hover {
+  background: rgba(44, 44, 44, 0.05);
+}
+.contact__list button .text_left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(44, 44, 44, 0.65);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: left;
+}
+.contact__list button .text_left b {
+  font-weight: 600;
+  color: #000000;
+}
+.contact_add .modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.contact_delete .modal__body {
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .contact_delete .modal__body p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -239,17 +239,23 @@ if (msgItems.length) {
 let modal = document.querySelectorAll('.modal'),
     modalClose = document.querySelectorAll('.modal__close'),
     deleteModal = document.querySelector('.modal_delete'),
-    deleteModalOpen = document.querySelectorAll('.modal_delete__open');
+    deleteModalOpen = document.querySelectorAll('.modal_delete__open'),
+    contactAdd = document.querySelector('.contact_add'),
+    contactAddOpen = document.querySelectorAll('.contact_add__open'),
+    contactEdit = document.querySelector('.contact_edit'),
+    contactEditOpen = document.querySelectorAll('.contact_edit__open');
 
 if (modalClose.length) {
     modalClose.forEach(el => {
         el.onclick = () => {
             modal.forEach(m => {
-                m.classList.remove('active');
-                m.classList.add('end-active');
-                setTimeout(() => {
-                    m.classList.remove('end-active');
-                }, 300);
+                if (m.classList.contains('active')) {
+                    m.classList.remove('active');
+                    m.classList.add('end-active');
+                    setTimeout(() => {
+                        m.classList.remove('end-active');
+                    }, 300);
+                }
             })
         }
     })
@@ -259,7 +265,56 @@ if (deleteModalOpen.length) {
     deleteModalOpen.forEach(el => {
         el.onclick = e => {
             e.preventDefault();
+            modal.forEach(m => {
+                if (m.classList.contains('active')) {
+                    m.classList.remove('active');
+                    m.classList.add('end-active');
+                    setTimeout(() => {
+                        m.classList.remove('end-active');
+                    }, 300);
+                }
+            })
             deleteModal.classList.add('active');
+        }
+    })
+}
+
+if (contactAddOpen.length) {
+    contactAddOpen.forEach(el => {
+        el.onclick = e => {
+            e.preventDefault();
+            contactAdd.classList.add('active');
+        }
+    })
+}
+
+if (contactEditOpen.length) {
+    contactEditOpen.forEach(el => {
+        el.onclick = e => {
+            e.preventDefault();
+            contactEdit.classList.add('active');
+        }
+    })
+}
+
+let formInp = document.querySelectorAll('.form_inp');
+
+if (formInp.length) {
+    formInp.forEach(el => {
+        let inp = el.querySelector('input');
+
+        inp.onblur = () => {
+            if (inp.value == "") {
+                el.classList.add('error');
+            } else {
+                el.classList.remove('error')
+            }
+        }
+
+        inp.onfocus = () => {
+            if (inp.value != "") {
+                el.classList.remove('error');
+            }
         }
     })
 }

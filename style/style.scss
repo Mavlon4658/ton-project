@@ -183,6 +183,64 @@ body {
     }
 }
 
+.form_inp {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.2px;
+        color: $color-shade-4;
+
+        span {
+            color: $color-red;
+        }
+    }
+
+    input {
+        width: 100%;
+        height: 40px;
+        background: $color-shade-1;
+        border-radius: 10px;
+        margin: 6px 0 2px;
+        border: 1px solid transparent;
+        transition: .3s ease all;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 0px 14px;
+
+        &:hover {
+            border-color: $color-shade-2;
+        }
+
+        &:focus {
+            border-color: $color-active;
+            box-shadow: 0 0 8px rgba(67, 151, 229, 0.2);
+            background: $color-bg;
+        }
+    }
+
+    .error_text {
+        font-size: 10px;
+        line-height: 14px;
+        letter-spacing: 0.2px;
+        color: $color-red;
+        display: none;
+    }
+
+    &.error {
+        input {
+            border-color: $color-red;
+            box-shadow: 0 0 8px rgba(248, 60, 60, 0.2);
+        }
+
+        .error_text {
+            display: block;
+        }
+    }
+}
+
 .checkbox {
     user-select: none;
     cursor: pointer;
@@ -620,6 +678,63 @@ body {
 
 }
 
+.nav {
+    &_head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        background: $color-bg;
+        border-bottom: 1px solid $color-shade-2;
+
+        @include media(-992) {
+            display: none !important;
+        }
+
+        a {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &_foot {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        border-top: 1px solid $color-shade-2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        background: $color-bg;
+        padding: 0px 16px;
+
+        @include media(992) {
+            height: 73px;
+        }
+
+        button {
+            font-weight: 600;
+
+            @include media(992) {
+                width: 100%;
+            }
+        }
+    }
+}
+
 @import './block/header';
 @import './block/leftNav';
 @import './block/footer';
@@ -627,3 +742,4 @@ body {
 @import './block/inbox';
 @import './block/modals';
 @import './block/preference';
+@import './block/contacts';
