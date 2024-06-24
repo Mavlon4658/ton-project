@@ -15,30 +15,6 @@
         }
     }
 
-    &__empty {
-        height: calc(100svh - 152px);
-        margin-top: 72px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-
-        @include media(992) {
-            height: 100%;
-            margin-top: 0;
-        }
-
-        img {
-            width: 126px;
-        }
-
-        p {
-            color: $color-shade-4;
-            font-weight: 600;
-        }
-    }
-
     &__list {
         padding: 82px 10px 90px;
         display: flex;

@@ -243,7 +243,11 @@ let modal = document.querySelectorAll('.modal'),
     contactAdd = document.querySelector('.contact_add'),
     contactAddOpen = document.querySelectorAll('.contact_add__open'),
     contactEdit = document.querySelector('.contact_edit'),
-    contactEditOpen = document.querySelectorAll('.contact_edit__open');
+    contactEditOpen = document.querySelectorAll('.contact_edit__open'),
+    foldersAdd = document.querySelector('.folders_add'),
+    foldersAddOpen = document.querySelectorAll('.folders_add__open'),
+    foldersEdit = document.querySelector('.folders_edit'),
+    foldersEditOpen = document.querySelectorAll('.folders_edit__open');
 
 if (modalClose.length) {
     modalClose.forEach(el => {
@@ -297,6 +301,24 @@ if (contactEditOpen.length) {
     })
 }
 
+if (foldersAddOpen.length) {
+    foldersAddOpen.forEach(el => {
+        el.onclick = e => {
+            e.preventDefault();
+            foldersAdd.classList.add('active');
+        }
+    })
+}
+
+if (foldersEditOpen.length) {
+    foldersEditOpen.forEach(el => {
+        el.onclick = e => {
+            e.preventDefault();
+            foldersEdit.classList.add('active');
+        }
+    })
+}
+
 let formInp = document.querySelectorAll('.form_inp');
 
 if (formInp.length) {
@@ -314,6 +336,34 @@ if (formInp.length) {
         inp.onfocus = () => {
             if (inp.value != "") {
                 el.classList.remove('error');
+            }
+        }
+    })
+}
+
+let foldersAccordion = document.querySelectorAll('.folders__accordion');
+if (foldersAccordion.length) {
+    foldersAccordion.forEach(el => {
+        let btn = el.querySelector('.folders__accordion_btn'),
+            bdy = el.querySelector('.folders__accordion_body');
+        btn.onclick = () => {
+            if (bdy) {
+                bdy.classList.toggle('active');
+                btn.classList.toggle('active');
+            }
+        }
+    })
+}
+
+let folderChilAccordion = document.querySelectorAll('.folders__child_accordion');
+if (folderChilAccordion.length) {
+    folderChilAccordion.forEach(el => {
+        let btn = el.querySelector('.folders__child_accordion__btn'),
+            bdy = el.querySelector('.folders__child_accordion__body');
+        btn.onclick = () => {
+            if (bdy) {
+                bdy.classList.toggle('active');
+                btn.classList.toggle('active')
             }
         }
     })
