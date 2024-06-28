@@ -1,0 +1,89 @@
+.responses {
+    @include media(992) {
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100svh;
+        background: $color-bg;
+    }
+
+    &__list {
+        padding: 82px 10px 90px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        @include media(992) {
+            height: 100svh;
+            overflow-y: scroll;
+            padding: 66px 8px 80px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &_item {
+            text-align: left;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-radius: 10px;
+            transition: .3s ease all;
+
+            &:hover {
+                background: $color-shade-1;
+            }
+
+            &__text {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: $color-shade-4;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 400;
+
+                b {
+                    color: $color-main;
+                    font-weight: 600;
+                }
+            }
+
+            .icon {
+                width: 18px;
+                height: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    &_add, &_edit {
+        .modal__body {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+    }
+
+    &_delete {
+        .modal__body {
+            text-align: center;
+
+            @include media(768) {
+                color: $color-main;
+
+                p {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

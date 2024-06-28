@@ -190,7 +190,7 @@
         <!-- Modals -->
 
         <!-- Delete modal -->
-        <div class="modal modal_delete folders_delete">
+        <div class="modal modal_delete responses_delete">
             <div class="modal__bg"></div>
             <div class="modal__content">
                 <button type="button" class="modal__close">
@@ -200,10 +200,10 @@
                     </svg>
                 </button>
                 <div class="modal__head">
-                    <h2 class="text-h6">Delete folder</h2>
+                    <h2 class="text-h6">Delete response</h2>
                 </div>
                 <div class="modal__body">
-                    <p class="text-p6">Are you sure want to delete selected folder?</p>
+                    <p class="text-p6">Are you sure want to delete selected response?</p>
                 </div>
                 <div class="modal__foot">
                     <button class="btn_red">Delete</button>
@@ -212,8 +212,8 @@
         </div>
         <!-- Delete modal end -->
 
-        <!-- Contact add modal -->
-        <div class="modal folders_add">
+        <!-- Responses add modal -->
+        <div class="modal responses_add">
             <div class="modal__bg"></div>
             <div class="modal__content">
                 <button type="button" class="modal__close">
@@ -223,34 +223,20 @@
                     </svg>
                 </button>
                 <div class="modal__head">
-                    <h2 class="text-h6">New folder</h2>
+                    <h2 class="text-h6">Add response</h2>
                 </div>
                 <div class="modal__body">
                     <div class="form_inp">
                         <label for="">
-                            Folder name <span>*</span>
+                            Name
                         </label>
                         <input type="text">
                         <p class="error_text">This field is required</p>
                     </div>
-                    <div class="form_dropdown">
-                        <label for="" class="text-p6">Parent folder</label>
-                        <div class="dropdown">
-                            <div class="dropdown_inp">
-                                <input type="text" disabled value="">
-                                <button>
-                                    <img src="./images/arrow-down.svg" alt="">
-                                </button>
-                            </div>
-                            <ul class="dropdown_list">
-                                <li class="dropdown_list__item checked">Inbox</li>
-                                <li class="dropdown_list__item">Item 1</li>
-                                <li class="dropdown_list__item">Item 2</li>
-                                <li class="dropdown_list__item">Item 3</li>
-                                <li class="dropdown_list__item">Item 4</li>
-                                <li class="dropdown_list__item">Item 5</li>
-                            </ul>
-                        </div>
+                    <div class="form_text">
+                        <label for="" class="text-p6">Signature</label>
+                        <img src="./images/textarea-icon.svg" alt="">
+                        <textarea name="" id=""></textarea>
                     </div>
                 </div>
                 <div class="modal__foot">
@@ -258,10 +244,10 @@
                 </div>
             </div>
         </div>
-        <!-- Contact add modal end -->
+        <!-- Responses add modal end -->
 
-        <!-- Contact edit modal -->
-        <div class="modal folders_edit">
+        <!-- Responses edit modal -->
+        <div class="modal responses_edit">
             <div class="modal__bg"></div>
             <div class="modal__content">
                 <button type="button" class="modal__close">
@@ -276,48 +262,20 @@
                     </svg>
                 </button>
                 <div class="modal__head">
-                    <h2 class="text-h6">Edit folder</h2>
+                    <h2 class="text-h6">Edit response</h2>
                 </div>
                 <div class="modal__body">
                     <div class="form_inp">
                         <label for="">
-                            Folder name <span>*</span>
+                            Name
                         </label>
-                        <input type="text" value="Whale">
+                        <input type="text" value="filtername112rds">
                         <p class="error_text">This field is required</p>
                     </div>
-                    <div class="form_dropdown">
-                        <label for="" class="text-p6">Parent folder</label>
-                        <div class="dropdown">
-                            <div class="dropdown_inp">
-                                <input type="text" disabled value="">
-                                <button>
-                                    <img src="./images/arrow-down.svg" alt="">
-                                </button>
-                            </div>
-                            <ul class="dropdown_list">
-                                <li class="dropdown_list__item checked">Inbox</li>
-                                <li class="dropdown_list__item">Item 1</li>
-                                <li class="dropdown_list__item">Item 2</li>
-                                <li class="dropdown_list__item">Item 3</li>
-                                <li class="dropdown_list__item">Item 4</li>
-                                <li class="dropdown_list__item">Item 5</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="form_inp">
-                        <label for="">
-                            Messages
-                        </label>
-                        <input type="text" value="1">
-                        <p class="error_text">This field is required</p>
-                    </div>
-                    <div class="form_inp">
-                        <label for="">
-                            Size
-                        </label>
-                        <input type="text" value="72 KB">
-                        <p class="error_text">This field is required</p>
+                    <div class="form_text">
+                        <label for="" class="text-p6">Signature</label>
+                        <img src="./images/textarea-icon.svg" alt="">
+                        <textarea name="" id="">filtername112rds</textarea>
                     </div>
                 </div>
                 <div class="modal__foot">
@@ -325,169 +283,63 @@
                 </div>
             </div>
         </div>
-        <!-- Contact edit modal end -->
+        <!-- Responses edit modal end -->
 
         <!-- Modals end -->
 
         <main>
 
-            <section class="folders">
+            <section class="responses">
                 <div class="nav_head">
                     <a href="./inbox.html">
                         <img src="./images/back-icon.svg" alt="">
                     </a>
-                    <h3>Folders</h3>
+                    <h3>Responses</h3>
                 </div>
 
-                <!-- Folders empty -->
+                <!-- Responses empty -->
                 <!-- <div class="data__empty">
                     <img src="./images/empty-icon.png" alt="">
-                    <p class="text-p5">No folders</p>
+                    <p class="text-p5">No responses</p>
                 </div> -->
-                <!-- Folders empty end -->
+                <!-- Responses empty end -->
 
-                <!-- Folders not empty -->
-                <div class="folders__list">
-                    <div class="folders__accordion">
-                        <div class="folders__accordion_head folders__item">
-                            <button class="folders__accordion_btn active">
-                                <span>Inbox</span>
-                                <img src="./images/accordion-icon.svg" alt="">
-                            </button>
-                            <div class="checkbox-1 disabled">
-                                <input type="checkbox" checked>
-                                <div class="icon">
-                                    <span></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="folders__accordion_body active">
-                            <div class="folders__item">
-                                <button class="folders_edit__open">
-                                    <span>Subfolder Name</span>
-                                </button>
-                                <div class="checkbox-1">
-                                    <input type="checkbox" checked>
-                                    <div class="icon">
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="folders__child_accordion">
-                                <div class="folders__child_accordion__head folders__item">
-                                    <button class="folders__child_accordion__btn active">
-                                        <span>Subfolder Name</span>
-                                        <img src="./images/accordion-icon.svg" alt="">
-                                    </button>
-                                    <div class="checkbox-1">
-                                        <input type="checkbox" checked>
-                                        <div class="icon">
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="folders__child_accordion__body active">
-                                    <div class="folders__item">
-                                        <button class="folders_edit__open">
-                                            <span>Subfolder Name 3</span>
-                                        </button>
-                                        <div class="checkbox-1">
-                                            <input type="checkbox" checked>
-                                            <div class="icon">
-                                                <span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="folders__item">
-                        <button>
-                            <span>Drafts</span>
-                        </button>
-                        <div class="checkbox-1 disabled">
-                            <input type="checkbox" checked>
-                            <div class="icon">
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="folders__item">
-                        <button>
-                            <span>Sent</span>
-                        </button>
-                        <div class="checkbox-1 disabled">
-                            <input type="checkbox" checked>
-                            <div class="icon">
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="folders__item">
-                        <button>
-                            <span>Junk</span>
-                        </button>
-                        <div class="checkbox-1 disabled">
-                            <input type="checkbox" checked>
-                            <div class="icon">
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="folders__item">
-                        <button>
-                            <span>Trash</span>
-                        </button>
-                        <div class="checkbox-1 disabled">
-                            <input type="checkbox" checked>
-                            <div class="icon">
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="folders__accordion">
-                        <div class="folders__accordion_head folders__item">
-                            <button class="folders__accordion_btn">
-                                <span>Folder name</span>
-                            </button>
-                            <div class="checkbox-1">
-                                <input type="checkbox" checked>
-                                <div class="icon">
-                                    <span></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="folders__accordion_body active">
-                            <div class="folders__item">
-                                <button class="folders_edit__open">
-                                    <span>Subfolder Name</span>
-                                </button>
-                                <div class="checkbox-1">
-                                    <input type="checkbox" checked>
-                                    <div class="icon">
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="folders__item">
-                                <button class="folders_edit__open">
-                                    <span>News Subfolder Name 2</span>
-                                </button>
-                                <div class="checkbox-1">
-                                    <input type="checkbox" checked>
-                                    <div class="icon">
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Responses not empty -->
+                <div class="responses__list">
+
+                    <button class="responses__list_item responses_edit__open">
+                        <span class="responses__list_item__text">
+                            <img src="./images/indentities-icon.svg" alt="">
+                            <span>
+                                <b>Alexey</b> alexey@ton.pro
+                            </span>
+                        </span>
+                        <span class="icon">
+                            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <button class="responses__list_item responses_edit__open">
+                        <span class="responses__list_item__text">
+                            <img src="./images/indentities-icon.svg" alt="">
+                            <span>
+                                <b>Alexey</b> alexey@ton.pro
+                            </span>
+                        </span>
+                        <span class="icon">
+                            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                            </svg>
+                        </span>
+                    </button>
+
                 </div>
-                <!-- Folders not empty end -->
+                <!-- Responses not empty end -->
 
                 <div class="nav_foot">
-                    <button class="text-p5 btn_blue folders_add__open">Add folder</button>
+                    <button class="text-p5 btn_blue responses_add__open">Add response</button>
                 </div>
             </section>
 

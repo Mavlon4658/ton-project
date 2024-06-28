@@ -239,15 +239,7 @@ if (msgItems.length) {
 let modal = document.querySelectorAll('.modal'),
     modalClose = document.querySelectorAll('.modal__close'),
     deleteModal = document.querySelector('.modal_delete'),
-    deleteModalOpen = document.querySelectorAll('.modal_delete__open'),
-    contactAdd = document.querySelector('.contact_add'),
-    contactAddOpen = document.querySelectorAll('.contact_add__open'),
-    contactEdit = document.querySelector('.contact_edit'),
-    contactEditOpen = document.querySelectorAll('.contact_edit__open'),
-    foldersAdd = document.querySelector('.folders_add'),
-    foldersAddOpen = document.querySelectorAll('.folders_add__open'),
-    foldersEdit = document.querySelector('.folders_edit'),
-    foldersEditOpen = document.querySelectorAll('.folders_edit__open');
+    deleteModalOpen = document.querySelectorAll('.modal_delete__open');
 
 if (modalClose.length) {
     modalClose.forEach(el => {
@@ -283,40 +275,49 @@ if (deleteModalOpen.length) {
     })
 }
 
-if (contactAddOpen.length) {
-    contactAddOpen.forEach(el => {
-        el.onclick = e => {
-            e.preventDefault();
-            contactAdd.classList.add('active');
-        }
-    })
-}
+let modalClass = ['contact', 'folder', 'indentities', 'responses', 'filters'];
+modalClass.forEach(cls => {
+    let add = document.querySelector(`.${cls}_add`),
+        addOpen = document.querySelectorAll(`.${cls}_add__open`),
+        edit = document.querySelector(`.${cls}_edit`),
+        editOpen = document.querySelectorAll(`.${cls}_edit__open`);
 
-if (contactEditOpen.length) {
-    contactEditOpen.forEach(el => {
-        el.onclick = e => {
-            e.preventDefault();
-            contactEdit.classList.add('active');
-        }
-    })
-}
+    if (addOpen.length) {
+        addOpen.forEach(el => {
+            el.onclick = e => {
+                e.preventDefault();
+                add.classList.add('active');
+            }
+        })
+    }
+    
+    if (editOpen.length) {
+        editOpen.forEach(el => {
+            el.onclick = e => {
+                e.preventDefault();
+                edit.classList.add('active');
+            }
+        })
+    }
+    
+})
 
-if (foldersAddOpen.length) {
-    foldersAddOpen.forEach(el => {
-        el.onclick = e => {
-            e.preventDefault();
-            foldersAdd.classList.add('active');
-        }
-    })
-}
-
-if (foldersEditOpen.length) {
-    foldersEditOpen.forEach(el => {
-        el.onclick = e => {
-            e.preventDefault();
-            foldersEdit.classList.add('active');
-        }
-    })
+let deleteModalOpen2 = document.querySelector('.modal_delete__open_2'),
+    deleteModal2 = document.querySelector('.filters_delete');
+if (deleteModalOpen2) {
+    deleteModalOpen2.onclick = e => {
+        e.preventDefault();
+        modal.forEach(m => {
+            if (m.classList.contains('active')) {
+                m.classList.remove('active');
+                m.classList.add('end-active');
+                setTimeout(() => {
+                    m.classList.remove('end-active');
+                }, 300);
+            }
+        })
+        deleteModal2.classList.add('active')
+    }
 }
 
 let formInp = document.querySelectorAll('.form_inp');

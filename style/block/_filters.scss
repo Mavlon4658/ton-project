@@ -1,0 +1,134 @@
+.filters {
+    @include media(992) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100svh;
+        background: $color-bg;
+        z-index: 3;
+    }
+
+    &__list {
+        padding: 82px 10px 90px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100svh;
+
+        @include media(992) {
+            height: 100svh;
+            overflow-y: scroll;
+            padding: 66px 6px 80px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &_item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            padding: 10px;
+            border-radius: 10px;
+            transition: .3s ease all;
+
+            &:hover {
+                background: $color-shade-1;
+            }
+
+            &__text {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+                line-height: 20px;
+                color: $color-shade-4;
+
+                b {
+                    color: $color-main;
+                    font-weight: 600;
+                }
+            }
+
+            .icon {
+                width: 18px;
+                height: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    &_add, &_edit {
+        .modal__body {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+
+            .form_dropdown {
+                
+                label {
+                    margin-bottom: 6px;
+                    color: $color-shade-4;
+                }
+
+                input {
+                    color: $color-main;
+                }
+            }
+
+            .form_rule {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                &__item {
+                    border: 1px solid $color-shade-2;
+                    border-radius: 14px;
+                    padding: 14px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+
+                    &_head {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: -6px;
+
+                        label {
+                            color: $color-shade-4;
+                        }
+
+                        button {
+                            color: $color-red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &_delete, &_delete_rule {
+        .modal__body {
+            text-align: center;
+
+            p {
+                color: $color-shade-4;
+            }
+
+            @include media(768) {
+                p {
+                    color: $color-main;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

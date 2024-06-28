@@ -138,6 +138,42 @@ body {
         border-radius: 10px;
         width: 100%;
     }
+
+    &_light {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid $color-shade-2;
+        border-radius: 10px;
+        height: 40px;
+        background: $color-bg;
+        transition: .3s ease all;
+
+        &:hover {
+            background: $color-shade-1;
+        }
+
+        &:active {
+            background: $color-shade-2;
+            border-color: transparent;
+        }
+
+        &:disabled {
+            background: $color-bg;
+            border-color: rgba(44, 44, 44, 0.15);
+            color: $color-shade-4;
+            pointer-events: none;
+            user-select: none;
+
+            svg path {
+                fill: $color-shade-4;
+            }
+        }
+    }
 }
 
 .inp {
@@ -183,60 +219,104 @@ body {
     }
 }
 
-.form_inp {
-    display: flex;
-    flex-direction: column;
+.form {
+    &_inp {
+        display: flex;
+        flex-direction: column;
 
-    label {
-        font-size: 12px;
-        line-height: 16px;
-        letter-spacing: 0.2px;
-        color: $color-shade-4;
+        label {
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.2px;
+            color: $color-shade-4;
 
-        span {
-            color: $color-red;
-        }
-    }
-
-    input {
-        width: 100%;
-        height: 40px;
-        background: $color-shade-1;
-        border-radius: 10px;
-        margin: 6px 0 2px;
-        border: 1px solid transparent;
-        transition: .3s ease all;
-        font-size: 14px;
-        line-height: 20px;
-        padding: 0px 14px;
-
-        &:hover {
-            border-color: $color-shade-2;
+            span {
+                color: $color-red;
+            }
         }
 
-        &:focus {
-            border-color: $color-active;
-            box-shadow: 0 0 8px rgba(67, 151, 229, 0.2);
-            background: $color-bg;
-        }
-    }
-
-    .error_text {
-        font-size: 10px;
-        line-height: 14px;
-        letter-spacing: 0.2px;
-        color: $color-red;
-        display: none;
-    }
-
-    &.error {
         input {
-            border-color: $color-red;
-            box-shadow: 0 0 8px rgba(248, 60, 60, 0.2);
+            width: 100%;
+            height: 40px;
+            background: $color-shade-1;
+            border-radius: 10px;
+            margin: 6px 0 2px;
+            border: 1px solid transparent;
+            transition: .3s ease all;
+            font-size: 14px;
+            line-height: 20px;
+            padding: 0px 14px;
+
+            &:hover {
+                border-color: $color-shade-2;
+            }
+
+            &:focus {
+                border-color: $color-active;
+                box-shadow: 0 0 8px rgba(67, 151, 229, 0.2);
+                background: $color-bg;
+            }
         }
 
         .error_text {
-            display: block;
+            font-size: 10px;
+            line-height: 14px;
+            letter-spacing: 0.2px;
+            color: $color-red;
+            display: none;
+        }
+
+        &.error {
+            input {
+                border-color: $color-red;
+                box-shadow: 0 0 8px rgba(248, 60, 60, 0.2);
+            }
+
+            .error_text {
+                display: block;
+            }
+        }
+    }
+
+    &_radio {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &_text {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+            height: 177px;
+            resize: none;
+            background: $color-shade-1;
+            padding: 12px 14px;
+            font-size: 14px;
+            line-height: 20px;
+            color: $color-main;
+            transition: .3s ease all;
+            border: 1px solid $color-shade-1;
+
+            &:hover {
+                border-color: $color-shade-2;
+            }
+
+            &:focus {
+                border-color: $color-active;
+                background: $color-bg;
+                box-shadow: 0 0 8px rgb(67, 151, 229, .2);
+            }
         }
     }
 }
@@ -686,7 +766,6 @@ body {
 
 .data__empty {
     height: calc(100svh - 152px);
-    margin-top: 72px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -695,7 +774,6 @@ body {
 
     @include media(992) {
         height: 100%;
-        margin-top: 0;
     }
 
     img {
@@ -774,3 +852,7 @@ body {
 @import './block/preference';
 @import './block/contacts';
 @import './block/folders';
+@import './block/indentities';
+@import './block/responses';
+@import './block/security';
+@import './block/filters';

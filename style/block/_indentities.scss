@@ -1,0 +1,89 @@
+.indentities {
+    @include media(992) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100svh;
+        background: $color-bg;
+        z-index: 3;
+    }
+
+    &__list {
+        min-height: 100svh;
+        padding: 82px 10px 90px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        @include media(992) {
+            height: 100svh;
+            overflow-y: scroll;
+            padding: 66px 6px 80px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &_item {
+            width: 100%;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 8px;
+            padding: 10px;
+            transition: .3s ease all;
+
+            &:hover {
+                background: $color-shade-1;
+            }
+
+            &__text {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+                line-height: 20px;
+                color: $color-shade-4;
+
+                b {
+                    color: $color-main;
+                    font-weight: 600;
+                }
+            }
+
+            .icon {
+                width: 28px;
+                height: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    &_add, &_edit {
+        .modal__body {
+            gap: 14px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &_delete {
+        .modal__body {
+            text-align: center;
+
+            @include media(768) {
+                color: $color-main;
+
+                p {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}
