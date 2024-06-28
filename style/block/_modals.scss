@@ -56,6 +56,7 @@
             height: 60px;
             border-radius: 0;
             background: transparent;
+            z-index: 3;
 
             img {
                 display: none;
@@ -87,6 +88,7 @@
             height: 60px;
             border-radius: 0;
             background: transparent;
+            z-index: 3;
 
             svg path {
                 fill: $color-red;
@@ -107,6 +109,7 @@
             background: $color-bg;
             padding: 20px 0;
             height: 60px;
+            z-index: 2;
 
             h2 {
                 font-size: 16px;

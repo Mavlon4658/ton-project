@@ -1654,6 +1654,7 @@ body {
     height: 60px;
     border-radius: 0;
     background: transparent;
+    z-index: 3;
   }
   .modal__close img {
     display: none;
@@ -1683,6 +1684,7 @@ body {
     height: 60px;
     border-radius: 0;
     background: transparent;
+    z-index: 3;
   }
   .modal__delete svg path {
     fill: #F83C3C;
@@ -1702,6 +1704,7 @@ body {
     background: #FFFFFF;
     padding: 20px 0;
     height: 60px;
+    z-index: 2;
   }
   .modal__head h2 {
     font-size: 16px;
@@ -2402,7 +2405,7 @@ body {
   flex-direction: column;
   gap: 20px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 .filters_add .modal__body .form_dropdown label, .filters_edit .modal__body .form_dropdown label {
   margin-bottom: 6px;
