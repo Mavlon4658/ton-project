@@ -508,6 +508,63 @@ if (openNav) {
     }
 }
 
+if (document.querySelector('#text-editor')) {
+    let Size = Quill.import('attributors/style/size');
+    Size.whitelist = ['10pt', '12pt', '14pt', '18pt', '24pt', '32pt', '48pt'];
+    Quill.register(Size, true);
+
+    let Font = Quill.import('attributors/style/font');
+    Font.whitelist = ['sans-serif', 'serif', 'monospace', 'times-new-roman', 'arial', 'courier-new'];
+    Quill.register(Font, true);
+
+    let quill = new Quill('#text-editor', {
+        modules: {
+            toolbar: '#toolbar-container'
+        },
+        theme: 'snow',
+        placeholder: 'Type your message here',
+    });
+
+    // Custom handler for unlink button
+    document.querySelector('.ql-unlink').addEventListener('click', function() {
+        let range = quill.getSelection();
+        if (range) {
+            quill.format('link', false);
+        }
+    });
+
+    // Custom handler for table button
+    document.querySelector('.ql-table').addEventListener('click', function() {
+        let range = quill.getSelection();
+        if (range) {
+            let table = `
+                <table border="1">
+                    <tr><td>Row 1 Col 1</td><td>Row 1 Col 2</td></tr>
+                    <tr><td>Row 2 Col 1</td><td>Row 2 Col 2</td></tr>
+                </table>`;
+            quill.clipboard.dangerouslyPasteHTML(range.index, table);
+        }
+    });
+
+    // Custom handler for symbol button
+    document.querySelector('.ql-symbol').addEventListener('click', function() {
+        let range = quill.getSelection();
+        if (range) {
+            quill.insertText(range.index, 'Ω');
+        }
+    });
+
+    // Custom handler for undo button
+    document.querySelector('.ql-undo').addEventListener('click', function() {
+        quill.history.undo();
+    });
+
+    // Custom handler for redo button
+    document.querySelector('.ql-redo').addEventListener('click', function() {
+        quill.history.redo();
+    });
+}
+
 document.addEventListener('click', (event) => {
     if (accountDropdown && accountDropdownList.classList.contains('active') && window.innerWidth > 992) {
         const t1 = event.composedPath().includes(accountDropdown)

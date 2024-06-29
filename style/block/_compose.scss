@@ -1,0 +1,208 @@
+.compose {
+    min-height: 100svh;
+    padding: 72px 20px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    &__left {
+        width: 100%;
+
+        #toolbar-container {
+            border-radius: 10px 10px 0 0;
+        }
+
+        #text-editor {
+            background: $color-shade-1;
+            border: 0;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .btn_blue {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    &_nav {
+        display: flex;
+        align-items: center;
+        padding: 10px 0px 5px;
+        margin-bottom: 10px;
+
+        a {
+            padding: 7px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 600;
+        }
+
+        .link_dropdown {
+            &__btn {
+                padding: 7px 12px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 20px;
+
+        &_item {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            .text-p5 {
+                width: 70px;
+                flex-shrink: 0;
+            }
+
+            .form_inp {
+                width: 100%;
+            }
+        }
+    }
+
+    .ql-editor {
+        min-height: 446px;
+    }
+
+    .ql-editor.ql-blank::before {
+        font-style: normal;
+    }
+
+    &__right {
+        width: 290px;
+        flex-shrink: 0;
+        padding: 21px 0 20px;
+
+        &_card {
+            border-radius: 12px;
+            border: 1px solid $color-shade-2;
+            padding: 16px;
+        }
+
+        .form_radio {
+            justify-content: space-between;
+            gap: 10px;
+
+            p {
+                color: $color-shade-4;
+            }
+        }
+
+        .dropdown_wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            
+            p {
+                color: $color-shade-4;
+            }
+        }
+
+        .top_card {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+
+        .bottom_card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            input[type="file"] {
+                display: none;
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                gap: 10px;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 600;
+                border-radius: 10px;
+                border: 1px solid $color-shade-2;
+                user-select: none;
+                cursor: pointer;
+                width: 100%;
+            }
+            
+            .text {
+                text-align: center;
+                color: $color-shade-4;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .images {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+
+                a {
+                    border-radius: 10px;
+                    border: 1px solid $color-shade-2;
+                    padding: 8px 14px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 12px;
+                    line-height: 16px;
+                    letter-spacing: 0.2px;
+
+                    .icon {
+                        flex-shrink: 0;
+                        width: 35px;
+                        height: 20px;
+                        border-radius: 4px;
+                        background: $color-active;
+                        color: #fff;
+                        font-size: 10px;
+                        line-height: 14px;
+                        font-weight: 600;
+                        letter-spacing: 0.2px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                &__text {
+                    display: flex;
+                    flex-direction: column;
+                    width: calc(100% - 45px);
+
+                    &_name {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
