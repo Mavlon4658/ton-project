@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+    <title>TON Mail Protocol</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- CSS file -->
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header__left">
+                <div class="header__account">
+                    <img src="./images/logotip.svg" class="logo_icon" alt="">
+                    <div class="header__account_text">
+                        <p class="text-p5">whale@ton.pro</p>
+                        <p class="text-p5">EQDvh...mZ5Xe</p>
+                    </div>
+                    <div class="header__account_dropdown">
+                        <button class="header__account_dropdown__btn">
+                            <img src="./images/arrow-down.svg" alt="">
+                        </button>
+                        <div class="header__account_dropdown__list">
+                            <img src="./images/dropdown-icon.svg" alt="" class="before_icon">
+                            <div class="account__top">
+                                <button class="account_close accc__cls">
+                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                                    </svg>
+                                </button>
+                                <p class="text-p4">Switch accounts</p>
+                            </div>
+                            <ul class="dropdown_radio">
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" checked name="account">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">whale@ton.pro</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" name="account">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">nex@ton.pro</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" name="account">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">nex@ton.pro</p>
+                                </li>
+                            </ul>
+                            <div class="line"></div>
+                            <button class="text-p5 dropdown_close">Disconnect</button>
+                            <div class="account__bottom">
+                                <button class="btn_blue accc__cls">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search">
+                    <div class="search_inp">
+                        <button class="icon">
+                            <img src="./images/search.svg" alt="">
+                        </button>
+                        <input type="text" placeholder="Search">
+                        <button class="search__close">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.636643 0.636864C0.246119 1.02739 0.246119 1.66055 0.636643 2.05108L5.58658 7.00102L0.637248 11.9504C0.246724 12.3409 0.246724 12.974 0.637248 13.3646C1.02777 13.7551 1.66094 13.7551 2.05146 13.3646L7.0008 8.41523L11.9504 13.3648C12.3409 13.7553 12.974 13.7553 13.3646 13.3648C13.7551 12.9743 13.7551 12.3411 13.3646 11.9506L8.41501 7.00102L13.3652 2.05086C13.7557 1.66033 13.7557 1.02717 13.3652 0.636643C12.9746 0.246119 12.3415 0.246119 11.951 0.636643L7.0008 5.5868L2.05086 0.636864C1.66033 0.24634 1.02717 0.24634 0.636643 0.636864Z" fill="black"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="search_result">
+                        <ul class="search_result__settings">
+                            <li>
+                                <p class="text-p5">Subject</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Sender</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Recipient</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Body</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Entire message</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="search_result__dropdowns">
+                            <div class="dropdown">
+                                <div class="dropdown_inp">
+                                    <input type="text" disabled value="">
+                                    <button>
+                                        <img src="./images/arrow-down.svg" alt="">
+                                    </button>
+                                </div>
+                                <ul class="dropdown_list">
+                                    <li class="dropdown_list__item checked">Unread</li>
+                                    <li class="dropdown_list__item">Item 1</li>
+                                    <li class="dropdown_list__item">Item 2</li>
+                                    <li class="dropdown_list__item">Item 3</li>
+                                    <li class="dropdown_list__item">Item 4</li>
+                                    <li class="dropdown_list__item">Item 5</li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <div class="dropdown_inp">
+                                    <input type="text" disabled value="">
+                                    <button>
+                                        <img src="./images/arrow-down.svg" alt="">
+                                    </button>
+                                </div>
+                                <ul class="dropdown_list">
+                                    <li class="dropdown_list__item checked">Older than week</li>
+                                    <li class="dropdown_list__item">Item 1</li>
+                                    <li class="dropdown_list__item">Item 2</li>
+                                    <li class="dropdown_list__item">Item 3</li>
+                                    <li class="dropdown_list__item">Item 4</li>
+                                    <li class="dropdown_list__item">Item 5</li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <div class="dropdown_inp">
+                                    <input type="text" disabled value="">
+                                    <button>
+                                        <img src="./images/arrow-down.svg" alt="">
+                                    </button>
+                                </div>
+                                <ul class="dropdown_list">
+                                    <li class="dropdown_list__item checked">Current folder</li>
+                                    <li class="dropdown_list__item">Item 1</li>
+                                    <li class="dropdown_list__item">Item 2</li>
+                                    <li class="dropdown_list__item">Item 3</li>
+                                    <li class="dropdown_list__item">Item 4</li>
+                                    <li class="dropdown_list__item">Item 5</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="search_result__bottom">
+                            <button class="btn_blue">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="header__navs auth__navs">
+                <li>
+                    <a href="./inbox.html" class="text-p5 active">Email</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Preferences</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Contacts</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Folders</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Indentities</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Responses</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Security</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Filters</a>
+                </li>
+            </ul>
+            <div class="header__right">
+                <button class="search__open">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 2C3.79086 2 2 3.79086 2 6C2 8.20914 3.79086 10 6 10C8.20914 10 10 8.20914 10 6C10 3.79086 8.20914 2 6 2ZM0 6C0 2.68629 2.68629 0 6 0C9.31371 0 12 2.68629 12 6C12 7.29584 11.5892 8.49574 10.8907 9.47656L15.1916 13.7783C15.582 14.1689 15.582 14.8021 15.1914 15.1925C14.8008 15.583 14.1677 15.5829 13.7772 15.1924L9.47651 10.8908C8.4957 11.5892 7.29582 12 6 12C2.68629 12 0 9.31371 0 6Z" fill="black"/>
+                    </svg>
+                </button>
+                <button class="header__bars">
+                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1C16 1.55228 15.5523 2 15 2H1C0.447715 2 0 1.55228 0 1Z" fill="black"/>
+                        <path d="M0 7C0 6.44772 0.447715 6 1 6H15C15.5523 6 16 6.44772 16 7C16 7.55228 15.5523 8 15 8H1C0.447715 8 0 7.55228 0 7Z" fill="black"/>
+                        <path d="M0 13C0 12.4477 0.447715 12 1 12H15C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14H1C0.447715 14 0 13.5523 0 13Z" fill="black"/>
+                    </svg>
+                    <span>2</span>
+                </button>
+            </div>
+        </header>
+        <!-- Header end -->
+
+        <!-- Mobile menu -->
+        <div class="mobile_menu">
+            <div class="mobile_menu__head">
+                <button class="btn_light acc__opn">
+                    <span>alex@ton.pro</span>
+                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 0.365166C0.716638 0.0136945 1.28649 0.0136945 1.63796 0.365166L6.00156 4.72877L10.3652 0.365166C10.7166 0.0136945 11.2865 0.0136945 11.638 0.365166C11.9894 0.716638 11.9894 1.28649 11.638 1.63796L6.63796 6.63796C6.28649 6.98943 5.71664 6.98943 5.36517 6.63796L0.365166 1.63796C0.0136945 1.28649 0.0136945 0.716638 0.365166 0.365166Z" fill="black"/>
+                    </svg>
+                </button>
+                <button class="mobile_menu__close">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.636643 0.636864C0.246119 1.02739 0.246119 1.66055 0.636643 2.05108L5.58658 7.00102L0.637248 11.9504C0.246724 12.3409 0.246724 12.974 0.637248 13.3646C1.02777 13.7551 1.66094 13.7551 2.05146 13.3646L7.0008 8.41523L11.9504 13.3648C12.3409 13.7553 12.974 13.7553 13.3646 13.3648C13.7551 12.9743 13.7551 12.3411 13.3646 11.9506L8.41501 7.00102L13.3652 2.05086C13.7557 1.66033 13.7557 1.02717 13.3652 0.636643C12.9746 0.246119 12.3415 0.246119 11.951 0.636643L7.0008 5.5868L2.05086 0.636864C1.66033 0.24634 1.02717 0.24634 0.636643 0.636864Z" fill="black"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile_menu__body">
+                <p class="text-p6 block_name">Folders</p>
+                <!-- Navigation -->
+                <ul class="mobile_menu__nav">
+                    <li>
+                        <a href="#" class="active">
+                            <span class="text">
+                                <img src="./images/nav-icon-1.svg" alt="">
+                                <span>Inbox</span>
+                            </span>
+                            <span class="alert">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/nav-icon-2.svg" alt="">
+                                <span>Drafts</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/nav-icon-3.svg" alt="">
+                                <span>Sent</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/nav-icon-4.svg" alt="">
+                                <span>Junk</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/nav-icon-5.svg" alt="">
+                                <span>Trash</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/nav-icon-6.svg" alt="">
+                                <span>Folder Name</span>
+                            </span>
+                        </a>
+                        <ul class="child_nav">
+                            <li>
+                                <a href="#">
+                                    <span class="text">
+                                        <img src="./images/nav-icon-6.svg" alt="">
+                                        <span>Subfolder Name</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Navigation end -->
+                <p class="text-p6 block_name">Settings</p>
+                <!-- Settings -->
+                <ul class="mobile_menu__settings">
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/settings-icon-1.svg" alt="">
+                                <span>Preferences</span>
+                            </span>
+                            <span class="icon">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/settings-icon-2.svg" alt="">
+                                <span>Contacts</span>
+                            </span>
+                            <span class="icon">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/settings-icon-3.svg" alt="">
+                                <span>Folders</span>
+                            </span>
+                            <span class="icon">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/settings-icon-4.svg" alt="">
+                                <span>Indentities</span>
+                            </span>
+                            <span class="icon">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/settings-icon-5.svg" alt="">
+                                <span>Responses</span>
+                            </span>
+                            <span class="icon">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/settings-icon-6.svg" alt="">
+                                <span>Security</span>
+                            </span>
+                            <span class="icon">
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="text">
+                                <img src="./images/settings-icon-7.svg" alt="">
+                                <span>Disconnect</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Settings end -->
+            </div>
+            <div class="mobile_menu__foot">
+                <p>Disk usage: <span>2.1 MB / 2.0 GB (0%)</span></p>
+                <div class="line">
+                    <span style="width: 40%;"></span>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu end -->
+
+        <!-- Left nav -->
+        <section class="left_nav">
+            <div class="left_nav__top">
+                <h3 class="text-p5 left_nav__title">Folders</h3>
+                <div class="left_nav__links">
+                    <ul>
+                        <li>
+                            <a href="#" class="active">
+                                <img src="./images/nav-icon-1.svg" alt="">
+                                <span>Inbox</span>
+                                <span class="text-p7 icon">764</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/nav-icon-2.svg" alt="">
+                                <span>Drafts</span>
+                            </a>
+                            <ul class="left_nav__child">
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/nav-icon-7.svg" alt="">
+                                        <span>News Subfolder Name 2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/nav-icon-3.svg" alt="">
+                                <span>Sent</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/nav-icon-4.svg" alt="">
+                                <span>Junk</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/nav-icon-5.svg" alt="">
+                                <span>Trash</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/nav-icon-6.svg" alt="">
+                                <span>Archive</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/nav-icon-7.svg" alt="">
+                                <span>Folder Name</span>
+                            </a>
+                            <ul class="left_nav__child">
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/nav-icon-7.svg" alt="">
+                                        <span>Subfolder Name</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/nav-icon-7.svg" alt="">
+                                        <span>News Subfolder Name 2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="text-p5 btn_blue">
+                <span>Compose</span>
+                <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 0C7.05228 0 7.5 0.447715 7.5 1V5H11.5C12.0523 5 12.5 5.44772 12.5 6C12.5 6.55228 12.0523 7 11.5 7H7.5V11C7.5 11.5523 7.05228 12 6.5 12C5.94772 12 5.5 11.5523 5.5 11V7H1.5C0.947715 7 0.5 6.55228 0.5 6C0.5 5.44771 0.947715 5 1.5 5L5.5 5V1C5.5 0.447715 5.94772 0 6.5 0Z" fill="white"/>
+                </svg>
+            </a>
+        </section>
+        <!-- Left nav end -->
+
+        <!-- Modals -->
+
+        <!-- Delete modal -->
+        <div class="modal modal_delete">
+            <div class="modal__bg"></div>
+            <div class="modal__content">
+                <button type="button" class="modal__close">
+                    <img src="./images/times.svg" alt="">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                    </svg>
+                </button>
+                <div class="modal__head">
+                    <h2 class="text-h6">Empty folder</h2>
+                </div>
+                <div class="modal__body">
+                    <p class="text-p5">Do you really want to delete all messages in this folder?</p>
+                </div>
+                <div class="modal__foot">
+                    <button class="btn_red">Delete</button>
+                </div>
+            </div>
+        </div>
+        <!-- Delete modal end -->
+
+        <!-- Modals end -->
+
+        <main>
+
+            <!-- Inbox home -->
+            <section class="inbox">
+
+                <div class="inbox__nav">
+                    <div class="inbox__nav_left">
+                        
+                        <a href="#" class="text-p5 inbox__nav_link">
+                            <span class="inbox__nav_link__icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6348 14.6348C11.9863 14.2834 11.9863 13.7135 11.6348 13.362L7.27123 8.99844L11.6348 4.63483C11.9863 4.28336 11.9863 3.71351 11.6348 3.36204C11.2834 3.01057 10.7135 3.01057 10.362 3.36204L5.36204 8.36204C5.01057 8.71351 5.01057 9.28336 5.36204 9.63483L10.362 14.6348C10.7135 14.9863 11.2834 14.9863 11.6348 14.6348Z" fill="black"/>
+                                </svg>
+                            </span>
+                            <span class="inbox__nav_link__text">Back</span>
+                        </a>
+                        <a href="#" class="text-p5 inbox__nav_link">
+                            <span class="inbox__nav_link__icon">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27879 0.749698C6.5915 0.866334 6.79894 1.16485 6.79922 1.4986L6.80128 4.01089C11.4662 5.05731 13.4578 8.94191 14.1223 12.5964C14.1904 12.9714 13.9846 13.3424 13.6303 13.483C13.2761 13.6237 12.8718 13.4948 12.6642 13.1752C11.8965 11.9929 10.997 11.162 9.93101 10.6202C9.04779 10.1712 8.01796 9.90443 6.80121 9.82483L6.79922 12.4999C6.79897 12.8369 6.58745 13.1377 6.27031 13.2519C5.95316 13.3662 5.59844 13.2693 5.38332 13.0098L0.719255 7.38338C0.469419 7.08199 0.474386 6.64407 0.730993 6.34843L5.39506 0.974864C5.61383 0.722813 5.96609 0.633061 6.27879 0.749698ZM2.38415 6.88472L5.20087 10.2826L5.20182 8.9989C5.20215 8.5573 5.56023 8.19949 6.00182 8.19949C7.76223 8.19949 9.30975 8.50957 10.656 9.19382C10.9688 9.35285 11.2683 9.53079 11.5549 9.72755C10.5196 7.58821 8.74796 5.91418 5.87763 5.46313C5.48877 5.40202 5.20215 5.06711 5.20182 4.67348L5.20097 3.63939L2.38415 6.88472Z" fill="#2C2C2C" fill-opacity="0.65"/>
+                                </svg>
+                            </span>
+                            <span class="inbox__nav_link__text">Reply</span>
+                        </a>
+                        <a href="#" class="text-p5 inbox__nav_link">
+                            <span class="inbox__nav_link__icon">
+                                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2788 0.749698C10.5915 0.866334 10.7989 1.16485 10.7992 1.4986L10.8013 4.01089C15.4662 5.05731 17.4578 8.94191 18.1223 12.5964C18.1904 12.9714 17.9846 13.3424 17.6303 13.483C17.2761 13.6237 16.8718 13.4948 16.6642 13.1752C15.8965 11.9929 14.997 11.162 13.931 10.6202C13.0478 10.1712 12.018 9.90443 10.8012 9.82483L10.7992 12.4999C10.799 12.8369 10.5875 13.1377 10.2703 13.2519C9.95316 13.3662 9.59844 13.2693 9.38332 13.0098L4.71926 7.38338C4.46942 7.08199 4.47439 6.64407 4.73099 6.34843L9.39506 0.974864C9.61383 0.722813 9.96609 0.633061 10.2788 0.749698ZM6.38415 6.88472L9.20087 10.2826L9.20182 8.9989C9.20215 8.5573 9.56023 8.19949 10.0018 8.19949C11.7622 8.19949 13.3097 8.50957 14.656 9.19382C14.9688 9.35285 15.2683 9.53079 15.5549 9.72755C14.5196 7.58821 12.748 5.91418 9.87763 5.46313C9.48877 5.40202 9.20215 5.06711 9.20182 4.67348L9.20098 3.63939L6.38415 6.88472Z" fill="#2C2C2C" fill-opacity="0.65"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.18767 0.895092C6.52134 1.18471 6.55706 1.68998 6.26744 2.02365L2.04821 6.88472L6.27918 11.9887C6.56115 12.3289 6.51399 12.8332 6.17384 13.1152C5.83368 13.3971 5.32935 13.35 5.04738 13.0098L0.383318 7.38338C0.133482 7.08199 0.138448 6.64407 0.395056 6.34843L5.05912 0.974864C5.34873 0.641194 5.854 0.605479 6.18767 0.895092Z" fill="#2C2C2C" fill-opacity="0.65"/>
+                                </svg>
+                            </span>
+                            <span class="inbox__nav_link__text">Reply all</span>
+                        </a>
+                        <a href="#" class="text-p5 inbox__nav_link">
+                            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.39308 0.749698C8.08037 0.866334 7.87293 1.16485 7.87266 1.4986L7.87059 4.01089C3.20565 5.05731 1.21407 8.94191 0.549623 12.5964C0.48144 12.9714 0.687292 13.3424 1.04155 13.483C1.39581 13.6237 1.80009 13.4948 2.00767 13.1752C2.7754 11.9929 3.67486 11.162 4.74087 10.6202C5.62408 10.1712 6.65392 9.90443 7.87067 9.82483L7.87266 12.4999C7.87291 12.8369 8.08443 13.1377 8.40157 13.2519C8.71871 13.3662 9.07343 13.2693 9.28856 13.0098L13.9526 7.38338C14.2025 7.08199 14.1975 6.64407 13.9409 6.34843L9.27682 0.974864C9.05805 0.722813 8.70579 0.633061 8.39308 0.749698ZM12.2877 6.88472L9.47101 10.2826L9.47005 8.9989C9.46972 8.5573 9.11165 8.19949 8.67005 8.19949C6.90964 8.19949 5.36213 8.50957 4.0159 9.19382C3.70304 9.35285 3.40359 9.53079 3.11697 9.72755C4.15228 7.58821 5.92392 5.91418 8.79424 5.46313C9.1831 5.40202 9.46973 5.06711 9.47005 4.67348L9.4709 3.63939L12.2877 6.88472Z" fill="#2C2C2C" fill-opacity="0.65"/>
+                            </svg>
+                            <span class="inbox__nav_link__text">Forward</span>
+                        </a>
+                        <a href="#" class="text-p5 inbox__nav_link modal_delete__open">
+                            <span class="inbox__nav_link__icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.41635 1.85636C3.41635 0.941147 4.15828 0.199219 5.07349 0.199219H8.92983C9.84505 0.199219 10.587 0.941147 10.587 1.85636V4.01277H12.9992C13.441 4.01277 13.7992 4.37094 13.7992 4.81277C13.7992 5.25459 13.441 5.61277 12.9992 5.61277H12.011V10.999C12.011 12.5454 10.7574 13.799 9.21102 13.799H4.79166C3.24527 13.799 1.99167 12.5454 1.99167 10.999V5.61277H0.999219C0.557391 5.61277 0.199219 5.25459 0.199219 4.81277C0.199219 4.37094 0.557391 4.01277 0.999219 4.01277H3.41635V1.85636ZM3.59167 5.61277H10.411V10.999C10.411 11.6618 9.87376 12.199 9.21102 12.199H4.79166C4.12892 12.199 3.59167 11.6618 3.59167 10.999V5.61277ZM8.98698 4.01277H5.01635V1.85636C5.01635 1.8248 5.04193 1.79922 5.07349 1.79922H8.92983C8.96139 1.79922 8.98698 1.8248 8.98698 1.85636V4.01277Z" fill="#2C2C2C" fill-opacity="0.65"/>
+                                </svg>
+                            </span>
+                            <span class="inbox__nav_link__text">Delete</span>
+                        </a>
+                        <div class="mark_list__wrap">
+                            <a href="#" class="text-p5 inbox__nav_link">
+                                <span class="inbox__nav_link__icon">
+                                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10 1.6H2C1.77909 1.6 1.6 1.77909 1.6 2V11.3L4.38 9.215C5.34 8.495 6.66 8.495 7.62 9.215L10.4 11.3V2C10.4 1.77909 10.2209 1.6 10 1.6ZM2 0C0.895431 0 0 0.895431 0 2V11.5C0 12.7361 1.41115 13.4416 2.4 12.7L5.34 10.495C5.73111 10.2017 6.26889 10.2017 6.66 10.495L9.6 12.7C10.5889 13.4416 12 12.7361 12 11.5V2C12 0.895431 11.1046 0 10 0H2Z" fill="#2C2C2C" fill-opacity="0.65"/>
+                                    </svg>
+                                </span>
+                                <span class="inbox__nav_link__text">Mark</span>
+                                <span class="inbox__nav_link__icon">
+                                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L6 6L11 1" stroke="#2C2C2C" stroke-opacity="0.65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                            </a>
+                            <ul class="mark_list">
+                                <li class="mark_list__icon">
+                                    <img src="./images/dropdown-icon.svg" alt="">
+                                </li>
+                                <li class="mark_list__item">
+                                    <a href="#" class="mark_list__link">
+                                        <span class="icon">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="3" y="3" width="12" height="12" rx="3" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M6.5 9L7.08579 9.58579C7.75245 10.2525 8.08579 10.5858 8.5 10.5858C8.91421 10.5858 9.24755 10.2525 9.91421 9.58579L12.5 7" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span>As read</span>
+                                    </a>
+                                </li>
+                                <li class="mark_list__item">
+                                    <a href="#" class="mark_list__link">
+                                        <span class="icon">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect x="3" y="3" width="12" height="12" rx="3" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M7 7L11 11" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M11 7L7 11" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span>As unread</span>
+                                    </a>
+                                </li>
+                                <li class="mark_list__item">
+                                    <a href="#" class="mark_list__link">
+                                        <span class="icon">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3.8 5C3.8 4.33726 4.33726 3.8 5 3.8H13C13.6627 3.8 14.2 4.33726 14.2 5V14.5C14.2 15.0768 13.5415 15.4061 13.08 15.06L10.14 12.855C9.46444 12.3483 8.53556 12.3483 7.86 12.855L4.92 15.06C4.45853 15.4061 3.8 15.0768 3.8 14.5V5Z" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span>As flagged</span>
+                                    </a>
+                                </li>
+                                <li class="mark_list__item">
+                                    <a href="#" class="mark_list__link">
+                                        <span class="icon">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3.8 5C3.8 4.33726 4.33726 3.8 5 3.8H13C13.6627 3.8 14.2 4.33726 14.2 5V14.5C14.2 15.0768 13.5415 15.4061 13.08 15.06L10.14 12.855C9.46444 12.3483 8.53556 12.3483 7.86 12.855L4.92 15.06C4.45853 15.4061 3.8 15.0768 3.8 14.5V5Z" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M7 6.5L11 10.5M11 6.5L7 10.5" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <span>As unflagged</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="inbox__nav_more">
+                            <button class="more_btn">
+                                <img src="./images/more-icon.svg" alt="">
+                            </button>
+                            <div class="more_list__wrap">
+                                <img src="./images/dropdown-icon.svg" class="top-icon" alt="">
+                                <ul class="more_list">
+                                    <li class="more_list__item">
+                                        <a href="#" class="text-p5 more_list__link modal_delete__open">
+                                            <span>
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.41635 3.85636C5.41635 2.94115 6.15828 2.19922 7.07349 2.19922H10.9298C11.845 2.19922 12.587 2.94115 12.587 3.85636V6.01277H14.9992C15.441 6.01277 15.7992 6.37094 15.7992 6.81277C15.7992 7.25459 15.441 7.61277 14.9992 7.61277H14.011V12.999C14.011 14.5454 12.7574 15.799 11.211 15.799H6.79166C5.24527 15.799 3.99167 14.5454 3.99167 12.999V7.61277H2.99922C2.55739 7.61277 2.19922 7.25459 2.19922 6.81277C2.19922 6.37094 2.55739 6.01277 2.99922 6.01277H5.41635V3.85636ZM5.59167 7.61277H12.411V12.999C12.411 13.6618 11.8738 14.199 11.211 14.199H6.79166C6.12892 14.199 5.59167 13.6618 5.59167 12.999V7.61277ZM10.987 6.01277H7.01635V3.85636C7.01635 3.8248 7.04193 3.79922 7.07349 3.79922H10.9298C10.9614 3.79922 10.987 3.8248 10.987 3.85636V6.01277Z" fill="#2C2C2C" fill-opacity="0.65"/>
+                                                </svg>
+                                                <span>Delete</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="more_list__item">
+                                        <a href="#" class="text-p5 more_list__link">
+                                            <span>
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13 4.6H5C4.77909 4.6 4.6 4.77909 4.6 5V14.3L7.38 12.215C8.34 11.495 9.66 11.495 10.62 12.215L13.4 14.3V5C13.4 4.77909 13.2209 4.6 13 4.6ZM5 3C3.89543 3 3 3.89543 3 5V14.5C3 15.7361 4.41115 16.4416 5.4 15.7L8.34 13.495C8.73111 13.2017 9.26889 13.2017 9.66 13.495L12.6 15.7C13.5889 16.4416 15 15.7361 15 14.5V5C15 3.89543 14.1046 3 13 3H5Z" fill="#2C2C2C" fill-opacity="0.65"/>
+                                                </svg>
+                                                <span>Mark</span>
+                                            </span>
+                                            <img src="./images/chevron-right.svg" alt="">
+                                        </a>
+                                        <ul class="more_child">
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">
+                                                    <span>
+                                                        <span class="more_child__link_icon">
+                                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <rect x="3" y="3" width="12" height="12" rx="3" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M6.5 9L7.08579 9.58579C7.75245 10.2525 8.08579 10.5858 8.5 10.5858C8.91421 10.5858 9.24755 10.2525 9.91421 9.58579L12.5 7" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span>As read</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">
+                                                    <span>
+                                                        <span class="more_child__link_icon">
+                                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <rect x="3" y="3" width="12" height="12" rx="3" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M7 7L11 11" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M11 7L7 11" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span>As unread</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">
+                                                    <span>
+                                                        <span class="more_child__link_icon">
+                                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M3.8 5C3.8 4.33726 4.33726 3.8 5 3.8H13C13.6627 3.8 14.2 4.33726 14.2 5V14.5C14.2 15.0768 13.5415 15.4061 13.08 15.06L10.14 12.855C9.46444 12.3483 8.53556 12.3483 7.86 12.855L4.92 15.06C4.45853 15.4061 3.8 15.0768 3.8 14.5V5Z" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span>As flagged</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">
+                                                    <span>
+                                                        <span class="more_child__link_icon">
+                                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M3.8 5C3.8 4.33726 4.33726 3.8 5 3.8H13C13.6627 3.8 14.2 4.33726 14.2 5V14.5C14.2 15.0768 13.5415 15.4061 13.08 15.06L10.14 12.855C9.46444 12.3483 8.53556 12.3483 7.86 12.855L4.92 15.06C4.45853 15.4061 3.8 15.0768 3.8 14.5V5Z" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M7 6.5L11 10.5M11 6.5L7 10.5" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span>As unflagged</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="more_list__item">
+                                        <a href="#" class="text-p5 more_list__link">
+                                            <span>
+                                                <img src="./images/more-link-1.svg" alt="">
+                                                <span>Print</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="more_list__item">
+                                        <a href="#" class="text-p5 more_list__link">
+                                            <span>
+                                                <img src="./images/more-link-2.svg" alt="">
+                                                <span>Download</span>
+                                            </span>
+                                            <img src="./images/chevron-right.svg" alt="">
+                                        </a>
+                                        <ul class="more_child">
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">
+                                                    <span>
+                                                        <span class="more_child__link_icon">
+                                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M15 11V12C15 13.1046 14.1046 14 13 14H5C3.89543 14 3 13.1046 3 12V11" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M9 3V11M9 11L12 8M9 11L6 8" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span>Source (.eml)</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">
+                                                    <span>
+                                                        <span class="more_child__link_icon">
+                                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M15 11V12C15 13.1046 14.1046 14 13 14H5C3.89543 14 3 13.1046 3 12V11" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M9 3V11M9 11L12 8M9 11L6 8" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span>Mbox format (.zip)</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">
+                                                    <span>
+                                                        <span class="more_child__link_icon">
+                                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M15 11V12C15 13.1046 14.1046 14 13 14H5C3.89543 14 3 13.1046 3 12V11" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M9 3V11M9 11L12 8M9 11L6 8" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span>Maildir format (.zip)</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="more_list__item">
+                                        <a href="#" class="text-p5 more_list__link">
+                                            <span>
+                                                <img src="./images/more-link-3.svg" alt="">
+                                                <span>Edit as new</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="more_list__item">
+                                        <a href="#" class="text-p5 more_list__link">
+                                            <span>
+                                                <img src="./images/more-link-4.svg" alt="">
+                                                <span>Move to</span>
+                                            </span>
+                                            <img src="./images/chevron-right.svg" alt="">
+                                        </a>
+                                        <ul class="more_child">
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Inbox</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Drafts</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Sent</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Junk</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Trash</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Folder Name</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Subfolder Name</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">News Subfolder Name 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="more_list__item">
+                                        <a href="#" class="text-p5 more_list__link">
+                                            <span>
+                                                <img src="./images/more-link-5.svg" alt="">
+                                                <span>Copy to</span>
+                                            </span>
+                                            <img src="./images/chevron-right.svg" alt="">
+                                        </a>
+                                        <ul class="more_child">
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Inbox</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Drafts</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Sent</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Junk</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Trash</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Folder Name</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">Subfolder Name</a>
+                                            </li>
+                                            <li class="more_child__item">
+                                                <a href="#" class="more_child__link">News Subfolder Name 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb_nav">
+                    <p class="text-p6">Inbox</p>
+                    <div class="mb_nav__right">
+                        <button class="action_modal__open">Actions</button>
+                        <button>Newest</button>
+                    </div>
+                </div>
+
+                <!-- Action Modal -->
+                <div class="modal_sm nav-modal">
+                    <div class="modal_sm__bg"></div>
+                    <div class="modal_sm__content">
+                        <div class="modal_sm__head">
+                            <button class="back-icon"></button>
+                            <p>Close</p>
+                            <button class="close-icon action_modal__close">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.636643 0.636864C0.246119 1.02739 0.246119 1.66055 0.636643 2.05108L5.58658 7.00102L0.637248 11.9504C0.246724 12.3409 0.246724 12.974 0.637248 13.3646C1.02777 13.7551 1.66094 13.7551 2.05146 13.3646L7.0008 8.41523L11.9504 13.3648C12.3409 13.7553 12.974 13.7553 13.3646 13.3648C13.7551 12.9743 13.7551 12.3411 13.3646 11.9506L8.41501 7.00102L13.3652 2.05086C13.7557 1.66033 13.7557 1.02717 13.3652 0.636643C12.9746 0.246119 12.3415 0.246119 11.951 0.636643L7.0008 5.5868L2.05086 0.636864C1.66033 0.24634 1.02717 0.24634 0.636643 0.636864Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="modal_sm__body">
+                            <p class="title">Actions</p>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.27879 2.7497C8.5915 2.86633 8.79894 3.16485 8.79922 3.4986L8.80128 6.01089C13.4662 7.05731 15.4578 10.9419 16.1223 14.5964C16.1904 14.9714 15.9846 15.3424 15.6303 15.483C15.2761 15.6237 14.8718 15.4948 14.6642 15.1752C13.8965 13.9929 12.997 13.162 11.931 12.6202C11.0478 12.1712 10.018 11.9044 8.80121 11.8248L8.79922 14.4999C8.79897 14.8369 8.58745 15.1377 8.27031 15.2519C7.95316 15.3662 7.59844 15.2693 7.38332 15.0098L2.71926 9.38338C2.46942 9.08199 2.47439 8.64407 2.73099 8.34843L7.39506 2.97486C7.61383 2.72281 7.96609 2.63306 8.27879 2.7497ZM4.38415 8.88472L7.20087 12.2826L7.20182 10.9989C7.20215 10.5573 7.56023 10.1995 8.00182 10.1995C9.76223 10.1995 11.3097 10.5096 12.656 11.1938C12.9688 11.3528 13.2683 11.5308 13.5549 11.7276C12.5196 9.58821 10.748 7.91418 7.87763 7.46313C7.48877 7.40202 7.20215 7.06711 7.20182 6.67348L7.20097 5.63939L4.38415 8.88472Z" fill="black"/>
+                                            </svg>
+                                            <span>Reply</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_13035_4274)">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2788 2.7497C10.5915 2.86633 10.7989 3.16485 10.7992 3.4986L10.8013 6.01089C15.4662 7.05731 17.4578 10.9419 18.1223 14.5964C18.1904 14.9714 17.9846 15.3424 17.6303 15.483C17.2761 15.6237 16.8718 15.4948 16.6642 15.1752C15.8965 13.9929 14.997 13.162 13.931 12.6202C13.0478 12.1712 12.018 11.9044 10.8012 11.8248L10.7992 14.4999C10.799 14.8369 10.5875 15.1377 10.2703 15.2519C9.95316 15.3662 9.59844 15.2693 9.38332 15.0098L4.71926 9.38338C4.46942 9.08199 4.47439 8.64407 4.73099 8.34843L9.39506 2.97486C9.61383 2.72281 9.96609 2.63306 10.2788 2.7497ZM6.38415 8.88472L9.20087 12.2826L9.20182 10.9989C9.20215 10.5573 9.56023 10.1995 10.0018 10.1995C11.7622 10.1995 13.3097 10.5096 14.656 11.1938C14.9688 11.3528 15.2683 11.5308 15.5549 11.7276C14.5196 9.58821 12.748 7.91418 9.87763 7.46313C9.48877 7.40202 9.20215 7.06711 9.20182 6.67348L9.20098 5.63939L6.38415 8.88472Z" fill="black"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.18767 2.89509C6.52134 3.18471 6.55706 3.68998 6.26744 4.02365L2.04821 8.88472L6.27918 13.9887C6.56115 14.3289 6.51399 14.8332 6.17384 15.1152C5.83368 15.3971 5.32935 15.35 5.04738 15.0098L0.383318 9.38338C0.133482 9.08199 0.138448 8.64407 0.395056 8.34843L5.05912 2.97486C5.34873 2.64119 5.854 2.60548 6.18767 2.89509Z" fill="black"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_13035_4274">
+                                                        <rect width="18" height="18" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>Reply all</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3931 2.7497C10.0804 2.86633 9.87293 3.16485 9.87266 3.4986L9.87059 6.01089C5.20565 7.05731 3.21407 10.9419 2.54962 14.5964C2.48144 14.9714 2.68729 15.3424 3.04155 15.483C3.39581 15.6237 3.80009 15.4948 4.00767 15.1752C4.7754 13.9929 5.67486 13.162 6.74087 12.6202C7.62408 12.1712 8.65392 11.9044 9.87067 11.8248L9.87266 14.4999C9.87291 14.8369 10.0844 15.1377 10.4016 15.2519C10.7187 15.3662 11.0734 15.2693 11.2886 15.0098L15.9526 9.38338C16.2025 9.08199 16.1975 8.64407 15.9409 8.34843L11.2768 2.97486C11.058 2.72281 10.7058 2.63306 10.3931 2.7497ZM14.2877 8.88472L11.471 12.2826L11.4701 10.9989C11.4697 10.5573 11.1116 10.1995 10.6701 10.1995C8.90964 10.1995 7.36213 10.5096 6.0159 11.1938C5.70304 11.3528 5.40359 11.5308 5.11697 11.7276C6.15228 9.58821 7.92392 7.91418 10.7942 7.46313C11.1831 7.40202 11.4697 7.06711 11.4701 6.67348L11.4709 5.63939L14.2877 8.88472Z" fill="black"/>
+                                            </svg>
+                                            <span>Forward</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.41635 3.85636C5.41635 2.94115 6.15828 2.19922 7.07349 2.19922H10.9298C11.845 2.19922 12.587 2.94115 12.587 3.85636V6.01277H14.9992C15.441 6.01277 15.7992 6.37094 15.7992 6.81277C15.7992 7.25459 15.441 7.61277 14.9992 7.61277H14.011V12.999C14.011 14.5454 12.7574 15.799 11.211 15.799H6.79166C5.24527 15.799 3.99167 14.5454 3.99167 12.999V7.61277H2.99922C2.55739 7.61277 2.19922 7.25459 2.19922 6.81277C2.19922 6.37094 2.55739 6.01277 2.99922 6.01277H5.41635V3.85636ZM5.59167 7.61277H12.411V12.999C12.411 13.6618 11.8738 14.199 11.211 14.199H6.79166C6.12892 14.199 5.59167 13.6618 5.59167 12.999V7.61277ZM10.987 6.01277H7.01635V3.85636C7.01635 3.8248 7.04193 3.79922 7.07349 3.79922H10.9298C10.9614 3.79922 10.987 3.8248 10.987 3.85636V6.01277Z" fill="black"/>
+                                            </svg>
+                                            <span>Delete</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <button>
+                                        <span class="text">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13 4.6H5C4.77909 4.6 4.6 4.77909 4.6 5V14.3L7.38 12.215C8.34 11.495 9.66 11.495 10.62 12.215L13.4 14.3V5C13.4 4.77909 13.2209 4.6 13 4.6ZM5 3C3.89543 3 3 3.89543 3 5V14.5C3 15.7361 4.41115 16.4416 5.4 15.7L8.34 13.495C8.73111 13.2017 9.26889 13.2017 9.66 13.495L12.6 15.7C13.5889 16.4416 15 15.7361 15 14.5V5C15 3.89543 14.1046 3 13 3H5Z" fill="black"/>
+                                            </svg>
+                                            <span>Mark</span>
+                                        </span>
+                                        <span class="icon">
+                                            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        <span class="text">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.99922 10.1992C3.44105 10.1992 3.79922 10.5574 3.79922 10.9992V11.9992C3.79922 12.662 4.33648 13.1992 4.99922 13.1992H12.9992C13.662 13.1992 14.1992 12.662 14.1992 11.9992V10.9992C14.1992 10.5574 14.5574 10.1992 14.9992 10.1992C15.441 10.1992 15.7992 10.5574 15.7992 10.9992V11.9992C15.7992 13.5456 14.5456 14.7992 12.9992 14.7992H4.99922C3.45282 14.7992 2.19922 13.5456 2.19922 11.9992V10.9992C2.19922 10.5574 2.55739 10.1992 2.99922 10.1992Z" fill="black"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.99922 2.19922C9.44105 2.19922 9.79922 2.55739 9.79922 2.99922V9.06785L11.4335 7.43353C11.746 7.12111 12.2525 7.12111 12.5649 7.43353C12.8773 7.74595 12.8773 8.25248 12.5649 8.5649L9.5649 11.5649C9.25248 11.8773 8.74595 11.8773 8.43353 11.5649L5.43353 8.5649C5.12111 8.25248 5.12111 7.74595 5.43353 7.43353C5.74595 7.12111 6.25248 7.12111 6.5649 7.43353L8.19922 9.06785V2.99922C8.19922 2.55739 8.55739 2.19922 8.99922 2.19922Z" fill="black"/>
+                                            </svg>
+                                            <span>Download</span>
+                                        </span>
+                                        <span class="icon">
+                                            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        <span class="text">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.00313 3.19922H5.00313C3.45673 3.19922 2.20312 4.45282 2.20312 5.99922V11.9992C2.20312 13.5456 3.45673 14.7992 5.00313 14.7992H13.0031C14.5495 14.7992 15.8031 13.5456 15.8031 11.9992V9.99922C15.8031 9.13823 15.4145 8.368 14.8031 7.85437V6.99922C14.8031 5.45282 13.5495 4.19922 12.0031 4.19922H9.14797C8.63434 3.58783 7.86412 3.19922 7.00313 3.19922ZM8.20312 5.99922C8.20312 5.33648 7.66587 4.79922 7.00313 4.79922H5.00313C4.34038 4.79922 3.80313 5.33648 3.80313 5.99922V11.9992C3.80313 12.662 4.34038 13.1992 5.00313 13.1992H13.0031C13.6659 13.1992 14.2031 12.662 14.2031 11.9992V9.99922C14.2031 9.33648 13.6659 8.79922 13.0031 8.79922H11.0031C9.45673 8.79922 8.20312 7.54562 8.20312 5.99922ZM11.0031 7.19922H13.0031C13.0704 7.19922 13.1371 7.20159 13.2031 7.20625V6.99922C13.2031 6.33648 12.6659 5.79922 12.0031 5.79922H9.79609C9.80075 5.86528 9.80313 5.93197 9.80313 5.99922C9.80313 6.66196 10.3404 7.19922 11.0031 7.19922Z" fill="black"/>
+                                            </svg>
+                                            <span>Move to</span>
+                                        </span>
+                                        <span class="icon">
+                                            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        <span class="text">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.19922 7.99922C2.19922 6.45282 3.45282 5.19922 4.99922 5.19922H5.19922V4.99922C5.19922 3.45282 6.45282 2.19922 7.99922 2.19922H12.9992C14.5456 2.19922 15.7992 3.45282 15.7992 4.99922V9.99922C15.7992 11.5456 14.5456 12.7992 12.9992 12.7992H12.7992V12.9992C12.7992 14.5456 11.5456 15.7992 9.99922 15.7992H4.99922C3.45282 15.7992 2.19922 14.5456 2.19922 12.9992V7.99922ZM3.79922 7.99922C3.79922 7.33648 4.33648 6.79922 4.99922 6.79922H9.99922C10.662 6.79922 11.1992 7.33648 11.1992 7.99922V12.9992C11.1992 13.662 10.662 14.1992 9.99922 14.1992H4.99922C4.33648 14.1992 3.79922 13.662 3.79922 12.9992V7.99922ZM9.99922 5.19922C11.5456 5.19922 12.7992 6.45282 12.7992 7.99922V11.1992H12.9992C13.662 11.1992 14.1992 10.662 14.1992 9.99922V4.99922C14.1992 4.33648 13.662 3.79922 12.9992 3.79922H7.99922C7.33648 3.79922 6.79922 4.33648 6.79922 4.99922V5.19922H9.99922Z" fill="black"/>
+                                            </svg>
+                                            <span>Copy to</span>
+                                        </span>
+                                        <span class="icon">
+                                            <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8477 5.15069C12.3791 4.68206 11.6193 4.68206 11.1507 5.15069L10.1306 6.17079L11.8276 7.86785L12.8477 6.84775C13.3164 6.37912 13.3164 5.61932 12.8477 5.15069ZM10.6963 8.99922L8.99922 7.30216L4.79922 11.5022L4.79922 13.1992H6.49627L10.6963 8.99922ZM10.0193 4.01932C11.1128 2.92585 12.8856 2.92585 13.9791 4.01932C15.0726 5.11279 15.0726 6.88565 13.9791 7.97912L7.39333 14.5649C7.2433 14.7149 7.03982 14.7992 6.82764 14.7992H3.99922C3.55739 14.7992 3.19922 14.441 3.19922 13.9992L3.19922 11.1708C3.19922 10.9586 3.2835 10.7551 3.43353 10.6051L10.0193 4.01932Z" fill="black"/>
+                                            </svg>
+                                            <span>Edit as new</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-child__content">
+                            <div class="modal-child__content_head">
+                                <button class="modal-child__close">
+                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                                    </svg>
+                                </button>
+                                <h4 class="text-p5">Back</h4>
+                            </div>
+                            <div class="modal-child__content_body">
+                                <p class="text-p6">Mark</p>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.19922 5.99922C2.19922 3.90054 3.90054 2.19922 5.99922 2.19922H11.9992C14.0979 2.19922 15.7992 3.90054 15.7992 5.99922V11.9992C15.7992 14.0979 14.0979 15.7992 11.9992 15.7992H5.99922C3.90054 15.7992 2.19922 14.0979 2.19922 11.9992V5.99922ZM5.99922 3.79922C4.78419 3.79922 3.79922 4.78419 3.79922 5.99922V11.9992C3.79922 13.2142 4.78419 14.1992 5.99922 14.1992H11.9992C13.2142 14.1992 14.1992 13.2142 14.1992 11.9992V5.99922C14.1992 4.78419 13.2142 3.79922 11.9992 3.79922H5.99922Z" fill="black"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0649 6.43353C13.3773 6.74595 13.3773 7.25248 13.0649 7.5649L10.4791 10.1507C10.4681 10.1618 10.457 10.1728 10.446 10.1838C10.1413 10.4886 9.85861 10.7714 9.59692 10.971C9.30731 11.192 8.95157 11.385 8.49922 11.385C8.04687 11.385 7.69112 11.192 7.40152 10.971C7.13983 10.7714 6.85712 10.4886 6.55244 10.1838C6.54143 10.1728 6.53039 10.1618 6.51932 10.1507L5.93353 9.5649C5.62111 9.25248 5.62111 8.74595 5.93353 8.43353C6.24595 8.12111 6.75248 8.12111 7.0649 8.43353L7.65069 9.01932C8.00002 9.36864 8.2063 9.57253 8.37205 9.69899C8.43854 9.74972 8.47869 9.77218 8.49922 9.78155C8.51975 9.77218 8.5599 9.74972 8.62639 9.69899C8.79213 9.57253 8.99842 9.36864 9.34775 9.01932L11.9335 6.43353C12.246 6.12111 12.7525 6.12111 13.0649 6.43353ZM8.48199 9.78759C8.48199 9.78759 8.48475 9.7863 8.4894 9.78565C8.48418 9.78758 8.48199 9.78759 8.48199 9.78759ZM8.50903 9.78565C8.51369 9.7863 8.51644 9.78759 8.51644 9.78759C8.51644 9.78759 8.51425 9.78758 8.50903 9.78565Z" fill="black"/>
+                                            </svg>
+                                            <span>As read</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.19922 5.99922C2.19922 3.90054 3.90054 2.19922 5.99922 2.19922H11.9992C14.0979 2.19922 15.7992 3.90054 15.7992 5.99922V11.9992C15.7992 14.0979 14.0979 15.7992 11.9992 15.7992H5.99922C3.90054 15.7992 2.19922 14.0979 2.19922 11.9992V5.99922ZM5.99922 3.79922C4.78419 3.79922 3.79922 4.78419 3.79922 5.99922V11.9992C3.79922 13.2142 4.78419 14.1992 5.99922 14.1992H11.9992C13.2142 14.1992 14.1992 13.2142 14.1992 11.9992V5.99922C14.1992 4.78419 13.2142 3.79922 11.9992 3.79922H5.99922Z" fill="black"/>
+                                                <path d="M7.5649 6.43353C7.25248 6.12111 6.74595 6.12111 6.43353 6.43353C6.12111 6.74595 6.12111 7.25248 6.43353 7.5649L7.86785 8.99922L6.43353 10.4335C6.12111 10.746 6.12111 11.2525 6.43353 11.5649C6.74595 11.8773 7.25248 11.8773 7.5649 11.5649L8.99922 10.1306L10.4335 11.5649C10.746 11.8773 11.2525 11.8773 11.5649 11.5649C11.8773 11.2525 11.8773 10.746 11.5649 10.4335L10.1306 8.99922L11.5649 7.5649C11.8773 7.25248 11.8773 6.74595 11.5649 6.43353C11.2525 6.12111 10.746 6.12111 10.4335 6.43353L8.99922 7.86785L7.5649 6.43353Z" fill="black"/>
+                                            </svg>
+                                            <span>As unread</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13 4.6H5C4.77909 4.6 4.6 4.77909 4.6 5V14.3L7.38 12.215C8.34 11.495 9.66 11.495 10.62 12.215L13.4 14.3V5C13.4 4.77909 13.2209 4.6 13 4.6ZM5 3C3.89543 3 3 3.89543 3 5V14.5C3 15.7361 4.41115 16.4416 5.4 15.7L8.34 13.495C8.73111 13.2017 9.26889 13.2017 9.66 13.495L12.6 15.7C13.5889 16.4416 15 15.7361 15 14.5V5C15 3.89543 14.1046 3 13 3H5Z" fill="black"/>
+                                            </svg>
+                                            <span>As flagged</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.99922 3.79922C4.33648 3.79922 3.79922 4.33648 3.79922 4.99922V14.4992C3.79922 15.0761 4.45775 15.4053 4.91922 15.0592L7.85922 12.8542C8.53477 12.3476 9.46366 12.3476 10.1392 12.8542L13.0792 15.0592C13.5407 15.4053 14.1992 15.0761 14.1992 14.4992V4.99922C14.1992 4.33648 13.662 3.79922 12.9992 3.79922H4.99922ZM2.19922 4.99922C2.19922 3.45282 3.45282 2.19922 4.99922 2.19922H12.9992C14.5456 2.19922 15.7992 3.45282 15.7992 4.99922V14.4992C15.7992 16.3945 13.6355 17.4764 12.1192 16.3392L9.17922 14.1342C9.07255 14.0542 8.92589 14.0542 8.81922 14.1342L5.87922 16.3392C4.36298 17.4764 2.19922 16.3945 2.19922 14.4992V4.99922ZM6.43353 5.93353C6.74595 5.62111 7.25248 5.62111 7.5649 5.93353L8.99922 7.36785L10.4335 5.93353C10.746 5.62111 11.2525 5.62111 11.5649 5.93353C11.8773 6.24595 11.8773 6.75249 11.5649 7.0649L10.1306 8.49922L11.5649 9.93353C11.8773 10.246 11.8773 10.7525 11.5649 11.0649C11.2525 11.3773 10.746 11.3773 10.4335 11.0649L8.99922 9.63059L7.5649 11.0649C7.25248 11.3773 6.74595 11.3773 6.43353 11.0649C6.12111 10.7525 6.12111 10.246 6.43353 9.93353L7.86785 8.49922L6.43353 7.0649C6.12111 6.75249 6.12111 6.24595 6.43353 5.93353Z" fill="black"/>
+                                            </svg>
+                                            <span>As unflagged</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="modal-child__content">
+                            <div class="modal-child__content_head">
+                                <button class="modal-child__close">
+                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                                    </svg>
+                                </button>
+                                <h4 class="text-p5">Back</h4>
+                            </div>
+                            <div class="modal-child__content_body">
+                                <p class="text-p6">Download</p>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.99922 10.1992C3.44105 10.1992 3.79922 10.5574 3.79922 10.9992V11.9992C3.79922 12.662 4.33648 13.1992 4.99922 13.1992H12.9992C13.662 13.1992 14.1992 12.662 14.1992 11.9992V10.9992C14.1992 10.5574 14.5574 10.1992 14.9992 10.1992C15.441 10.1992 15.7992 10.5574 15.7992 10.9992V11.9992C15.7992 13.5456 14.5456 14.7992 12.9992 14.7992H4.99922C3.45282 14.7992 2.19922 13.5456 2.19922 11.9992V10.9992C2.19922 10.5574 2.55739 10.1992 2.99922 10.1992Z" fill="black"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.99922 2.19922C9.44105 2.19922 9.79922 2.55739 9.79922 2.99922V9.06785L11.4335 7.43353C11.746 7.12111 12.2525 7.12111 12.5649 7.43353C12.8773 7.74595 12.8773 8.25248 12.5649 8.5649L9.5649 11.5649C9.25248 11.8773 8.74595 11.8773 8.43353 11.5649L5.43353 8.5649C5.12111 8.25248 5.12111 7.74595 5.43353 7.43353C5.74595 7.12111 6.25248 7.12111 6.5649 7.43353L8.19922 9.06785V2.99922C8.19922 2.55739 8.55739 2.19922 8.99922 2.19922Z" fill="black"/>
+                                            </svg>
+                                            <span>Source (.eml)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.99922 10.1992C3.44105 10.1992 3.79922 10.5574 3.79922 10.9992V11.9992C3.79922 12.662 4.33648 13.1992 4.99922 13.1992H12.9992C13.662 13.1992 14.1992 12.662 14.1992 11.9992V10.9992C14.1992 10.5574 14.5574 10.1992 14.9992 10.1992C15.441 10.1992 15.7992 10.5574 15.7992 10.9992V11.9992C15.7992 13.5456 14.5456 14.7992 12.9992 14.7992H4.99922C3.45282 14.7992 2.19922 13.5456 2.19922 11.9992V10.9992C2.19922 10.5574 2.55739 10.1992 2.99922 10.1992Z" fill="black"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.99922 2.19922C9.44105 2.19922 9.79922 2.55739 9.79922 2.99922V9.06785L11.4335 7.43353C11.746 7.12111 12.2525 7.12111 12.5649 7.43353C12.8773 7.74595 12.8773 8.25248 12.5649 8.5649L9.5649 11.5649C9.25248 11.8773 8.74595 11.8773 8.43353 11.5649L5.43353 8.5649C5.12111 8.25248 5.12111 7.74595 5.43353 7.43353C5.74595 7.12111 6.25248 7.12111 6.5649 7.43353L8.19922 9.06785V2.99922C8.19922 2.55739 8.55739 2.19922 8.99922 2.19922Z" fill="black"/>
+                                            </svg>
+                                            <span>Mbox format (.zip)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.99922 10.1992C3.44105 10.1992 3.79922 10.5574 3.79922 10.9992V11.9992C3.79922 12.662 4.33648 13.1992 4.99922 13.1992H12.9992C13.662 13.1992 14.1992 12.662 14.1992 11.9992V10.9992C14.1992 10.5574 14.5574 10.1992 14.9992 10.1992C15.441 10.1992 15.7992 10.5574 15.7992 10.9992V11.9992C15.7992 13.5456 14.5456 14.7992 12.9992 14.7992H4.99922C3.45282 14.7992 2.19922 13.5456 2.19922 11.9992V10.9992C2.19922 10.5574 2.55739 10.1992 2.99922 10.1992Z" fill="black"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.99922 2.19922C9.44105 2.19922 9.79922 2.55739 9.79922 2.99922V9.06785L11.4335 7.43353C11.746 7.12111 12.2525 7.12111 12.5649 7.43353C12.8773 7.74595 12.8773 8.25248 12.5649 8.5649L9.5649 11.5649C9.25248 11.8773 8.74595 11.8773 8.43353 11.5649L5.43353 8.5649C5.12111 8.25248 5.12111 7.74595 5.43353 7.43353C5.74595 7.12111 6.25248 7.12111 6.5649 7.43353L8.19922 9.06785V2.99922C8.19922 2.55739 8.55739 2.19922 8.99922 2.19922Z" fill="black"/>
+                                            </svg>
+                                            <span>Maildir format (.zip)</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="modal-child__content">
+                            <div class="modal-child__content_head">
+                                <button class="modal-child__close">
+                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                                    </svg>
+                                </button>
+                                <h4 class="text-p5">Back</h4>
+                            </div>
+                            <div class="modal-child__content_body">
+                                <p class="text-p6">Move to</p>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span>Source (.eml)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Inbox</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Drafts</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Sent</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Junk</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Trash</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Archive</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Folder Name</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Subfolder Name</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>News Subfolder Name 2</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="modal-child__content">
+                            <div class="modal-child__content_head">
+                                <button class="modal-child__close">
+                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                                    </svg>
+                                </button>
+                                <h4 class="text-p5">Back</h4>
+                            </div>
+                            <div class="modal-child__content_body">
+                                <p class="text-p6">Copy to</p>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span>Source (.eml)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Inbox</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Drafts</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Sent</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Junk</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Trash</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Archive</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Folder Name</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Subfolder Name</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>News Subfolder Name 2</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Action Modal end -->
+
+                <!-- Empty -->
+                <!-- <div class="inbox__empty">
+                    <img src="./images/empty-icon.png" alt="">
+                    <p class="text-p6">Your Inbox is currently empty.</p>
+                </div> -->
+                <!-- Empty end -->
+
+                <!-- Not empty -->
+                <div class="mail">
+                    <div class="mail_head">
+                        <a href="./inbox.html" class="bac-icon">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                            </svg>
+                        </a>
+                        <div class="mail_head__left">
+                            <div class="icon">
+                                <img src="./images/avatar-2.png" alt="">
+                            </div>
+                            <div class="text">
+                                <p class="text-p5 text_top">
+                                    <button class="mark-icon active">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 5C3 3.89543 3.89543 3 5 3H13C14.1046 3 15 3.89543 15 5V15.5C15 16.324 14.0592 16.7944 13.4 16.3L9.66 13.495C9.26889 13.2017 8.73111 13.2017 8.34 13.495L4.6 16.3C3.94076 16.7944 3 16.324 3 15.5V5Z" fill="#D8E0FF" fill-opacity="0.4"/>
+                                        </svg>
+                                    </button>
+                                    <span class="name">Creative Market</span>
+                                    <span>16.02.2024 11:42</span>
+                                </p>
+                                <p class="text-p6 text_bottom">
+                                    <span>from</span> <a href="#">donotreply@stackoverflow.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        <button class="open-navs">
+                            <svg width="3" height="13" viewBox="0 0 3 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 1.5C3 2.32843 2.32843 3 1.5 3C0.671573 3 0 2.32843 0 1.5C0 0.671573 0.671573 0 1.5 0C2.32843 0 3 0.671573 3 1.5Z" fill="black"/>
+                                <path d="M3 6.5C3 7.32843 2.32843 8 1.5 8C0.671573 8 0 7.32843 0 6.5C0 5.67157 0.671573 5 1.5 5C2.32843 5 3 5.67157 3 6.5Z" fill="black"/>
+                                <path d="M3 11.5C3 12.3284 2.32843 13 1.5 13C0.671573 13 0 12.3284 0 11.5C0 10.6716 0.671573 10 1.5 10C2.32843 10 3 10.6716 3 11.5Z" fill="black"/>
+                            </svg>
+                        </button>
+                        <button class="plan">Plain format</button>
+                    </div>
+                    <div class="mail__body">
+                        <p class="text-h6 mark">
+                            <button class="mark-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 5C3 3.89543 3.89543 3 5 3H13C14.1046 3 15 3.89543 15 5V15.5C15 16.324 14.0592 16.7944 13.4 16.3L9.66 13.495C9.26889 13.2017 8.73111 13.2017 8.34 13.495L4.6 16.3C3.94076 16.7944 3 16.324 3 15.5V5Z" fill="#D8E0FF" fill-opacity="0.4"/>
+                                </svg>
+                            </button>
+                            <span>Elevate your designs</span>
+                            <span class="date">
+                                <span>16 Dec 2024</span>
+                                <span>14:32</span>
+                            </span>
+                        </p>
+                        <div class="mail_list">
+                            <div class="mail_list__item">
+                                <div class="alert-danger">
+                                    <p class="text-p5">To protect your privacy remote attachments have been blocked</p>
+                                    <a href="#" class="text-p5">Allow</a>
+                                </div>
+                                <div class="alert-warning">
+                                    <p class="text-p5">This is a draft message</p>
+                                    <a href="" class="text-p5">Edit</a>
+                                </div>
+                            </div>
+                            <div class="mail_list__item">
+                                <ul class="images">
+                                    <li>
+                                        <a href="#">
+                                            <span class="text-p6 text">
+                                                <span class="text_name">954 КБ</span>
+                                                <span class="text_value">file_sdgsde243gsfg324523523523523523.jpg</span>
+                                            </span>
+                                            <span class="extention">JPF</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="text-p6 text">
+                                                <span class="text_name">954 КБ</span>
+                                                <span class="text_value">prom.jpg</span>
+                                            </span>
+                                            <span class="extention">JPF</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="text-p6 text">
+                                                <span class="text_name">954 КБ</span>
+                                                <span class="text_value">prom.jpg</span>
+                                            </span>
+                                            <span class="extention">JPF</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mail_list__item mail_result">
+                                <p>Hello, ready to transform your designs? Dive into our selection of top trending fonts and make your projects stand out like never before.</p>
+                                <p>Welcome to Crypto Insights, your trusted source for monthly market analysis and forecasts. In this edition, we delve deep into the latest trends shaping the cryptocurrency landscape.</p>
+                                <h4>Market Overview:</h4>
+                                <p>The crypto market has seen significant volatility over the past month, with fluctuations in prices across various digital assets. Bitcoin continues to be a focal point, demonstrating resilience amidst market uncertainties.</p>
+                                <h4>Altcoin Spotlight:</h4>
+                                <p>Explore the performance of popular altcoins, including Ethereum, Ripple, and Litecoin. Our in-depth analysis covers key developments, partnerships, and technological advancements driving these projects forward.</p>
+                                <h4>Regulatory Landscape:</h4>
+                                <p>Stay informed about the evolving regulatory environment. We provide insights into global regulatory updates affecting the crypto industry, offering clarity on compliance and legal considerations.</p>
+                                <h4>Blockchain Technology News:</h4>
+                                <p>Discover the latest advancements in blockchain technology. From scalability solutions to decentralized finance (DeFi) innovations, we highlight projects that are pushing the boundaries of what's possible in the blockchain space.</p>
+                                <h4>Trading Strategies:</h4>
+                                <p>Our expert analysts share insights into effective trading strategies tailored for different market conditions. Whether you're a seasoned trader or a novice, our tips and recommendations aim to enhance your trading experience.</p>
+                                <h4>Upcoming ICOs and Token Sales:</h4>
+                                <p>Don't miss out on upcoming Initial Coin Offerings (ICOs) and token sales. We provide a curated list of projects that are garnering attention within the crypto community, along with detailed information to help you make informed investment decisions.</p>
+                                <h4>**Community Spotlight:**</h4>
+                                <p>Celebrate the achievements and milestones of notable projects and influencers within the crypto community. From successful project launches to impactful contributions, we shine a spotlight on those making a positive impact in the space.</p>
+                                <p>Thank you for being part of the Crypto Insights community. Stay tuned for our next edition, where we'll continue to deliver comprehensive insights into the dynamic world of cryptocurrencies.</p>
+                                <p>Happy investing!</p>
+                                <p>Crypto Insights Team</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mail__foot">
+                        <a href="" class="btn_blue">Reply</a>
+                    </div>
+                </div>
+                <!-- Not empty end -->
+
+            </section>
+            <!-- Inbox home end -->
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__left">
+                <div class="progress">
+                    <span></span>
+                </div>
+                <p>2%</p>
+            </div>
+            <div class="footer__right">
+                <div class="text-p5 footer__messages">Messages 1 to 50 of 388</div>
+                <div class="footer__msg_pagination">
+                    <button disabled>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 14L8 9L13 4" stroke="#2C2C2C" stroke-opacity="0.65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="0.9" y1="-0.9" x2="9.1" y2="-0.9" transform="matrix(4.37119e-08 1 1 -4.37119e-08 6 4)" stroke="#2C2C2C" stroke-opacity="0.65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button disabled>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 14L6 9L11 4" stroke="#2C2C2C" stroke-opacity="0.65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <p class="text-p5">Messages 1 to 50 of  253</p>
+                    <button>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 14L11 9L6 4" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 14L10 9L5 4" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="12.9" y1="4.9" x2="12.9" y2="13.1" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <button class="btn_blue">Compose</button>
+        </footer>
+        <!-- Footer end -->
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- JS file -->
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

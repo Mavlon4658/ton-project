@@ -231,3 +231,290 @@
     }
 }
 // Delte modal end
+
+// Modal sm
+.modal_sm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: none;
+
+    @include media(-992) {
+        display: none !important;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $color-shade-4;
+    }
+
+    &__content {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 188px;
+        background: $color-bg;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        border-bottom: 1px solid $color-shade-2;
+
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 600;
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+        }
+
+        .back-icon {
+            left: 0;
+        }
+
+        .close-icon {
+            right: 0;
+        }
+    }
+
+    &__body {
+        padding: 6px;
+
+        .title {
+            color: $color-shade-4;
+            padding: 10px 10px 6px;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.2px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            a, button {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 600;
+                gap: 8px;
+                padding: 10px;
+                border-radius: 8px;
+                width: 100%;
+                transition: .3s ease all;
+
+                &:hover {
+                    background: $color-shade-1;
+                }
+
+                .text {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
+                .icon {
+                    width: 18px;
+                    height: 18px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    &.active {
+        display: block;
+
+        .modal_sm {
+            @keyframes modalSmBgActive {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            &__bg {
+                animation: modalSmBgActive .2s linear 1;
+            }
+            
+            @keyframes modalSmContentActive {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            &__content {
+                animation: modalSmContentActive .2s linear 1;
+            }
+        }
+    }
+
+    &.end-active {
+        display: block;
+
+        .modal_sm {
+            @keyframes modalSmBgEndActive {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            } 
+
+            &__bg {
+                opacity: 0;
+                animation: modalSmBgEndActive .2s linear 1;
+            }
+            @keyframes modalSmContentEndActive {
+                from {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(100%);
+                }
+            }
+
+            &__content {
+                opacity: 0;
+                animation: modalSmContentEndActive .2s linear 1;
+            }
+        }
+    }
+
+    .modal-child__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $color-bg;
+        display: none;
+
+        &_head {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            border-bottom: 1px solid $color-shade-2;
+
+            button {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        &_body {
+            padding: 6px;
+            
+            p {
+                color: $color-shade-4;
+                padding: 10px 10px 6px;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+
+                a {
+                    padding: 10px;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-weight: 600;
+                    transition: .3s ease all;
+
+                    &:hover {
+                        background: $color-shade-1;
+                    }
+                    
+                    svg {
+                        flex-shrink: 0;
+                    }
+
+                    span {
+                        display: block;
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+
+        @keyframes childContentActive {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        &.active {
+            display: block;
+            animation: childContentActive .2s linear 1;
+        }
+
+        @keyframes childContentEndActive {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(100%);
+            }
+        }
+
+        &.end-active {
+            display: block;
+            opacity: 0;
+            animation: childContentEndActive .2s linear 1;
+        }
+    }
+}
+// Modal sm end

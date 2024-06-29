@@ -11,6 +11,10 @@
     justify-content: space-between;
     background: $color-bg;
 
+    @include media(992) {
+        display: none;
+    }
+
     &__title {
         font-weight: 600;
         color: $color-shade-4;

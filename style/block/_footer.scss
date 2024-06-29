@@ -10,12 +10,22 @@
     left: 0;
     width: 100%;
     padding: 0px 20px;
-    border: 1px solid $color-shade-2;
+    border-top: 1px solid $color-shade-2;
+
+    @include media(992) {
+        padding: 14px 16px 0;
+        height: 73px;
+        align-items: flex-start;
+    }
 
     &__left {
         display: flex;
         align-items: center;
         gap: 10px;
+
+        @include media(992) {
+            display: none;
+        }
 
         .progress {
             width: 115px;
@@ -38,6 +48,10 @@
         display: flex;
         align-items: center;
         gap: 43px;
+
+        @include media(992) {
+            display: none;
+        }
     }
 
     &__messages {
@@ -75,6 +89,14 @@
 
         p {
 
+        }
+    }
+
+    .btn_blue {
+        width: 100%;
+
+        @include media(-992) {
+            display: none;
         }
     }
 }

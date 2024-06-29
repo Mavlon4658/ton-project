@@ -1,6 +1,10 @@
 .inbox {
     padding: 72px 20px 40px 260px;
 
+    @include media (992) {
+        padding: 60px 0 73px;
+    }
+
     &__nav {
         height: 48px;
         position: fixed;
@@ -13,6 +17,10 @@
         padding: 0 20px 0 10px;
         background: $color-bg;
         z-index: 2;
+
+        @include media(992) {
+            display: none;
+        }
         
         &_left {
             display: flex;
@@ -45,6 +53,12 @@
             &__text {
                 color: $color-shade-4;
                 font-weight: 600;
+            }
+
+            &:nth-child(5) {
+                @include media(1200) {
+                    display: none !important;
+                }
             }
         }
 
@@ -105,6 +119,10 @@
 
             &__wrap {
                 position: relative;
+
+                @include media(1200) {
+                    display: none !important;
+                }
 
                 &:hover {
                     .mark_list {
@@ -183,6 +201,14 @@
 
                     &__item {
                         position: relative;
+                        
+                        &:not(:nth-child(n+3)) {
+                            display: none;
+
+                            @include media(1200) {
+                                display: block;
+                            }
+                        }
 
                         &:hover {
                             .more_list__link {
@@ -341,6 +367,42 @@
             }
         }
     }
+
+    .mb_nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: $color-bg;
+        padding: 16px 16px 8px;
+
+        @include media(-992) {
+            display: none !important;
+        }
+
+        p {
+            color: $color-shade-4;
+        }
+
+        &__right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            button {
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.2px;
+                font-weight: 400;
+                color: $color-active;
+            }
+        }
+    }
     
     &__empty {
         min-height: calc(100svh - 112px);
@@ -360,12 +422,102 @@
         }
     }
 
+    .swiper {
+        width: 100%;
+
+        &-wrapper {
+            align-items: stretch;
+        }
+
+        .swiper-slide {
+            height: auto;
+
+            &:nth-child(1), &:nth-child(3) {
+                width: 68px;
+            }
+
+            &:nth-child(2) {
+                width: 100%;
+            }
+        }
+    }
+
+    .read_btn {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        &__content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 4px;
+            background: $color-shade-4;
+
+            &:nth-child(2) {
+                display: flex;
+            }
+            
+            span {
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 16px;
+                letter-spacing: 0.2px;
+                color: #FFF;
+            }
+
+            &:nth-child(2) {
+                background: $color-orange;
+            }
+        }
+        
+        &.active {
+            .read_btn__content {
+                display: flex;
+
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .delete_icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $color-red;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        color: #fff;
+    }
+
     .msg {
         &_list {
             padding-top: 48px;
             display: flex;
             flex-direction: column;
             gap: 2px;
+
+            @include media(992) {
+                gap: 0px;
+                padding-top: 40px;
+            }
         }
 
         &_item {
@@ -377,6 +529,35 @@
             border-radius: 10px;
             height: 38px;
             transition: .3s ease all;
+            
+            @include media(992) {
+                position: relative;
+                height: 94px;
+                padding: 10px 16px 10px 66px;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 2px !important;
+                border-radius: 0;
+                justify-content: flex-start;
+            }
+
+            &__logo {
+                position: absolute;
+                left: 16px;
+                top: 12px;
+                width: 36px;
+                height: 36px;
+
+                @include media(-992) {
+                    display: none;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
 
             &__name {
                 display: flex;
@@ -385,8 +566,16 @@
                 width: 200px;
                 flex-shrink: 0;
 
+                @include media(992) {
+                    padding-left: 12px;
+                }
+
                 .checkbox {
                     flex-shrink: 0;
+
+                    @include media(992) {
+                        display: none;
+                    }
                 }
 
                 p {
@@ -394,6 +583,11 @@
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
+
+                    @include media(992) {
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
                 }
             }
 
@@ -412,6 +606,12 @@
                     transition: .3s ease all;
                     cursor: pointer;
 
+                    @include media(992) {
+                        position: absolute;
+                        top: 16px;
+                        left: 66px;
+                    }
+
                     &:hover {
                         background: $color-shade-2;
                     }
@@ -428,6 +628,12 @@
                     align-items: center;
                     justify-content: center;
                     cursor: pointer;
+
+                    @include media(992) {
+                        position: absolute;
+                        left: 25px;
+                        top: 56px;
+                    }
 
                     svg {
                         transform: translateY(2px);
@@ -460,6 +666,12 @@
                     align-items: center;
                     gap: 20px;
 
+                    @include media(992) {
+                        flex-direction: column;
+                        gap: 2px;
+                        align-items: flex-start;
+                    }
+
                     .title {
                         display: inline-block;
                         flex-shrink: 0;
@@ -481,6 +693,12 @@
                         -webkit-box-orient: vertical;
                         overflow: hidden;
                         text-overflow: ellipsis;
+
+                        @include media(992) {
+                            -webkit-line-clamp: 2;
+                            font-size: 12px;
+                            line-height: 16px;
+                        }
                     }
 
                 }
@@ -494,11 +712,24 @@
                 line-height: 20px;
                 color: $color-shade-4;
 
+                @include media(992) {
+                    position: absolute;
+                    right: 16px;
+                    top: 10px;
+                    font-size: 12px;
+                    line-height: 16px;
+                    gap: 6px;
+                }
+
                 .icon {
                     display: none;
 
                     &.active {
                         display: block;
+                    }
+
+                    @include media(992) {
+                        display: none !important;
                     }
                 }
             }
@@ -525,15 +756,17 @@
                 }
             }
 
-            &:hover {
-                background: $color-shade-1;
-            }
-
-            &.selected {
-                background: rgba(50, 108, 255, 0.05);
-                
+            @include media(-992) {
                 &:hover {
-                    background: rgba(50, 108, 255, 0.15);
+                    background: $color-shade-1;
+                }
+    
+                &.selected {
+                    background: rgba(50, 108, 255, 0.05);
+                    
+                    &:hover {
+                        background: rgba(50, 108, 255, 0.15);
+                    }
                 }
             }
         }
