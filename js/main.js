@@ -565,6 +565,49 @@ if (document.querySelector('#text-editor')) {
     });
 }
 
+let sendToInp = document.querySelector('.send_to input'),
+    sendToList = document.querySelector('.send_to ul');
+
+if (sendToInp) {
+    let addUser = () => {
+        let text = sendToInp.value;
+
+        if (text != '') {
+            let el = document.createElement('li');
+            el.innerHTML = `<p>${text}</p>
+            <span class="line"></span>
+            <button>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.06483 0.933534C9.37725 1.24595 9.37725 1.75249 9.06483 2.0649L6.13055 4.99918L9.06483 7.93346C9.37725 8.24588 9.37725 8.75241 9.06483 9.06483C8.75241 9.37725 8.24588 9.37725 7.93346 9.06483L4.99918 6.13056L2.0649 9.06483C1.75248 9.37725 1.24595 9.37725 0.933533 9.06483C0.621114 8.75241 0.621114 8.24588 0.933533 7.93346L3.86781 4.99918L0.933533 2.0649C0.621114 1.75248 0.621114 1.24595 0.933533 0.933533C1.24595 0.621114 1.75248 0.621114 2.0649 0.933533L4.99918 3.86781L7.93346 0.933534C8.24588 0.621114 8.75241 0.621114 9.06483 0.933534Z" fill="black"/>
+                </svg>
+            </button>`;
+            sendToList.appendChild(el);
+        }
+
+        sendToInp.value = "";
+
+        let sendToListItem = document.querySelectorAll('.send_to ul li');
+        if (sendToListItem.length) {
+            sendToListItem.forEach(li => {
+                let btn = li.querySelector('button');
+                btn.onclick = () => {
+                    li.remove();
+                }
+            })
+        }
+    }
+
+    sendToInp.onblur = () => {
+        addUser();
+    }
+
+    sendToInp.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            addUser();
+        }
+    });
+}
+
 document.addEventListener('click', (event) => {
     if (accountDropdown && accountDropdownList.classList.contains('active') && window.innerWidth > 992) {
         const t1 = event.composedPath().includes(accountDropdown)
