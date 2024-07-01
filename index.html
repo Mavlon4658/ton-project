@@ -15,25 +15,173 @@
 
         <!-- Header -->
         <header class="header">
-            <div class="header__account">
-                <img src="./images/logotip.svg" class="logo_icon" alt="">
-                <div class="header__account_text">
-                    <p class="text-p5">TON Mail Protocol</p>
-                    <p class="text-p5">ton.pro</p>
+            <div class="header__left">
+                <div class="header__account">
+                    <img src="./images/logotip.svg" class="logo_icon" alt="">
+                    <div class="header__account_text">
+                        <p class="text-p5">whale@ton.pro</p>
+                        <p class="text-p5">EQDvh...mZ5Xe</p>
+                    </div>
+                    <div class="header__account_dropdown">
+                        <button class="header__account_dropdown__btn">
+                            <img src="./images/arrow-down.svg" alt="">
+                        </button>
+                        <div class="header__account_dropdown__list">
+                            <img src="./images/dropdown-icon.svg" alt="" class="before_icon">
+                            <ul class="dropdown_radio">
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" checked name="account">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">whale@ton.pro</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" name="account">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">nex@ton.pro</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" name="account">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">nex@ton.pro</p>
+                                </li>
+                            </ul>
+                            <div class="line"></div>
+                            <button class="text-p5 dropdown_close">Disconnect</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="search">
+                    <div class="search_inp">
+                        <img src="./images/search.svg" class="icon" alt="">
+                        <input type="text" placeholder="Search">
+                    </div>
+
+                    <div class="search_result">
+                        <ul class="search_result__settings">
+                            <li>
+                                <p class="text-p5">Subject</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Sender</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Recipient</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Body</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-p5">Entire message</p>
+                                <div class="checkbox-1">
+                                    <input type="checkbox" checked>
+                                    <div class="icon">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="search_result__dropdowns">
+                            <div class="dropdown">
+                                <div class="dropdown_inp">
+                                    <input type="text" disabled value="">
+                                    <button>
+                                        <img src="./images/arrow-down.svg" alt="">
+                                    </button>
+                                </div>
+                                <ul class="dropdown_list">
+                                    <li class="dropdown_list__item checked">Unread</li>
+                                    <li class="dropdown_list__item">Item 1</li>
+                                    <li class="dropdown_list__item">Item 2</li>
+                                    <li class="dropdown_list__item">Item 3</li>
+                                    <li class="dropdown_list__item">Item 4</li>
+                                    <li class="dropdown_list__item">Item 5</li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <div class="dropdown_inp">
+                                    <input type="text" disabled value="">
+                                    <button>
+                                        <img src="./images/arrow-down.svg" alt="">
+                                    </button>
+                                </div>
+                                <ul class="dropdown_list">
+                                    <li class="dropdown_list__item checked">Older than week</li>
+                                    <li class="dropdown_list__item">Item 1</li>
+                                    <li class="dropdown_list__item">Item 2</li>
+                                    <li class="dropdown_list__item">Item 3</li>
+                                    <li class="dropdown_list__item">Item 4</li>
+                                    <li class="dropdown_list__item">Item 5</li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <div class="dropdown_inp">
+                                    <input type="text" disabled value="">
+                                    <button>
+                                        <img src="./images/arrow-down.svg" alt="">
+                                    </button>
+                                </div>
+                                <ul class="dropdown_list">
+                                    <li class="dropdown_list__item checked">Current folder</li>
+                                    <li class="dropdown_list__item">Item 1</li>
+                                    <li class="dropdown_list__item">Item 2</li>
+                                    <li class="dropdown_list__item">Item 3</li>
+                                    <li class="dropdown_list__item">Item 4</li>
+                                    <li class="dropdown_list__item">Item 5</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="btn_blue">Search</button>
+                    </div>
                 </div>
             </div>
-            <ul class="header__navs">
+            <ul class="header__navs auth__navs">
                 <li>
-                    <a href="#" class="text-p5">Register</a>
+                    <a href="./inbox.html" class="text-p5 active">Email</a>
                 </li>
                 <li>
-                    <a href="#" class="text-p5">Getgems.io</a>
+                    <a href="#" class="text-p5">Preferences</a>
                 </li>
                 <li>
-                    <a href="#" class="text-p5">Telegram</a>
+                    <a href="#" class="text-p5">Contacts</a>
                 </li>
                 <li>
-                    <a href="#" class="text-p5">Support</a>
+                    <a href="#" class="text-p5">Folders</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Indentities</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Responses</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Security</a>
+                </li>
+                <li>
+                    <a href="#" class="text-p5">Filters</a>
                 </li>
             </ul>
         </header>
