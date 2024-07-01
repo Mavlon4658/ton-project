@@ -152,6 +152,11 @@ body {
         height: 40px;
         background: $color-bg;
         transition: .3s ease all;
+        color: #000;
+
+        span {
+            color: #000;
+        }
 
         &:hover {
             background: $color-shade-1;
@@ -420,7 +425,6 @@ body {
         cursor: pointer;
         height: 40px;
         position: relative;
-        overflow: hidden;
         transition: .3s ease all;
         
         input {
@@ -511,7 +515,7 @@ body {
             &.checked {
                 background: rgba(50, 108, 255, 0.1);
                 
-                &:active {
+                &:hover {
                     background: rgba(50, 108, 255, 0.15);
                 }
                 
@@ -538,6 +542,7 @@ body {
                 input {
                     background: $color-bg;
                     border-color: $color-active;
+                    box-shadow: 0 0 8px rgba(67, 151, 229, 0.2);
                 }
             }
 
@@ -719,6 +724,8 @@ body {
             height: 40px;
             padding: 0px 10px 0px 40px;
             width: 100%;
+            font-size: 14px;
+            line-height: 20px;
 
             @include media(992) {
                 height: 60px;
@@ -772,6 +779,12 @@ body {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+                @include media(992) {
+                    flex-direction: row-reverse;
+                    justify-content: flex-end;
+                    gap: 8px;
+                }
             }
         }
 
@@ -780,6 +793,17 @@ body {
             flex-direction: column;
             gap: 14px;
             margin-bottom: 14px;
+
+            label {
+                font-size: 12px;
+                line-height: 16px;
+                margin-bottom: 6px;
+                color: $color-shade-4;
+
+                @include media(-992) {
+                    display: none !important;
+                }
+            }
         }
 
         &__bottom {

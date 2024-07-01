@@ -8,7 +8,7 @@
     &__nav {
         height: 48px;
         position: fixed;
-        top: 72px;
+        top: 74px;
         left: 260px;
         width: calc(100% - 260px);
         display: flex;
@@ -25,13 +25,15 @@
         &_left {
             display: flex;
             align-items: center;
-            gap: 26px;
+
+            .checkbox {
+                margin-right: 10px;
+            }
         }
 
         &_right {
             display: flex;
             align-items: center;
-            gap: 24px;
         }
 
         &_link {
@@ -41,6 +43,13 @@
             user-select: none;
             cursor: pointer;
             position: relative;
+            padding: 7px 12px;
+            border-radius: 8px;
+            transition: .3s ease all;
+
+            &:hover {
+                background: $color-shade-1;
+            }
 
             &__icon {
                 width: 18px;
@@ -125,6 +134,10 @@
                 }
 
                 &:hover {
+                    .inbox__nav_link {
+                        background: $color-shade-1;
+                    }
+
                     .mark_list {
                         display: flex;
                     }
@@ -142,7 +155,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-left: -8px;
+                    border-radius: 8px;
                 }
 
                 &_list {
@@ -268,6 +281,10 @@
             }
 
             &:hover {
+                .more_btn {
+                    background: $color-shade-1;
+                }
+
                 .more_list__wrap {
                     display: block;
                 }
@@ -284,6 +301,8 @@
                 font-size: 14px;
                 line-height: 20px;
                 font-weight: 600;
+                padding: 7px 12px;
+                border-radius: 8px;
 
                 .icon {
                     width: 18px;
@@ -335,6 +354,11 @@
                     line-height: 20px;
                     font-weight: 600;
                     padding: 10px;
+                    border-radius: 8px;
+
+                    &:hover {
+                        background: $color-shade-1;
+                    }
 
                     .icon {
                         width: 18px;
@@ -347,6 +371,10 @@
             }
 
             &:hover {
+                .nav_dropdown__btn {
+                    background: $color-shade-1;
+                }
+
                 .nav_dropdown__list {
                     display: flex;
                 }
@@ -447,13 +475,17 @@
         height: 100%;
         position: relative;
 
+        @include media(-992) {
+            display: none !important;
+        }
+
         &__content {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            display: none;
+            display: flex;
             align-items: center;
             flex-direction: column;
             justify-content: center;
@@ -461,7 +493,7 @@
             background: $color-shade-4;
 
             &:nth-child(2) {
-                display: flex;
+                display: none;
             }
             
             span {
@@ -479,10 +511,10 @@
         
         &.active {
             .read_btn__content {
-                display: flex;
+                display: none;
 
                 &:nth-child(2) {
-                    display: none;
+                    display: flex;
                 }
             }
         }
@@ -505,6 +537,10 @@
         font-weight: 600;
         letter-spacing: 0.2px;
         color: #fff;
+
+        @include media(-992) {
+            display: none !important;
+        }
     }
 
     .msg {
@@ -693,6 +729,9 @@
                         -webkit-box-orient: vertical;
                         overflow: hidden;
                         text-overflow: ellipsis;
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: 400;
 
                         @include media(992) {
                             -webkit-line-clamp: 2;

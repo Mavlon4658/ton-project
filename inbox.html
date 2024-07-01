@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
     <title>TON Mail Protocol</title>
 
@@ -125,53 +125,62 @@
                             </li>
                         </ul>
                         <div class="search_result__dropdowns">
-                            <div class="dropdown">
-                                <div class="dropdown_inp">
-                                    <input type="text" disabled value="">
-                                    <button>
-                                        <img src="./images/arrow-down.svg" alt="">
-                                    </button>
+                            <div>
+                                <label for="">Type</label>
+                                <div class="dropdown">
+                                    <div class="dropdown_inp">
+                                        <input type="text" disabled value="">
+                                        <button>
+                                            <img src="./images/arrow-down.svg" alt="">
+                                        </button>
+                                    </div>
+                                    <ul class="dropdown_list">
+                                        <li class="dropdown_list__item checked">Unread</li>
+                                        <li class="dropdown_list__item">Item 1</li>
+                                        <li class="dropdown_list__item">Item 2</li>
+                                        <li class="dropdown_list__item">Item 3</li>
+                                        <li class="dropdown_list__item">Item 4</li>
+                                        <li class="dropdown_list__item">Item 5</li>
+                                    </ul>
                                 </div>
-                                <ul class="dropdown_list">
-                                    <li class="dropdown_list__item checked">Unread</li>
-                                    <li class="dropdown_list__item">Item 1</li>
-                                    <li class="dropdown_list__item">Item 2</li>
-                                    <li class="dropdown_list__item">Item 3</li>
-                                    <li class="dropdown_list__item">Item 4</li>
-                                    <li class="dropdown_list__item">Item 5</li>
-                                </ul>
                             </div>
-                            <div class="dropdown">
-                                <div class="dropdown_inp">
-                                    <input type="text" disabled value="">
-                                    <button>
-                                        <img src="./images/arrow-down.svg" alt="">
-                                    </button>
+                            <div>
+                                <label for="">Date</label>
+                                <div class="dropdown">
+                                    <div class="dropdown_inp">
+                                        <input type="text" disabled value="">
+                                        <button>
+                                            <img src="./images/arrow-down.svg" alt="">
+                                        </button>
+                                    </div>
+                                    <ul class="dropdown_list">
+                                        <li class="dropdown_list__item checked">Older than week</li>
+                                        <li class="dropdown_list__item">Item 1</li>
+                                        <li class="dropdown_list__item">Item 2</li>
+                                        <li class="dropdown_list__item">Item 3</li>
+                                        <li class="dropdown_list__item">Item 4</li>
+                                        <li class="dropdown_list__item">Item 5</li>
+                                    </ul>
                                 </div>
-                                <ul class="dropdown_list">
-                                    <li class="dropdown_list__item checked">Older than week</li>
-                                    <li class="dropdown_list__item">Item 1</li>
-                                    <li class="dropdown_list__item">Item 2</li>
-                                    <li class="dropdown_list__item">Item 3</li>
-                                    <li class="dropdown_list__item">Item 4</li>
-                                    <li class="dropdown_list__item">Item 5</li>
-                                </ul>
                             </div>
-                            <div class="dropdown">
-                                <div class="dropdown_inp">
-                                    <input type="text" disabled value="">
-                                    <button>
-                                        <img src="./images/arrow-down.svg" alt="">
-                                    </button>
+                            <div>
+                                <label for="">Scope</label>
+                                <div class="dropdown">
+                                    <div class="dropdown_inp">
+                                        <input type="text" disabled value="">
+                                        <button>
+                                            <img src="./images/arrow-down.svg" alt="">
+                                        </button>
+                                    </div>
+                                    <ul class="dropdown_list">
+                                        <li class="dropdown_list__item checked">Current folder</li>
+                                        <li class="dropdown_list__item">Item 1</li>
+                                        <li class="dropdown_list__item">Item 2</li>
+                                        <li class="dropdown_list__item">Item 3</li>
+                                        <li class="dropdown_list__item">Item 4</li>
+                                        <li class="dropdown_list__item">Item 5</li>
+                                    </ul>
                                 </div>
-                                <ul class="dropdown_list">
-                                    <li class="dropdown_list__item checked">Current folder</li>
-                                    <li class="dropdown_list__item">Item 1</li>
-                                    <li class="dropdown_list__item">Item 2</li>
-                                    <li class="dropdown_list__item">Item 3</li>
-                                    <li class="dropdown_list__item">Item 4</li>
-                                    <li class="dropdown_list__item">Item 5</li>
-                                </ul>
                             </div>
                         </div>
                         <div class="search_result__bottom">
@@ -226,180 +235,183 @@
 
         <!-- Mobile menu -->
         <div class="mobile_menu">
-            <div class="mobile_menu__head">
-                <button class="btn_light acc__opn">
-                    <span>alex@ton.pro</span>
-                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 0.365166C0.716638 0.0136945 1.28649 0.0136945 1.63796 0.365166L6.00156 4.72877L10.3652 0.365166C10.7166 0.0136945 11.2865 0.0136945 11.638 0.365166C11.9894 0.716638 11.9894 1.28649 11.638 1.63796L6.63796 6.63796C6.28649 6.98943 5.71664 6.98943 5.36517 6.63796L0.365166 1.63796C0.0136945 1.28649 0.0136945 0.716638 0.365166 0.365166Z" fill="black"/>
-                    </svg>
-                </button>
-                <button class="mobile_menu__close">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.636643 0.636864C0.246119 1.02739 0.246119 1.66055 0.636643 2.05108L5.58658 7.00102L0.637248 11.9504C0.246724 12.3409 0.246724 12.974 0.637248 13.3646C1.02777 13.7551 1.66094 13.7551 2.05146 13.3646L7.0008 8.41523L11.9504 13.3648C12.3409 13.7553 12.974 13.7553 13.3646 13.3648C13.7551 12.9743 13.7551 12.3411 13.3646 11.9506L8.41501 7.00102L13.3652 2.05086C13.7557 1.66033 13.7557 1.02717 13.3652 0.636643C12.9746 0.246119 12.3415 0.246119 11.951 0.636643L7.0008 5.5868L2.05086 0.636864C1.66033 0.24634 1.02717 0.24634 0.636643 0.636864Z" fill="black"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="mobile_menu__body">
-                <p class="text-p6 block_name">Folders</p>
-                <!-- Navigation -->
-                <ul class="mobile_menu__nav">
-                    <li>
-                        <a href="#" class="active">
-                            <span class="text">
-                                <img src="./images/nav-icon-1.svg" alt="">
-                                <span>Inbox</span>
-                            </span>
-                            <span class="alert">2</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/nav-icon-2.svg" alt="">
-                                <span>Drafts</span>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/nav-icon-3.svg" alt="">
-                                <span>Sent</span>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/nav-icon-4.svg" alt="">
-                                <span>Junk</span>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/nav-icon-5.svg" alt="">
-                                <span>Trash</span>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/nav-icon-6.svg" alt="">
-                                <span>Folder Name</span>
-                            </span>
-                        </a>
-                        <ul class="child_nav">
-                            <li>
-                                <a href="#">
-                                    <span class="text">
-                                        <img src="./images/nav-icon-6.svg" alt="">
-                                        <span>Subfolder Name</span>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- Navigation end -->
-                <p class="text-p6 block_name">Settings</p>
-                <!-- Settings -->
-                <ul class="mobile_menu__settings">
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/settings-icon-1.svg" alt="">
-                                <span>Preferences</span>
-                            </span>
-                            <span class="icon">
-                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
-                                </svg>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/settings-icon-2.svg" alt="">
-                                <span>Contacts</span>
-                            </span>
-                            <span class="icon">
-                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
-                                </svg>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/settings-icon-3.svg" alt="">
-                                <span>Folders</span>
-                            </span>
-                            <span class="icon">
-                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
-                                </svg>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/settings-icon-4.svg" alt="">
-                                <span>Indentities</span>
-                            </span>
-                            <span class="icon">
-                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
-                                </svg>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/settings-icon-5.svg" alt="">
-                                <span>Responses</span>
-                            </span>
-                            <span class="icon">
-                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
-                                </svg>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/settings-icon-6.svg" alt="">
-                                <span>Security</span>
-                            </span>
-                            <span class="icon">
-                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
-                                </svg>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="text">
-                                <img src="./images/settings-icon-7.svg" alt="">
-                                <span>Disconnect</span>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-                <!-- Settings end -->
-            </div>
-            <div class="mobile_menu__foot">
-                <p>Disk usage: <span>2.1 MB / 2.0 GB (0%)</span></p>
-                <div class="line">
-                    <span style="width: 40%;"></span>
+            <div class="mobile_menu__bg"></div>
+            <div class="mobile_menu__content">
+                <div class="mobile_menu__head">
+                    <button class="btn_light acc__opn">
+                        <span>alex@ton.pro</span>
+                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 0.365166C0.716638 0.0136945 1.28649 0.0136945 1.63796 0.365166L6.00156 4.72877L10.3652 0.365166C10.7166 0.0136945 11.2865 0.0136945 11.638 0.365166C11.9894 0.716638 11.9894 1.28649 11.638 1.63796L6.63796 6.63796C6.28649 6.98943 5.71664 6.98943 5.36517 6.63796L0.365166 1.63796C0.0136945 1.28649 0.0136945 0.716638 0.365166 0.365166Z" fill="black"/>
+                        </svg>
+                    </button>
+                    <button class="mobile_menu__close">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.636643 0.636864C0.246119 1.02739 0.246119 1.66055 0.636643 2.05108L5.58658 7.00102L0.637248 11.9504C0.246724 12.3409 0.246724 12.974 0.637248 13.3646C1.02777 13.7551 1.66094 13.7551 2.05146 13.3646L7.0008 8.41523L11.9504 13.3648C12.3409 13.7553 12.974 13.7553 13.3646 13.3648C13.7551 12.9743 13.7551 12.3411 13.3646 11.9506L8.41501 7.00102L13.3652 2.05086C13.7557 1.66033 13.7557 1.02717 13.3652 0.636643C12.9746 0.246119 12.3415 0.246119 11.951 0.636643L7.0008 5.5868L2.05086 0.636864C1.66033 0.24634 1.02717 0.24634 0.636643 0.636864Z" fill="black"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="mobile_menu__body">
+                    <p class="text-p6 block_name">Folders</p>
+                    <!-- Navigation -->
+                    <ul class="mobile_menu__nav">
+                        <li>
+                            <a href="#" class="active">
+                                <span class="text">
+                                    <img src="./images/nav-icon-1.svg" alt="">
+                                    <span>Inbox</span>
+                                </span>
+                                <span class="alert">2</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/nav-icon-2.svg" alt="">
+                                    <span>Drafts</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/nav-icon-3.svg" alt="">
+                                    <span>Sent</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/nav-icon-4.svg" alt="">
+                                    <span>Junk</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/nav-icon-5.svg" alt="">
+                                    <span>Trash</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/nav-icon-6.svg" alt="">
+                                    <span>Folder Name</span>
+                                </span>
+                            </a>
+                            <ul class="child_nav">
+                                <li>
+                                    <a href="#">
+                                        <span class="text">
+                                            <img src="./images/nav-icon-6.svg" alt="">
+                                            <span>Subfolder Name</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Navigation end -->
+                    <p class="text-p6 block_name">Settings</p>
+                    <!-- Settings -->
+                    <ul class="mobile_menu__settings">
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-1.svg" alt="">
+                                    <span>Preferences</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-2.svg" alt="">
+                                    <span>Contacts</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-3.svg" alt="">
+                                    <span>Folders</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-4.svg" alt="">
+                                    <span>Indentities</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-5.svg" alt="">
+                                    <span>Responses</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-6.svg" alt="">
+                                    <span>Security</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-7.svg" alt="">
+                                    <span>Disconnect</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Settings end -->
+                </div>
+                <div class="mobile_menu__foot">
+                    <p>Disk usage: <span>2.1 MB / 2.0 GB (0%)</span></p>
+                    <div class="line">
+                        <span style="width: 40%;"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -955,7 +967,7 @@
                     <p class="text-p6">Inbox</p>
                     <div class="mb_nav__right">
                         <button class="action_modal__open">Actions</button>
-                        <button>Newest</button>
+                        <button class="sort_modal__open">Newest</button>
                     </div>
                 </div>
 
@@ -989,6 +1001,68 @@
                     </div>
                 </div>
                 <!-- Action Modal end -->
+
+                <!-- Sort modal -->
+                <div class="modal_sm sort-modal">
+                    <div class="modal_sm__bg"></div>
+                    <div class="modal_sm__content">
+                        <div class="modal_sm__head">
+                            <button class="back-icon"></button>
+                            <p>Close</p>
+                            <button class="close-icon action_modal__close">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.636643 0.636864C0.246119 1.02739 0.246119 1.66055 0.636643 2.05108L5.58658 7.00102L0.637248 11.9504C0.246724 12.3409 0.246724 12.974 0.637248 13.3646C1.02777 13.7551 1.66094 13.7551 2.05146 13.3646L7.0008 8.41523L11.9504 13.3648C12.3409 13.7553 12.974 13.7553 13.3646 13.3648C13.7551 12.9743 13.7551 12.3411 13.3646 11.9506L8.41501 7.00102L13.3652 2.05086C13.7557 1.66033 13.7557 1.02717 13.3652 0.636643C12.9746 0.246119 12.3415 0.246119 11.951 0.636643L7.0008 5.5868L2.05086 0.636864C1.66033 0.24634 1.02717 0.24634 0.636643 0.636864Z" fill="black"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="modal_sm__body">
+                            <p class="title">Sort</p>
+                            <ul class="dropdown_radio">
+                                <li class="dropdown_radio__item checked">
+                                    <input type="radio" value="Newest" checked name="sortMb">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">Newest</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" value="Oldest" name="sortMb">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">Oldest</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" value="Subject (A-Z)" name="sortMb">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">Subject (A-Z)</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" value="Subject (Z-A)" name="sortMb">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">Subject (Z-A)</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" value="From (A-Z)" name="sortMb">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">From (A-Z)</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" value="From (Z-A)" name="sortMb">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">From (Z-A)</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" value="Size (Large)" name="sortMb">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">Size (Large)</p>
+                                </li>
+                                <li class="dropdown_radio__item">
+                                    <input type="radio" value="Size (Small)" name="sortMb">
+                                    <span class="icon"></span>
+                                    <p class="text-p5">Size (Small)</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sort modal end -->
 
                 <!-- Empty -->
                 <!-- <div class="inbox__empty">

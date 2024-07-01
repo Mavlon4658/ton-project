@@ -42,6 +42,13 @@
                 border-radius: 4px;
             }
         }
+
+        p {
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
     }
 
     &__right {
@@ -94,6 +101,9 @@
 
     .btn_blue {
         width: 100%;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
 
         @include media(-992) {
             display: none;
