@@ -322,8 +322,7 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            border: 3px solid $color-bg;
-            background: $color-active;
+            background: $color-bg;
             font-size: 9px;
             font-weight: bold;
             line-height: 4px;
@@ -333,9 +332,20 @@
             justify-content: center;
             color: $color-bg;
             position: absolute;
-            right: 15px;
-            top: 12px;
-            overflow: hidden;
+            right: 12px;
+            top: -8px;
+            position: relative;
+            z-index: 2;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                z-index: -1;
+                background: $color-active;
+            }
         }
     }
 }

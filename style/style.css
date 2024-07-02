@@ -1216,8 +1216,7 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 3px solid #FFFFFF;
-  background: #326BFF;
+  background: #FFFFFF;
   font-size: 9px;
   font-weight: bold;
   line-height: 4px;
@@ -1227,9 +1226,19 @@ body {
   justify-content: center;
   color: #FFFFFF;
   position: absolute;
-  right: 15px;
-  top: 12px;
-  overflow: hidden;
+  right: 12px;
+  top: -8px;
+  position: relative;
+  z-index: 2;
+}
+.header__bars span::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  z-index: -1;
+  background: #326BFF;
 }
 
 .mobile_menu {
@@ -1761,15 +1770,15 @@ body {
   }
 }
 .inbox__nav {
-  height: 48px;
+  height: 62px;
   position: fixed;
-  top: 74px;
+  top: 60px;
   left: 260px;
   width: calc(100% - 260px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px 0 10px;
+  padding: 14px 20px 0 10px;
   background: #FFFFFF;
   z-index: 2;
 }
