@@ -442,6 +442,7 @@ body {
             font-size: 14px;
             line-height: 20px;
             transition: .3s ease all;
+            color: $color-main;
         }
 
         button {
@@ -595,7 +596,7 @@ body {
             user-select: none;
             cursor: pointer;
             position: relative;
-            font-weight: 500;
+            font-weight: 600;
 
             input {
                 display: none;

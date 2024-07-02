@@ -441,6 +441,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   transition: 0.3s ease all;
+  color: #000000;
 }
 .dropdown_inp button {
   position: absolute;
@@ -567,7 +568,7 @@ body {
           user-select: none;
   cursor: pointer;
   position: relative;
-  font-weight: 500;
+  font-weight: 600;
 }
 .dropdown_radio__item input {
   display: none;
