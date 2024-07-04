@@ -173,10 +173,12 @@ if (search.length) {
         }
     })
 
-    searchOpen.onclick = () => {
-        search.forEach(el => {
-            el.classList.add('active');
-        })
+    if (searchOpen) {
+        searchOpen.onclick = () => {
+            search.forEach(el => {
+                el.classList.add('active');
+            })
+        }
     }
 
     searchClose.forEach(el => {
