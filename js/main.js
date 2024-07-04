@@ -641,6 +641,128 @@ if (sortModal) {
     }
 }
 
+let toolbarOpen = document.querySelector('.toolbar__open'),
+    toolbarhead = document.querySelector('.toolbar__head'),
+    tollbarClose = document.querySelector('.toolbar__head_content__left .times');
+
+if (toolbarOpen) {
+    toolbarOpen.onclick = e => {
+        e.preventDefault();
+        toolbarhead.classList.add('active');
+    }
+    
+    tollbarClose.onclick = e => {
+        e.preventDefault();
+        toolbarhead.classList.remove('active');
+    }
+}
+
+let openFile = document.querySelector('.open_file'),
+    fileUpload = document.querySelector('#fileUpload');
+
+if (openFile) {
+    openFile.onclick = e => {
+        e.preventDefault();
+        fileUpload.click();
+    }
+}
+
+let composeMore = document.querySelector('.compose_more'),
+    composeMoreOpen = document.querySelector('.compose_more__open'),
+    composeMoreClose = document.querySelector('.compose_more__close');
+
+if (composeMore) {
+    composeMoreOpen.onclick = e => {
+        e.preventDefault();
+        composeMore.classList.add('active');
+    };
+    composeMoreClose.onclick = () => {
+        composeMore.classList.remove('active');
+        composeMore.classList.add('end-active');
+        setTimeout(() => {
+            composeMore.classList.remove('end-active');
+        }, 300);
+    }
+}
+
+let checkList = document.querySelectorAll('.compose_contact .check_list li');
+
+if (checkList.length) {
+    checkList.forEach(el => {
+        let inp = el.querySelector('input[type="checkbox"]')
+        const checkCheckbox = () => {
+            if (inp.checked) {
+                el.classList.add('checked');
+            } else {
+                el.classList.remove('checked');
+            }
+        }
+        checkCheckbox();
+        el.onclick = () => {
+            inp.click();
+            checkCheckbox();
+        }
+    })
+}
+
+let composeContact = document.querySelector('.compose_contact'),
+    composeContactAdd = document.querySelectorAll('.compose_contact__add');
+
+if (composeContactAdd.length) {
+    composeContactAdd.forEach(el => {
+        el.onclick = e => {
+            e.preventDefault();
+            composeContact.classList.add('active');
+        }
+    })
+}
+
+let addRecipient = document.querySelector('.add_recipient'),
+    addRecipientOpen = document.querySelector('.add_recipient__open'),
+    addRecipientClose = document.querySelector('.add_recipient__close')
+
+if (addRecipient) {
+    addRecipientOpen.onclick = e => {
+        e.preventDefault();
+        addRecipient.classList.add('active');
+    }
+    addRecipientClose.onclick = () => {
+        addRecipient.classList.remove('active');
+        addRecipient.classList.add('end-active');
+        setTimeout(() => {
+            addRecipient.classList.remove('end-active');
+        }, 300);
+    }
+}
+
+let composeSettings = document.querySelector('.compose_settings'),
+    composeSettingsOpen = document.querySelector('.compose_settings__open');
+
+if (composeSettings) {
+    composeSettingsOpen.onclick = e => {
+        e.preventDefault();
+        composeSettings.classList.add('active');
+    }
+}
+
+let addResponses = document.querySelector('.compose__add_responses'),
+    addResponsesOpen = document.querySelector('.compose__add_responses__open'),
+    addResponsesClose = document.querySelector('.compose__add_responses__close');
+
+if (addResponses) {
+    addResponsesOpen.onclick = e => {
+        e.preventDefault();
+        addResponses.classList.add('active');
+    }
+    addResponsesClose.onclick = () => {
+        addResponses.classList.remove('active');
+        addResponses.classList.add('end-active');
+        setTimeout(() => {
+            addResponses.classList.remove('end-active');
+        }, 300);
+    }
+}
+
 document.addEventListener('click', (event) => {
     if (accountDropdown && accountDropdownList.classList.contains('active') && window.innerWidth > 992) {
         const t1 = event.composedPath().includes(accountDropdown)
