@@ -468,19 +468,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  max-height: 178px;
+  max-height: 198px;
   overflow-y: scroll;
   display: none;
 }
 .dropdown_list::-webkit-scrollbar {
-  width: 6px;
-}
-.dropdown_list::-webkit-scrollbar-track {
-  border-radius: 10px;
-}
-.dropdown_list::-webkit-scrollbar-thumb {
-  background: rgba(44, 44, 44, 0.15);
-  border-radius: 10px;
+  display: none;
 }
 .dropdown_list__item {
   height: 40px;
@@ -4047,7 +4040,7 @@ body {
   align-items: center;
   gap: 10px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 14px 10px 10px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -4064,12 +4057,23 @@ body {
   justify-content: center;
   border-radius: 4px;
   flex-shrink: 0;
+  background: rgba(44, 44, 44, 0.1);
+  transition: 0.3s ease all;
+}
+.compose_contact .check_list .icon:hover {
+  background: rgba(44, 44, 44, 0.15);
+}
+.compose_contact .check_list .icon svg {
+  display: none;
 }
 .compose_contact .check_list input {
   display: none;
 }
 .compose_contact .check_list input:checked ~ .icon {
   background: #326BFF;
+}
+.compose_contact .check_list input:checked ~ .icon svg {
+  display: block;
 }
 .compose_contact .check_list p {
   font-size: 14px;
@@ -4340,9 +4344,14 @@ body {
 .compose_nav .link_dropdown__body .icon {
   position: absolute;
   left: 50%;
-  top: 3px;
+  top: 4px;
   transform: translate(-50%, -100%);
   width: auto;
+}
+.compose_nav .link_dropdown__body a {
+  height: 40px;
+  gap: 8px;
+  border-radius: 8px;
 }
 .compose_nav .link_dropdown__body button {
   width: 100%;
@@ -4351,10 +4360,11 @@ body {
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: 8px;
   transition: 0.3s ease all;
   position: relative;
   margin-top: 3px;
+  height: 40px;
 }
 .compose_nav .link_dropdown__body button:hover {
   background: rgba(44, 44, 44, 0.1);
@@ -4448,11 +4458,21 @@ body {
   flex-wrap: wrap;
   gap: 4px;
   z-index: 1;
+  transition: 0.3s ease all;
+  border: 1px solid transparent;
 }
 @media screen and (max-width: 992px) {
   .compose .send_to {
     padding: 6px;
   }
+}
+.compose .send_to:hover {
+  border-color: rgba(44, 44, 44, 0.15);
+}
+.compose .send_to:active, .compose .send_to.focused {
+  background: #FFFFFF;
+  border-color: #326BFF;
+  box-shadow: 0 4px 8px rgba(67, 151, 229, 0.2);
 }
 .compose .send_to label {
   position: absolute;
@@ -4462,11 +4482,13 @@ body {
   height: 100%;
   background: transparent;
   z-index: -1;
+  cursor: text;
 }
 .compose .send_to input {
   height: 32px;
   font-size: 14px;
   line-height: 20px;
+  margin-left: 10px;
 }
 .compose .send_to ul {
   display: flex;
@@ -4602,6 +4624,28 @@ body {
 }
 .compose #text-editor {
   height: 446px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.compose #text-editor p {
+  font-size: 14px;
+  line-height: 20px;
+}
+.compose #text-editor .ql-editor {
+  transition: 0.3s ease all;
+  border: 1px solid transparent;
+  border-radius: 0 0 10px 10px;
+}
+.compose #text-editor .ql-editor:hover {
+  border-color: rgba(44, 44, 44, 0.15);
+}
+.compose #text-editor .ql-editor:focus {
+  border-color: #326BFF;
+  background: #FFFFFF;
+}
+.compose #text-editor .ql-editor::before {
+  font-size: 14px;
+  line-height: 20px;
 }
 @media screen and (max-width: 992px) {
   .compose #text-editor {
@@ -4730,6 +4774,14 @@ body {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.2px;
+  transition: 0.3s ease all;
+}
+.compose__right .bottom_card .images a:hover {
+  background: rgba(44, 44, 44, 0.1);
+}
+.compose__right .bottom_card .images a:active {
+  background: rgba(44, 44, 44, 0.15);
+  border-color: transparent;
 }
 .compose__right .bottom_card .images a .icon {
   flex-shrink: 0;

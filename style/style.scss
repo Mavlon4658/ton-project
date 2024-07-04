@@ -475,21 +475,12 @@ body {
         display: flex;
         flex-direction: column;
         gap: 2px;
-        max-height: 178px;
+        max-height: 198px;
         overflow-y: scroll;
         display: none;
 
         &::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        &::-webkit-scrollbar-track {
-            border-radius: 10px;
-        }
-        
-        &::-webkit-scrollbar-thumb {
-            background: $color-shade-2; 
-            border-radius: 10px;
+            display: none;
         }
 
         &__item {

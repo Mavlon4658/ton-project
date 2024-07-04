@@ -568,7 +568,8 @@ if (document.querySelector('#text-editor')) {
 }
 
 let sendToInp = document.querySelector('.send_to input'),
-    sendToList = document.querySelector('.send_to ul');
+    sendToList = document.querySelector('.send_to ul'),
+    sendTo = document.querySelector('.send_to');
 
 if (sendToInp) {
     let addUser = () => {
@@ -599,8 +600,13 @@ if (sendToInp) {
         }
     }
 
+    sendToInp.onfocus = () => {
+        sendTo.classList.add('focused');
+    }
+
     sendToInp.onblur = () => {
         addUser();
+        sendTo.classList.remove('focused');
     }
 
     sendToInp.addEventListener("keypress", function(event) {
@@ -706,7 +712,8 @@ if (checkList.length) {
 }
 
 let composeContact = document.querySelector('.compose_contact'),
-    composeContactAdd = document.querySelectorAll('.compose_contact__add');
+    composeContactAdd = document.querySelectorAll('.compose_contact__add'),
+    composeContactBg =document.querySelector('.compose_contact .modal__bg');
 
 if (composeContactAdd.length) {
     composeContactAdd.forEach(el => {
@@ -715,6 +722,13 @@ if (composeContactAdd.length) {
             composeContact.classList.add('active');
         }
     })
+    composeContactBg.onclick = () => {
+        composeContact.classList.remove('active');
+        composeContact.classList.add('end-active');
+        setTimeout(() => {
+            composeContact.classList.remove('end-active');
+        }, 300);
+    }
 }
 
 let addRecipient = document.querySelector('.add_recipient'),

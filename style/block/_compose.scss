@@ -71,7 +71,7 @@
                 align-items: center;
                 gap: 10px;
                 border-radius: 10px;
-                padding: 10px;
+                padding: 10px 14px 10px 10px;
                 user-select: none;
                 cursor: pointer;
 
@@ -88,6 +88,16 @@
                 justify-content: center;
                 border-radius: 4px;
                 flex-shrink: 0;
+                background: $color-shade-1;
+                transition: .3s ease all;
+
+                &:hover {
+                    background: $color-shade-2;
+                }
+
+                svg {
+                    display: none;;
+                }
             }
 
             input {
@@ -96,6 +106,10 @@
 
             input:checked ~ .icon {
                 background: $color-active;
+
+                svg {
+                    display: block;
+                }
             }
 
             p {
@@ -413,9 +427,15 @@
                 .icon {
                     position: absolute;
                     left: 50%;
-                    top: 3px;
+                    top: 4px;
                     transform: translate(-50%, -100%);
                     width: auto;
+                }
+
+                a {
+                    height: 40px;
+                    gap: 8px;
+                    border-radius: 8px;
                 }
 
                 button {
@@ -425,10 +445,11 @@
                     font-size: 14px;
                     line-height: 20px;
                     font-weight: 600;
-                    border-radius: 10px;
+                    border-radius: 8px;
                     transition: .3s ease all;
                     position: relative;
                     margin-top: 3px;
+                    height: 40px;
 
                     &:hover {
                         background: $color-shade-1;
@@ -536,11 +557,22 @@
         flex-wrap: wrap;
         gap: 4px;
         z-index: 1;
+        transition: .3s ease all;
+        border: 1px solid transparent;
 
         @include media(992) {
             padding: 6px;
         }
 
+        &:hover {
+            border-color: $color-shade-2;
+        }
+
+        &:active, &.focused {
+            background: $color-bg;
+            border-color: $color-active;
+            box-shadow: 0 4px 8px rgba(67, 151, 229, 0.2);
+        }
 
         label {
             position: absolute;
@@ -550,12 +582,14 @@
             height: 100%;
             background: transparent;
             z-index: -1;
+            cursor: text;
         }
 
         input {
             height: 32px;
             font-size: 14px;
             line-height: 20px;
+            margin-left: 10px;
         }
 
         ul {
@@ -704,6 +738,33 @@
 
     #text-editor {
         height: 446px;
+        font-size: 14px;
+        line-height: 20px;
+
+        p {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .ql-editor {
+            transition: .3s ease all;
+            border: 1px solid transparent;
+            border-radius: 0 0 10px 10px;
+
+            &:hover {
+                border-color: $color-shade-2;
+            }
+
+            &:focus {
+                border-color: $color-active;
+                background: $color-bg;
+            }
+
+            &::before {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
 
         @include media(992) {
             height: 276px;
@@ -835,6 +896,16 @@
                     font-size: 12px;
                     line-height: 16px;
                     letter-spacing: 0.2px;
+                    transition: .3s ease all;
+
+                    &:hover {
+                        background: $color-shade-1;
+                    }
+
+                    &:active {
+                        background: $color-shade-2;
+                        border-color: transparent;
+                    }
 
                     .icon {
                         flex-shrink: 0;
