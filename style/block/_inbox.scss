@@ -461,7 +461,8 @@
             height: auto;
 
             &:nth-child(1), &:nth-child(3) {
-                width: 68px;
+                width: 0;
+                overflow: hidden;
             }
 
             &:nth-child(2) {

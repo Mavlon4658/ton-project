@@ -836,5 +836,10 @@ document.addEventListener('dblclick', function (e) {
 });
 
 window.onload = function() {
-    console.log('ishladi');
+    let loader = document.querySelector('.loader');
+    loader.classList.remove('active');
+    loader.classList.add('end-active');
+    setTimeout(() => {
+        loader.classList.remove('end-active');
+    }, 300);
 };

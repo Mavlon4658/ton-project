@@ -13,7 +13,12 @@
     
     <div class="wrapper">
 
-        <!-- Header -->
+        <ul class="loader active">
+            <li class="loader_item"></li>
+            <li class="loader_item"></li>
+            <li class="loader_item"></li>
+        </ul>
+
         <!-- Header -->
         <header class="header">
             <div class="header__left">
@@ -29,6 +34,14 @@
                         </button>
                         <div class="header__account_dropdown__list">
                             <img src="./images/dropdown-icon.svg" alt="" class="before_icon">
+                            <div class="account__top">
+                                <button class="account_close accc__cls">
+                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                                    </svg>
+                                </button>
+                                <p class="text-p4">Switch accounts</p>
+                            </div>
                             <ul class="dropdown_radio">
                                 <li class="dropdown_radio__item">
                                     <input type="radio" checked name="account">
@@ -48,13 +61,23 @@
                             </ul>
                             <div class="line"></div>
                             <button class="text-p5 dropdown_close">Disconnect</button>
+                            <div class="account__bottom">
+                                <button class="btn_blue accc__cls">Confirm</button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="search">
                     <div class="search_inp">
-                        <img src="./images/search.svg" class="icon" alt="">
+                        <button class="icon">
+                            <img src="./images/search.svg" alt="">
+                        </button>
                         <input type="text" placeholder="Search">
+                        <button class="search__close">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.636643 0.636864C0.246119 1.02739 0.246119 1.66055 0.636643 2.05108L5.58658 7.00102L0.637248 11.9504C0.246724 12.3409 0.246724 12.974 0.637248 13.3646C1.02777 13.7551 1.66094 13.7551 2.05146 13.3646L7.0008 8.41523L11.9504 13.3648C12.3409 13.7553 12.974 13.7553 13.3646 13.3648C13.7551 12.9743 13.7551 12.3411 13.3646 11.9506L8.41501 7.00102L13.3652 2.05086C13.7557 1.66033 13.7557 1.02717 13.3652 0.636643C12.9746 0.246119 12.3415 0.246119 11.951 0.636643L7.0008 5.5868L2.05086 0.636864C1.66033 0.24634 1.02717 0.24634 0.636643 0.636864Z" fill="black"/>
+                            </svg>
+                        </button>
                     </div>
 
                     <div class="search_result">
@@ -106,56 +129,67 @@
                             </li>
                         </ul>
                         <div class="search_result__dropdowns">
-                            <div class="dropdown">
-                                <div class="dropdown_inp">
-                                    <input type="text" disabled value="">
-                                    <button>
-                                        <img src="./images/arrow-down.svg" alt="">
-                                    </button>
+                            <div>
+                                <label for="">Type</label>
+                                <div class="dropdown">
+                                    <div class="dropdown_inp">
+                                        <input type="text" value="">
+                                        <button>
+                                            <img src="./images/arrow-down.svg" alt="">
+                                        </button>
+                                    </div>
+                                    <ul class="dropdown_list">
+                                        <li class="dropdown_list__item checked">Unread</li>
+                                        <li class="dropdown_list__item">Item 1</li>
+                                        <li class="dropdown_list__item">Item 2</li>
+                                        <li class="dropdown_list__item">Item 3</li>
+                                        <li class="dropdown_list__item">Item 4</li>
+                                        <li class="dropdown_list__item">Item 5</li>
+                                    </ul>
                                 </div>
-                                <ul class="dropdown_list">
-                                    <li class="dropdown_list__item checked">Unread</li>
-                                    <li class="dropdown_list__item">Item 1</li>
-                                    <li class="dropdown_list__item">Item 2</li>
-                                    <li class="dropdown_list__item">Item 3</li>
-                                    <li class="dropdown_list__item">Item 4</li>
-                                    <li class="dropdown_list__item">Item 5</li>
-                                </ul>
                             </div>
-                            <div class="dropdown">
-                                <div class="dropdown_inp">
-                                    <input type="text" disabled value="">
-                                    <button>
-                                        <img src="./images/arrow-down.svg" alt="">
-                                    </button>
+                            <div>
+                                <label for="">Date</label>
+                                <div class="dropdown">
+                                    <div class="dropdown_inp">
+                                        <input type="text" value="">
+                                        <button>
+                                            <img src="./images/arrow-down.svg" alt="">
+                                        </button>
+                                    </div>
+                                    <ul class="dropdown_list">
+                                        <li class="dropdown_list__item checked">Older than week</li>
+                                        <li class="dropdown_list__item">Item 1</li>
+                                        <li class="dropdown_list__item">Item 2</li>
+                                        <li class="dropdown_list__item">Item 3</li>
+                                        <li class="dropdown_list__item">Item 4</li>
+                                        <li class="dropdown_list__item">Item 5</li>
+                                    </ul>
                                 </div>
-                                <ul class="dropdown_list">
-                                    <li class="dropdown_list__item checked">Older than week</li>
-                                    <li class="dropdown_list__item">Item 1</li>
-                                    <li class="dropdown_list__item">Item 2</li>
-                                    <li class="dropdown_list__item">Item 3</li>
-                                    <li class="dropdown_list__item">Item 4</li>
-                                    <li class="dropdown_list__item">Item 5</li>
-                                </ul>
                             </div>
-                            <div class="dropdown">
-                                <div class="dropdown_inp">
-                                    <input type="text" disabled value="">
-                                    <button>
-                                        <img src="./images/arrow-down.svg" alt="">
-                                    </button>
+                            <div>
+                                <label for="">Scope</label>
+                                <div class="dropdown">
+                                    <div class="dropdown_inp">
+                                        <input type="text" value="">
+                                        <button>
+                                            <img src="./images/arrow-down.svg" alt="">
+                                        </button>
+                                    </div>
+                                    <ul class="dropdown_list">
+                                        <li class="dropdown_list__item checked">Current folder</li>
+                                        <li class="dropdown_list__item">Item 1</li>
+                                        <li class="dropdown_list__item">Item 2</li>
+                                        <li class="dropdown_list__item">Item 3</li>
+                                        <li class="dropdown_list__item">Item 4</li>
+                                        <li class="dropdown_list__item">Item 5</li>
+                                    </ul>
                                 </div>
-                                <ul class="dropdown_list">
-                                    <li class="dropdown_list__item checked">Current folder</li>
-                                    <li class="dropdown_list__item">Item 1</li>
-                                    <li class="dropdown_list__item">Item 2</li>
-                                    <li class="dropdown_list__item">Item 3</li>
-                                    <li class="dropdown_list__item">Item 4</li>
-                                    <li class="dropdown_list__item">Item 5</li>
-                                </ul>
                             </div>
                         </div>
-                        <button class="btn_blue">Search</button>
+                        <div class="search_result__bottom">
+                            <button class="btn_blue">Search</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -185,8 +219,249 @@
                     <a href="#" class="text-p5">Filters</a>
                 </li>
             </ul>
+            <div class="header__right">
+                <button class="search__open">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6 2C3.79086 2 2 3.79086 2 6C2 8.20914 3.79086 10 6 10C8.20914 10 10 8.20914 10 6C10 3.79086 8.20914 2 6 2ZM0 6C0 2.68629 2.68629 0 6 0C9.31371 0 12 2.68629 12 6C12 7.29584 11.5892 8.49574 10.8907 9.47656L15.1916 13.7783C15.582 14.1689 15.582 14.8021 15.1914 15.1925C14.8008 15.583 14.1677 15.5829 13.7772 15.1924L9.47651 10.8908C8.4957 11.5892 7.29582 12 6 12C2.68629 12 0 9.31371 0 6Z" fill="black"/>
+                    </svg>
+                </button>
+                <button class="header__bars">
+                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1C16 1.55228 15.5523 2 15 2H1C0.447715 2 0 1.55228 0 1Z" fill="black"/>
+                        <path d="M0 7C0 6.44772 0.447715 6 1 6H15C15.5523 6 16 6.44772 16 7C16 7.55228 15.5523 8 15 8H1C0.447715 8 0 7.55228 0 7Z" fill="black"/>
+                        <path d="M0 13C0 12.4477 0.447715 12 1 12H15C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14H1C0.447715 14 0 13.5523 0 13Z" fill="black"/>
+                    </svg>
+                    <span>2</span>
+                </button>
+            </div>
         </header>
         <!-- Header end -->
+
+        <!-- Mobile menu -->
+        <div class="mobile_menu">
+            <div class="mobile_menu__bg"></div>
+            <div class="mobile_menu__content">
+                <div class="mobile_menu__head">
+                    <button class="btn_light acc__opn">
+                        <span>alex@ton.pro</span>
+                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 0.365166C0.716638 0.0136945 1.28649 0.0136945 1.63796 0.365166L6.00156 4.72877L10.3652 0.365166C10.7166 0.0136945 11.2865 0.0136945 11.638 0.365166C11.9894 0.716638 11.9894 1.28649 11.638 1.63796L6.63796 6.63796C6.28649 6.98943 5.71664 6.98943 5.36517 6.63796L0.365166 1.63796C0.0136945 1.28649 0.0136945 0.716638 0.365166 0.365166Z" fill="black"/>
+                        </svg>
+                    </button>
+                    <button class="mobile_menu__close">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.636643 0.636864C0.246119 1.02739 0.246119 1.66055 0.636643 2.05108L5.58658 7.00102L0.637248 11.9504C0.246724 12.3409 0.246724 12.974 0.637248 13.3646C1.02777 13.7551 1.66094 13.7551 2.05146 13.3646L7.0008 8.41523L11.9504 13.3648C12.3409 13.7553 12.974 13.7553 13.3646 13.3648C13.7551 12.9743 13.7551 12.3411 13.3646 11.9506L8.41501 7.00102L13.3652 2.05086C13.7557 1.66033 13.7557 1.02717 13.3652 0.636643C12.9746 0.246119 12.3415 0.246119 11.951 0.636643L7.0008 5.5868L2.05086 0.636864C1.66033 0.24634 1.02717 0.24634 0.636643 0.636864Z" fill="black"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="mobile_menu__body">
+                    <p class="text-p6 block_name">Folders</p>
+                    <!-- Navigation -->
+                    <ul class="mobile_menu__nav">
+                        <li>
+                            <a href="#" class="active">
+                                <span class="text">
+                                    <img src="./images/nav-icon-1.svg" alt="">
+                                    <span>Inbox</span>
+                                </span>
+                                <span class="alert">2</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/nav-icon-2.svg" alt="">
+                                    <span>Drafts</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/nav-icon-3.svg" alt="">
+                                    <span>Sent</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/nav-icon-4.svg" alt="">
+                                    <span>Junk</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/nav-icon-5.svg" alt="">
+                                    <span>Trash</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/nav-icon-6.svg" alt="">
+                                    <span>Folder Name</span>
+                                </span>
+                            </a>
+                            <ul class="child_nav">
+                                <li>
+                                    <a href="#">
+                                        <span class="text">
+                                            <img src="./images/nav-icon-6.svg" alt="">
+                                            <span>Subfolder Name</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Navigation end -->
+                    <p class="text-p6 block_name">Settings</p>
+                    <!-- Settings -->
+                    <ul class="mobile_menu__settings">
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-1.svg" alt="">
+                                    <span>Preferences</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-2.svg" alt="">
+                                    <span>Contacts</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-3.svg" alt="">
+                                    <span>Folders</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-4.svg" alt="">
+                                    <span>Indentities</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-5.svg" alt="">
+                                    <span>Responses</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-6.svg" alt="">
+                                    <span>Security</span>
+                                </span>
+                                <span class="icon">
+                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.365166 11.6348C0.0136945 11.2834 0.0136945 10.7135 0.365166 10.362L4.72877 5.99844L0.365166 1.63483C0.0136941 1.28336 0.013694 0.713513 0.365166 0.362041C0.716638 0.0105695 1.28649 0.0105695 1.63796 0.362041L6.63796 5.36204C6.98943 5.71351 6.98943 6.28336 6.63796 6.63483L1.63796 11.6348C1.28649 11.9863 0.716638 11.9863 0.365166 11.6348Z" fill="black"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="text">
+                                    <img src="./images/settings-icon-7.svg" alt="">
+                                    <span>Disconnect</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Settings end -->
+                </div>
+                <div class="mobile_menu__foot">
+                    <p>Disk usage: <span>2.1 MB / 2.0 GB (0%)</span></p>
+                    <div class="line">
+                        <span style="width: 40%;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu end -->
+
+        <!-- Header account -->
+        <div class="header__account_mobile">
+            <button class="header__account_dropdown__btn">
+                <img src="./images/arrow-down.svg" alt="">
+            </button>
+            <div class="header__account_mobile__bg"></div>
+            <div class="header__account_dropdown__list">
+                <img src="./images/dropdown-icon.svg" alt="" class="before_icon">
+                <div class="account__top">
+                    <button class="account_close accc__cls">
+                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.63483 13.6348C7.98631 13.2834 7.98631 12.7135 7.63483 12.362L2.27123 6.99844L7.63483 1.63483C7.98631 1.28336 7.98631 0.713513 7.63483 0.362041C7.28336 0.0105695 6.71351 0.0105695 6.36204 0.362041L0.362042 6.36204C0.193259 6.53082 0.0984376 6.75974 0.0984376 6.99844C0.0984376 7.23713 0.193259 7.46605 0.362042 7.63483L6.36204 13.6348C6.71351 13.9863 7.28336 13.9863 7.63483 13.6348Z" fill="black"/>
+                        </svg>
+                    </button>
+                    <p class="text-p4">Switch accounts</p>
+                </div>
+                <ul class="dropdown_radio">
+                    <li class="dropdown_radio__item">
+                        <input type="radio" checked name="account">
+                        <span class="icon"></span>
+                        <p class="text-p5">whale@ton.pro</p>
+                    </li>
+                    <li class="dropdown_radio__item">
+                        <input type="radio" name="account">
+                        <span class="icon"></span>
+                        <p class="text-p5">nex@ton.pro</p>
+                    </li>
+                    <li class="dropdown_radio__item">
+                        <input type="radio" name="account">
+                        <span class="icon"></span>
+                        <p class="text-p5">nex@ton.pro</p>
+                    </li>
+                </ul>
+                <div class="line"></div>
+                <button class="text-p5 dropdown_close">Disconnect</button>
+                <div class="account__bottom">
+                    <button class="btn_blue accc__cls">Confirm</button>
+                </div>
+            </div>
+        </div>
+        <!-- Header account end -->
 
         <!-- Modals -->
 

@@ -976,6 +976,65 @@ body {
     }
 }
 
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100svh;
+    z-index: 10;
+    background: $color-bg;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    &.active {
+        display: flex;
+    }
+
+    @keyframes loaderEndActive {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
+    &.end-active {
+        display: flex;
+        opacity: 0;
+        animation: loaderEndActive .2s linear 1;
+    }
+
+    @keyframes loader {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    &_item {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: $color-main;
+        animation: loader 1.2s ease-in-out infinite;
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                animation-delay: calc(80ms * $i);
+            }
+        }
+    }
+}
+
 @import './block/header';
 @import './block/leftNav';
 @import './block/footer';
