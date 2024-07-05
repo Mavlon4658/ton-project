@@ -85,7 +85,7 @@
                     top: 0;
                     width: 100%;
                     height: 100%;
-                    z-index: 5;
+                    z-index: 6;
                     transform: translate(0);
                     border: 0;
                     border-radius: 0;
@@ -255,6 +255,100 @@
                     background: $color-shade-2;
                 }
             }
+        }
+
+        &_mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+
+            @include media(-992) {
+                display: none !important;
+            }
+
+            .dropdown_close {
+                display: none;
+            }
+            
+            &__bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $color-shade-4;
+            }
+
+            @keyframes mobilebg {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes moibleList {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+            
+            &.active {
+                display: block;
+
+                .header__account_mobile__bg {
+                    animation: mobilebg .2s linear 1;
+                }
+
+                .header__account_dropdown__list {
+                    display: block;
+                    animation: moibleList .2s linear 1;
+                }
+            }
+
+            @keyframes mobilebgEnd {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+
+            @keyframes moibleListEnd {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 1;
+                }
+            }
+            
+            &.end-active {
+                display: block;
+
+                .header__account_mobile__bg {
+                    animation: mobilebgEnd .2s linear 1;
+                    opacity: 0;
+                }
+
+                .header__account_dropdown__list {
+                    display: block;
+                    animation: moibleListEnd .2s linear 1;
+                    opacity: 0;
+                }
+            }
+            
         }
     }
 

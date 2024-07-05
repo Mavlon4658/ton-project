@@ -550,7 +550,7 @@
         background: $color-shade-1;
         border-radius: 10px;
         position: relative;
-        padding: 4px;
+        padding: 4px 4px 4px 14px;
         min-height: 40px;
         display: flex;
         align-items: center;
@@ -589,7 +589,6 @@
             height: 32px;
             font-size: 14px;
             line-height: 20px;
-            margin-left: 10px;
         }
 
         ul {

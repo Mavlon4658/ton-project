@@ -130,7 +130,9 @@ body {
   gap: 10px;
   padding: 10px 18px;
   border-radius: 10px;
-  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
   color: #FFFFFF;
   transition: 0.3s ease all;
   position: relative;
@@ -173,6 +175,9 @@ body {
   height: 40px;
   border-radius: 10px;
   width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
 }
 .btn_light {
   font-size: 14px;
@@ -996,7 +1001,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 5;
+    z-index: 6;
     transform: translate(0);
     border: 0;
     border-radius: 0;
@@ -1148,6 +1153,87 @@ body {
 }
 .header__account_dropdown .dropdown_close:active {
   background: rgba(44, 44, 44, 0.15);
+}
+.header__account_mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+@media screen and (min-width: 992px) {
+  .header__account_mobile {
+    display: none !important;
+  }
+}
+.header__account_mobile .dropdown_close {
+  display: none;
+}
+.header__account_mobile__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 44, 44, 0.65);
+}
+@keyframes mobilebg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes moibleList {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.header__account_mobile.active {
+  display: block;
+}
+.header__account_mobile.active .header__account_mobile__bg {
+  animation: mobilebg 0.2s linear 1;
+}
+.header__account_mobile.active .header__account_dropdown__list {
+  display: block;
+  animation: moibleList 0.2s linear 1;
+}
+@keyframes mobilebgEnd {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes moibleListEnd {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+}
+.header__account_mobile.end-active {
+  display: block;
+}
+.header__account_mobile.end-active .header__account_mobile__bg {
+  animation: mobilebgEnd 0.2s linear 1;
+  opacity: 0;
+}
+.header__account_mobile.end-active .header__account_dropdown__list {
+  display: block;
+  animation: moibleListEnd 0.2s linear 1;
+  opacity: 0;
 }
 .header__navs {
   display: flex;
@@ -4451,7 +4537,7 @@ body {
   background: rgba(44, 44, 44, 0.1);
   border-radius: 10px;
   position: relative;
-  padding: 4px;
+  padding: 4px 4px 4px 14px;
   min-height: 40px;
   display: flex;
   align-items: center;
@@ -4488,7 +4574,6 @@ body {
   height: 32px;
   font-size: 14px;
   line-height: 20px;
-  margin-left: 10px;
 }
 .compose .send_to ul {
   display: flex;

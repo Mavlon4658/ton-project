@@ -87,7 +87,9 @@ body {
         gap: 10px;
         padding: 10px 18px;
         border-radius: 10px;
-        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
         color: $color-bg;
         transition: .3s ease all;
         position: relative;
@@ -137,6 +139,9 @@ body {
         height: 40px;
         border-radius: 10px;
         width: 100%;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
     }
 
     &_light {

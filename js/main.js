@@ -65,7 +65,8 @@ let accountDropdown = document.querySelector('.header__account_dropdown'),
     accountDropdownList = document.querySelector('.header__account_dropdown__list'),
     accountDropdownClose = document.querySelector('.header__account_dropdown .dropdown_close'),
     accClose = document.querySelectorAll('.accc__cls'),
-    accOpen = document.querySelector('.acc__opn');
+    accOpen = document.querySelector('.acc__opn'),
+    accountMobile = document.querySelector('.header__account_mobile')
 
 if (accountDropdownBtn) {
     accountDropdownBtn.onclick = () => {
@@ -91,13 +92,20 @@ if (accountDropdownBtn) {
     }
 
     accClose.forEach(el => {
-        el.onclick = () => accountDropdownClose.click();
+        el.onclick = () => {
+            accountMobile.classList.remove('active');
+            accountMobile.classList.add('end-active');
+            setTimeout(() => {
+                accountMobile.classList.remove('end-active');
+            }, 300);
+        }
     })
 
     if (accOpen) {
         accOpen.onclick = () => {
-            mobileMenuClose.click();
-            accountDropdownBtn.click();
+            // mobileMenuClose.click();
+            // accountDropdownBtn.click();
+            accountMobile.classList.add('active')
         }
     }
 }
@@ -826,3 +834,7 @@ document.addEventListener('gesturestart', function (e) {
 document.addEventListener('dblclick', function (e) {
     e.preventDefault();
 });
+
+window.onload = function() {
+    console.log('ishladi');
+};
