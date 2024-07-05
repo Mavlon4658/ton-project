@@ -65,6 +65,11 @@ p, h1, h2, h3, h4, h5, h6 {
     text-decoration: none !important;
 }
 
+a {
+    text-decoration-color: transparent !important;
+    -webkit-text-decoration-color: transparent !important;
+}
+
 a:link,
 a:visited,
 a:hover,
