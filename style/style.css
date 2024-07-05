@@ -75,6 +75,11 @@ a:active {
   text-decoration: none !important;
 }
 
+a {
+  text-decoration-line: none;
+  -webkit-text-decoration-line: none;
+}
+
 body {
   font-weight: 400;
   font-family: "Inter", sans-serif;
@@ -981,6 +986,7 @@ body {
   border-radius: 50%;
   background: #000000;
   animation: loader 1.2s ease-in-out infinite;
+  margin-top: 100px;
 }
 .loader_item:nth-child(1) {
   animation-delay: 80ms;

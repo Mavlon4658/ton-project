@@ -1026,6 +1026,7 @@ body {
         border-radius: 50%;
         background: $color-main;
         animation: loader 1.2s ease-in-out infinite;
+        margin-top: 100px;
 
         @for $i from 1 through 3 {
             &:nth-child(#{$i}) {
