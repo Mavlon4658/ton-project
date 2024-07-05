@@ -243,6 +243,7 @@ if (msgItems.length) {
             spaceBetween: 0,
             initialSlide: 1,
             allowTouchMove: true,
+            resistanceRatio: 0,
             breakpoints: {
                 992: {
                     allowTouchMove: false,

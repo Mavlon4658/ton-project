@@ -598,12 +598,24 @@
             gap: 10px;
             transition: .3s ease all;
 
-            &:hover, &.active {
-                background: rgba(50, 108, 255, 0.10);
+            &:hover {
+                background: rgba(44, 44, 44, 0.1);
             }
 
             &:active {
-                background: rgba(50, 108, 255, 0.20);
+                background: rgba(44, 44, 44, 0.15);
+            }
+            
+            &.active {
+                background: rgba(50, 108, 255, 0.10);
+
+                &:hover {
+                    background: rgba(50, 108, 255, 0.15);
+                }
+                
+                &:active {
+                    background: rgba(50, 108, 255, 0.20);
+                }
             }
 
             .text {
@@ -665,8 +677,12 @@
             transition: .3s ease all;
             border-radius: 10px;
 
-            &:hover, &:active {
-                background: $color-shade-2;
+            &:hover {
+                background: rgba(44, 44, 44, 0.1);
+            }
+
+            &:active {
+                background: rgba(44, 44, 44, 0.15);
             }
 
             .text {
