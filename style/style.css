@@ -59,20 +59,29 @@ p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-a {
-  text-decoration: none;
+* {
+  -webkit-text-decoration-skip: none !important;
+  -webkit-text-decoration-skip-ink: none !important;
+          text-decoration-skip-ink: none !important;
+  text-decoration: none !important;
 }
 
 a:link,
 a:visited,
 a:hover,
 a:active {
-  text-decoration: none;
+  -webkit-text-decoration-skip: none !important;
+  -webkit-text-decoration-skip-ink: none !important;
+          text-decoration-skip-ink: none !important;
+  text-decoration: none !important;
 }
 
 @media screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
   a {
-    text-decoration: none;
+    -webkit-text-decoration-skip: none !important;
+    -webkit-text-decoration-skip-ink: none !important;
+            text-decoration-skip-ink: none !important;
+    text-decoration: none !important;
   }
 }
 body {
