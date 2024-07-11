@@ -582,7 +582,7 @@
             <!-- Inbox home -->
             <section class="inbox">
 
-                <div class="inbox__nav">
+                <div class="inbox__nav active">
                     <div class="inbox__nav_left">
                         
                         <a href="#" class="text-p5 inbox__nav_link">
@@ -773,7 +773,7 @@
                                     <li class="more_list__item">
                                         <a href="#" class="text-p5 more_list__link">
                                             <span>
-                                                <img src="./images/more-link-1.svg" alt="">
+                                                <img src="./images/more-link-1-active.svg" alt="">
                                                 <span>Print</span>
                                             </span>
                                         </a>
@@ -781,10 +781,10 @@
                                     <li class="more_list__item">
                                         <a href="#" class="text-p5 more_list__link">
                                             <span>
-                                                <img src="./images/more-link-2.svg" alt="">
+                                                <img src="./images/more-link-2-active.svg" alt="">
                                                 <span>Download</span>
                                             </span>
-                                            <img src="./images/chevron-right.svg" alt="">
+                                            <img src="./images/chevron-right-active.svg" alt="">
                                         </a>
                                         <ul class="more_child">
                                             <li class="more_child__item">
@@ -831,7 +831,7 @@
                                     <li class="more_list__item">
                                         <a href="#" class="text-p5 more_list__link">
                                             <span>
-                                                <img src="./images/more-link-3.svg" alt="">
+                                                <img src="./images/more-link-3-active.svg" alt="">
                                                 <span>Edit as new</span>
                                             </span>
                                         </a>
@@ -839,10 +839,10 @@
                                     <li class="more_list__item">
                                         <a href="#" class="text-p5 more_list__link">
                                             <span>
-                                                <img src="./images/more-link-4.svg" alt="">
+                                                <img src="./images/more-link-4-active.svg" alt="">
                                                 <span>Move to</span>
                                             </span>
-                                            <img src="./images/chevron-right.svg" alt="">
+                                            <img src="./images/chevron-right-active.svg" alt="">
                                         </a>
                                         <ul class="more_child">
                                             <li class="more_child__item">
@@ -874,10 +874,10 @@
                                     <li class="more_list__item">
                                         <a href="#" class="text-p5 more_list__link">
                                             <span>
-                                                <img src="./images/more-link-5.svg" alt="">
+                                                <img src="./images/more-link-5-active.svg" alt="">
                                                 <span>Copy to</span>
                                             </span>
-                                            <img src="./images/chevron-right.svg" alt="">
+                                            <img src="./images/chevron-right-active.svg" alt="">
                                         </a>
                                         <ul class="more_child">
                                             <li class="more_child__item">
@@ -1345,12 +1345,12 @@
                         <div class="mail_list">
                             <div class="mail_list__item">
                                 <div class="alert-danger">
-                                    <p class="text-p5">To protect your privacy remote attachments have been blocked</p>
-                                    <a href="#" class="text-p5">Allow</a>
+                                    <p>To protect your privacy remote attachments have been blocked</p>
+                                    <a href="#">Allow</a>
                                 </div>
                                 <div class="alert-warning">
-                                    <p class="text-p5">This is a draft message</p>
-                                    <a href="" class="text-p5">Edit</a>
+                                    <p>This is a draft message</p>
+                                    <a href="#">Edit</a>
                                 </div>
                             </div>
                             <div class="mail_list__item">
@@ -1426,33 +1426,20 @@
                 </div>
                 <p>2%</p>
             </div>
-            <div class="footer__right">
-                <div class="text-p5 footer__messages">Messages 1 to 50 of 388</div>
-                <div class="footer__msg_pagination">
-                    <button disabled>
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 14L8 9L13 4" stroke="#2C2C2C" stroke-opacity="0.65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="0.9" y1="-0.9" x2="9.1" y2="-0.9" transform="matrix(4.37119e-08 1 1 -4.37119e-08 6 4)" stroke="#2C2C2C" stroke-opacity="0.65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <button disabled>
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11 14L6 9L11 4" stroke="#2C2C2C" stroke-opacity="0.65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <p class="text-p5">Messages 1 to 50 of  253</p>
-                    <button>
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 14L11 9L6 4" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <button>
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 14L10 9L5 4" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="12.9" y1="4.9" x2="12.9" y2="13.1" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
+            <div class="footer__navigation">
+                <button class="footer__navigation_prev disabled">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 14L6 9L11 4" stroke="#2C2C2C" stroke-opacity="0.65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Prev</span>
+                </button>
+                <p>/</p>
+                <button class="footer__navigation_next">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 14L11 9L6 4" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Next</span>
+                </button>
             </div>
             <button class="btn_blue">Compose</button>
         </footer>

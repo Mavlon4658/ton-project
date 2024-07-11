@@ -61,7 +61,7 @@
         }
     }
 
-    &_add {
+    &_add, &_edit {
         .modal__body {
             display: flex;
             flex-direction: column;

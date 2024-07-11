@@ -116,6 +116,12 @@
                 font-size: 14px;
                 line-height: 20px;
                 font-weight: 600;
+                transition: .3s ease all;
+                border-radius: 8px;
+
+                &:hover {
+                    background: $color-shade-1;
+                }
 
                 .icon {
                     width: 18px;
@@ -391,6 +397,43 @@
                         right: 49px;
                         transform: translate(0, -100%);
                     }
+                }
+            }
+        }
+
+        &.active {
+            .inbox__nav {
+                &_link {
+                    &__text {
+                        color: $color-main;
+                    }
+
+                    &__icon {
+                        path {
+                            fill: $color-main;
+                            fill-opacity: 1;
+                        }
+                        
+                        &:nth-child(3) {
+                            path {
+                                fill: none;
+                                stroke: $color-main;
+                                stroke-opacity: 1;
+                            }
+                        }
+                    }
+
+                }
+
+                &_more {
+                    .more_list__link {
+                        color: $color-main;
+                        
+                        svg {
+                            opacity: 0 !important;
+                        }
+                    }
+                    
                 }
             }
         }

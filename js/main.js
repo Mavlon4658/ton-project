@@ -366,7 +366,7 @@ if (deleteModalOpen.length) {
     })
 }
 
-let modalClass = ['contact', 'folder', 'indentities', 'responses', 'filters'];
+let modalClass = ['contact', 'folders', 'indentities', 'responses', 'filters'];
 modalClass.forEach(cls => {
     let add = document.querySelector(`.${cls}_add`),
         addOpen = document.querySelectorAll(`.${cls}_add__open`),

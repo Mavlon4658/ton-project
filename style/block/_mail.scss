@@ -219,12 +219,14 @@
             }
 
             a {
+                font-size: 14px;
+                line-height: 20px;
                 font-weight: 600;
             }
 
-            .text-p5 {
-                font-size: 12px;
-                line-height: 16px;
+            p {
+                font-size: 14px;
+                line-height: 20px;
             }
         }
 
@@ -240,8 +242,15 @@
                 gap: 20px;
             }
 
+            p {
+                font-size: 14px;
+                line-height: 20px;
+            }
+
             a {
                 font-weight: 600;
+                font-size: 14px;
+                line-height: 20px;
             }
         }
     }
@@ -295,6 +304,15 @@
             align-items: center;
             gap: 10px;
             width: 100%;
+            transition: .3s ease all;
+
+            &:hover {
+                background: $color-shade-1;
+            }
+
+            &:active {
+                background: $color-shade-2;
+            }
 
             .text {
                 display: flex;

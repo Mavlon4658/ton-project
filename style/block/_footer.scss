@@ -109,4 +109,40 @@
             display: none;
         }
     }
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        p {
+            color: $color-shade-4;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+            line-height: 20px;
+            color: $color-main;
+
+            svg path {
+                stroke: $color-main;
+                stroke-opacity: 1;
+            }
+
+            &.disabled {
+                color: $color-shade-4;
+                user-select: none;
+                pointer-events: none;
+
+                svg path {
+                    stroke: $color-shade-4;
+                }
+            }
+        }
+    }
 }

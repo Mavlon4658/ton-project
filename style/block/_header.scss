@@ -427,8 +427,8 @@
             color: $color-bg;
             position: absolute;
             right: 12px;
-            top: -8px;
-            position: relative;
+            top: 12px;
+            position: absolute;
             z-index: 2;
 
             &::before {
@@ -450,7 +450,7 @@
     top: 0;
     right: 0;
     width: 100%;
-    height: 100svh;
+    height: 100vh;
     z-index: 5;
     display: none;
 

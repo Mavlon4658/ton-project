@@ -1394,8 +1394,8 @@ body {
   color: #FFFFFF;
   position: absolute;
   right: 12px;
-  top: -8px;
-  position: relative;
+  top: 12px;
+  position: absolute;
   z-index: 2;
 }
 .header__bars span::before {
@@ -1413,7 +1413,7 @@ body {
   top: 0;
   right: 0;
   width: 100%;
-  height: 100svh;
+  height: 100vh;
   z-index: 5;
   display: none;
 }
@@ -1862,6 +1862,38 @@ body {
     display: none;
   }
 }
+.footer__navigation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.footer__navigation p {
+  color: rgba(44, 44, 44, 0.65);
+  font-size: 14px;
+  line-height: 20px;
+}
+.footer__navigation button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+.footer__navigation button svg path {
+  stroke: #000000;
+  stroke-opacity: 1;
+}
+.footer__navigation button.disabled {
+  color: rgba(44, 44, 44, 0.65);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+.footer__navigation button.disabled svg path {
+  stroke: rgba(44, 44, 44, 0.65);
+}
 
 .home {
   width: 100%;
@@ -2051,6 +2083,11 @@ body {
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
+  transition: 0.3s ease all;
+  border-radius: 8px;
+}
+.inbox__nav .mark_list__link:hover {
+  background: rgba(44, 44, 44, 0.1);
 }
 .inbox__nav .mark_list__link .icon {
   width: 18px;
@@ -2280,6 +2317,24 @@ body {
   left: auto;
   right: 49px;
   transform: translate(0, -100%);
+}
+.inbox__nav.active .inbox__nav_link__text {
+  color: #000000;
+}
+.inbox__nav.active .inbox__nav_link__icon path {
+  fill: #000000;
+  fill-opacity: 1;
+}
+.inbox__nav.active .inbox__nav_link__icon:nth-child(3) path {
+  fill: none;
+  stroke: #000000;
+  stroke-opacity: 1;
+}
+.inbox__nav.active .inbox__nav_more .more_list__link {
+  color: #000000;
+}
+.inbox__nav.active .inbox__nav_more .more_list__link svg {
+  opacity: 0 !important;
 }
 .inbox .mb_nav {
   position: fixed;
@@ -3364,7 +3419,7 @@ body {
   font-weight: 600;
   color: #000000;
 }
-.contact_add .modal__body {
+.contact_add .modal__body, .contact_edit .modal__body {
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -4010,11 +4065,13 @@ body {
   }
 }
 .mail .alert-danger a {
+  font-size: 14px;
+  line-height: 20px;
   font-weight: 600;
 }
-.mail .alert-danger .text-p5 {
-  font-size: 12px;
-  line-height: 16px;
+.mail .alert-danger p {
+  font-size: 14px;
+  line-height: 20px;
 }
 .mail .alert-warning {
   padding: 14px 20px;
@@ -4029,8 +4086,14 @@ body {
     gap: 20px;
   }
 }
+.mail .alert-warning p {
+  font-size: 14px;
+  line-height: 20px;
+}
 .mail .alert-warning a {
   font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
 }
 .mail_list {
   display: flex;
@@ -4083,6 +4146,13 @@ body {
   align-items: center;
   gap: 10px;
   width: 100%;
+  transition: 0.3s ease all;
+}
+.mail .images a:hover {
+  background: rgba(44, 44, 44, 0.1);
+}
+.mail .images a:active {
+  background: rgba(44, 44, 44, 0.15);
 }
 .mail .images a .text {
   display: flex;
@@ -4207,6 +4277,11 @@ body {
   align-items: center;
   justify-content: center;
 }
+.compose__head h3 {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
 @media screen and (min-width: 992px) {
   .compose__more {
     display: none !important;
@@ -4306,6 +4381,11 @@ body {
   .compose__left .toolbar_label {
     display: none;
   }
+}
+.compose__left .toolbar_label p {
+  color: rgba(44, 44, 44, 0.65);
+  font-size: 12px;
+  line-height: 16px;
 }
 .compose__left .toolbar__dropdown {
   position: relative;
@@ -4604,6 +4684,12 @@ body {
     justify-content: space-between;
     font-size: 12px;
     line-height: 16px;
+    color: rgba(44, 44, 44, 0.65);
+  }
+}
+@media screen and (max-width: 992px) {
+  .compose__form_item .text-p5 p {
+    color: rgba(44, 44, 44, 0.65);
   }
 }
 .compose__form_item .form_inp {
@@ -4637,7 +4723,7 @@ body {
   background: rgba(44, 44, 44, 0.1);
   border-radius: 10px;
   position: relative;
-  padding: 4px 4px 4px 14px;
+  padding: 4px;
   min-height: 40px;
   display: flex;
   align-items: center;
@@ -4674,6 +4760,12 @@ body {
   height: 32px;
   font-size: 14px;
   line-height: 20px;
+  padding-left: 10px;
+}
+@media screen and (max-width: 992px) {
+  .compose .send_to input {
+    padding: 10px;
+  }
 }
 .compose .send_to ul {
   display: flex;
@@ -4700,6 +4792,7 @@ body {
   .compose .send_to ul li {
     width: 100%;
     position: relative;
+    padding-left: 10px;
   }
 }
 .compose .send_to ul li .line {
