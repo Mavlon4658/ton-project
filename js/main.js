@@ -112,8 +112,7 @@ if (accountDropdownBtn) {
 
     if (accOpen) {
         accOpen.onclick = () => {
-            // mobileMenuClose.click();
-            // accountDropdownBtn.click();
+            bodyScrollDisable();
             accountMobile.classList.add('active')
         }
     }
