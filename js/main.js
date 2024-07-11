@@ -1,3 +1,10 @@
+const bodyScrollDisable = () => {
+    document.querySelector('body').style.overflow = 'hidden';
+};
+const bodyScrollEnable = () => {
+    document.querySelector('body').style.overflow = 'visible';
+}
+
 let duckEl =document.querySelector('.home__animation')
 
 if (duckEl) {
@@ -49,6 +56,7 @@ let headerBars = document.querySelector('.header__bars'),
 if (headerBars) {
     headerBars.onclick = () => {
         mobileMenu.classList.add('active');
+        bodyScrollDisable();
     }
 
     mobileMenuClose.onclick = () => {
@@ -57,6 +65,7 @@ if (headerBars) {
         setTimeout(() => {
             mobileMenu.classList.remove('end-active');
         }, 300);
+        bodyScrollEnable();
     }
 }
 
