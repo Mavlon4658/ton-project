@@ -155,7 +155,7 @@
         }
 
         @include media(768) {
-            padding-top: 74px;
+            padding: 74px 16px 20px;
             max-height: calc(100svh - 74px);
             overflow-y: scroll;
 
@@ -288,6 +288,8 @@
 
 // Delte modal
 .modal_delete {
+    z-index: 10;
+    
     .modal {
         &__body {
             color: $color-shade-4;
@@ -388,6 +390,7 @@
                 border-radius: 8px;
                 width: 100%;
                 transition: .3s ease all;
+                color: $color-main;
 
                 &:hover {
                     background: $color-shade-1;
@@ -582,3 +585,233 @@
     }
 }
 // Modal sm end
+
+// Download modal
+.download_modal {
+    @include media(-992) {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        display: none;
+    
+        &__body {
+            background: $color-bg;
+            border: 1px solid $color-shade-2;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(14, 28, 79, 0.05);
+            padding: 6px;
+            width: 220px;
+            position: relative;
+    
+            &_icon {
+                position: absolute;
+                top: 4px;
+                left: 50%;
+                transform: translate(-50%, -100%);
+            }
+
+            p {
+                display: none;
+            }
+    
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+    
+                a {
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    border-radius: 8px;
+                    transition: .3s ease all;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-weight: 600;
+    
+                    &:hover {
+                        background: $color-shade-1;
+                    }
+    
+                    &:active {
+                        background: $color-shade-2;
+                    }
+
+                    &.text-red {
+                        color: $color-red;
+                    }
+                }
+            }
+        }
+    }
+
+    &__head {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        border-bottom: 1px solid $color-shade-2;
+
+        @include media(-992) {
+            display: none !important;
+        }
+
+        h3 {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 600;
+            color: $color-main;
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    @include media(992) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        display: none;
+
+        &__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $color-shade-4;
+        }
+
+        &__content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 188px;
+            height: 100%;
+            background: #fff;
+        }
+
+        &__body {
+            padding: 6px;
+
+            &_icon {
+                display: none;
+            }
+
+            p {
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.2%;
+                color: $color-shade-4;
+                padding: 10px 10px 6px 10px;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    gap: 8px;
+                    border-radius: 10px;
+                    padding: 10px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-weight: 600;
+                    transition: .3s ease all;
+
+                    &:hover {
+                        background: $color-shade-1;
+                    }
+                }
+            }
+        }
+
+        &.active {
+            display: block;
+
+            @keyframes downloadActive {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes downloadContentActive {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+            
+            .download_modal {
+                &__bg {
+                    animation: downloadActive .2s linear 1;
+                }
+
+                &__content {
+                    animation: downloadContentActive .2s linear 1;
+                }
+            }
+        }
+
+        &.end-active {
+            display: block;
+
+            @keyframes downloadEndActive {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+
+            @keyframes downloadContentEndActive {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 1;
+                }
+            }
+            
+            .download_modal {
+                &__bg {
+                    opacity: 0;
+                    animation: downloadEndActive .2s linear 1;
+                }
+
+                &__content {
+                    opacity: 0;
+                    animation: downloadContentEndActive .2s linear 1;
+                }
+            }
+        }
+    }
+}
+// Download modal end

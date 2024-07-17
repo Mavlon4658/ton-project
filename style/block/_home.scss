@@ -60,6 +60,10 @@
 
         button {
             margin-top: 6px;
+
+            @include media(576) {
+                display: none !important;
+            }
         }
     }
 
@@ -78,8 +82,9 @@
             display: none !important;
         }
 
-        a {
+        button {
             width: 100%;
+            color: rgba(255, 255, 255, .5);
         }
     }
 }

@@ -4,6 +4,10 @@
 body {
     font-weight: 400;
     font-family: "Inter", sans-serif;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .text {
@@ -40,7 +44,7 @@ body {
     &-h6 {
         font-size: 18px;
         line-height: 22px;
-        font-weight: bold;
+        font-weight: 600;
     }
 
     &-p1 {
@@ -689,6 +693,8 @@ body {
             top: 50%;
             left: 13px;
             transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
 
             @include media(992) {
                 top: 0;
@@ -699,6 +705,11 @@ body {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
             }
         }
 
@@ -946,6 +957,12 @@ body {
             align-items: center;
             justify-content: center;
         }
+
+        h3 {
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 600;
+        }
     }
 
     &_foot {
@@ -981,7 +998,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100svh;
+    height: 100%;
     z-index: 10;
     background: $color-bg;
     display: none;
@@ -1026,7 +1043,6 @@ body {
         border-radius: 50%;
         background: $color-main;
         animation: loader 1.2s ease-in-out infinite;
-        margin-top: 100px;
 
         @for $i from 1 through 3 {
             &:nth-child(#{$i}) {

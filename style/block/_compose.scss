@@ -8,13 +8,9 @@
     @include media(992) {
         flex-direction: column;
         gap: 14px;
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100svh;
         background: $color-bg;
-        z-index: 3;
         padding: 76px 16px 90px;
         overflow-y: scroll;
 
@@ -35,6 +31,7 @@
         width: 100%;
         z-index: 4;
         background: $color-bg;
+        height: 60px;
 
         @include media(-992) {
             display: none !important;
@@ -358,6 +355,9 @@
             display: flex;
             gap: 20px;
             align-items: center;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.2px;
 
             @include media(-992) {
                 display: none !important;
@@ -517,6 +517,7 @@
             .text-p5 {
                 width: 70px;
                 flex-shrink: 0;
+                color: $color-shade-4;
 
                 @include media(992) {
                     display: flex;
@@ -524,13 +525,10 @@
                     justify-content: space-between;
                     font-size: 12px;
                     line-height: 16px;
-                    color: $color-shade-4;
                 }
 
                 p {
-                    @include media(992) {
-                        color: $color-shade-4;
-                    }
+                    color: $color-shade-4;
                 }
             }
 
@@ -581,6 +579,11 @@
 
         @include media(992) {
             padding: 6px;
+
+            &:not(.active) {
+                height: 40px;
+                padding: 1px 6px;
+            }
         }
 
         &:hover {
@@ -602,6 +605,10 @@
             background: transparent;
             z-index: -1;
             cursor: text;
+
+            @include media(992) {
+                min-height: 40px;
+            }
         }
 
         input {
@@ -623,6 +630,10 @@
 
             @include media(992) {
                 width: 100%;
+
+                &:not(.active) {
+                    display: none;
+                }
             }
 
             li {
@@ -909,7 +920,35 @@
                 gap: 8px;
                 width: 100%;
 
-                a {
+                &_item {
+                    position: relative;
+
+                    &:hover {
+                        .download_modal {
+                            @include media(-992) {
+                                display: block;
+                                z-index: 2;
+                                left: 0;
+                                top: 50%;
+                                bottom: auto;
+                                transform: translate(-100%, -50%);
+    
+                                &__body_icon {
+                                    top: 50%;
+                                    right: 0;
+                                    left: auto;
+                                    transform: translate(100%, -50%) rotateZ(90deg);
+                                }
+                            }
+                        }
+
+                        .images_link {
+                            background: $color-shade-1;
+                        }
+                    }
+                }
+
+                &_link {
                     border-radius: 10px;
                     border: 1px solid $color-shade-2;
                     padding: 8px 14px;
@@ -922,12 +961,8 @@
                     letter-spacing: 0.2px;
                     transition: .3s ease all;
 
-                    &:hover {
-                        background: $color-shade-1;
-                    }
-
                     &:active {
-                        background: $color-shade-2;
+                        background: $color-shade-2 !important;
                         border-color: transparent;
                     }
 

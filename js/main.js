@@ -15,7 +15,7 @@ if (duckEl) {
         loop: true,
         autoplay: true,
     })
-    duck.setSpeed(0.5)
+    duck.setSpeed(0.9)
 }
 
 let radioDropdown = document.querySelectorAll('.dropdown_radio');
@@ -338,48 +338,62 @@ if (msgItems.length) {
 let modal = document.querySelectorAll('.modal'),
     modalClose = document.querySelectorAll('.modal__close'),
     deleteModal = document.querySelector('.modal_delete'),
-    deleteModalOpen = document.querySelectorAll('.modal_delete__open');
+    inboxDeleteModalOpen = document.querySelectorAll('.inbox .modal_delete__open');
 
-if (modalClose.length) {
-    modalClose.forEach(el => {
-        el.onclick = () => {
-            modal.forEach(m => {
-                if (m.classList.contains('active')) {
-                    m.classList.remove('active');
-                    m.classList.add('end-active');
-                    setTimeout(() => {
-                        m.classList.remove('end-active');
-                    }, 300);
+if (modal.length) {
+    modal.forEach(el => {
+        mClose = el.querySelectorAll('.modal__close');
+
+        if (mClose.length) {
+            mClose.forEach(btn => {
+                btn.onclick = () => {
+                    if (el.classList.contains('active')) {
+                        el.classList.remove('active');
+                        el.classList.add('end-active');
+                        setTimeout(() => {
+                            el.classList.remove('end-active');
+                        }, 300);
+                    }
                 }
             })
         }
     })
 }
 
-if (deleteModalOpen.length) {
-    deleteModalOpen.forEach(el => {
-        el.onclick = e => {
-            e.preventDefault();
-            modal.forEach(m => {
-                if (m.classList.contains('active')) {
-                    m.classList.remove('active');
-                    m.classList.add('end-active');
-                    setTimeout(() => {
-                        m.classList.remove('end-active');
-                    }, 300);
-                }
-            })
+if (inboxDeleteModalOpen.length) {
+    inboxDeleteModalOpen.forEach(btn => {
+        btn.onclick = () => {
             deleteModal.classList.add('active');
         }
     })
 }
 
+// if (deleteModalOpen.length) {
+//     deleteModalOpen.forEach(el => {
+//         el.onclick = e => {
+//             e.preventDefault();
+//             modal.forEach(m => {
+//                 if (m.classList.contains('active')) {
+//                     m.classList.remove('active');
+//                     m.classList.add('end-active');
+//                     setTimeout(() => {
+//                         m.classList.remove('end-active');
+//                     }, 300);
+//                 }
+//             })
+//             deleteModal.classList.add('active');
+//         }
+//     })
+// }
+
 let modalClass = ['contact', 'folders', 'indentities', 'responses', 'filters'];
-modalClass.forEach(cls => {
+modalClass.forEach(async cls =>  {
     let add = document.querySelector(`.${cls}_add`),
         addOpen = document.querySelectorAll(`.${cls}_add__open`),
         edit = document.querySelector(`.${cls}_edit`),
-        editOpen = document.querySelectorAll(`.${cls}_edit__open`);
+        editOpen = document.querySelectorAll(`.${cls}_edit__open`),
+        deleteModalOpen = document.querySelector(`.${cls}_edit .modal__delete`),
+        mClose = document.querySelector(`.${cls}_edit .modal__close`);
 
     if (addOpen.length) {
         addOpen.forEach(el => {
@@ -399,7 +413,30 @@ modalClass.forEach(cls => {
         })
     }
     
+    if (deleteModalOpen) {
+        deleteModalOpen.onclick = () => {
+            if (window.innerWidth > 768) {
+                mClose.click();
+            }
+            deleteModal.classList.add('active');
+        }
+    }
 })
+
+let pModal = document.querySelectorAll('.modal');
+
+if (pModal.length) {
+    pModal.forEach(el => {
+        let modalBg = el.querySelector('.modal__bg');
+        modalBg.onclick = () => {
+            el.classList.remove('active');
+            el.classList.add('end-active');
+            setTimeout(() => {
+                el.classList.remove('end-active');
+            }, 300);
+        }
+    })
+}
 
 let deleteModalOpen2 = document.querySelector('.modal_delete__open_2'),
     deleteModal2 = document.querySelector('.filters_delete');
@@ -444,7 +481,7 @@ if (formInp.length) {
 let foldersAccordion = document.querySelectorAll('.folders__accordion');
 if (foldersAccordion.length) {
     foldersAccordion.forEach(el => {
-        let btn = el.querySelector('.folders__accordion_btn'),
+        let btn = el.querySelector('.folders__accordion_btn img'),
             bdy = el.querySelector('.folders__accordion_body');
         btn.onclick = () => {
             if (bdy) {
@@ -592,6 +629,18 @@ if (sendToInp) {
     let addUser = () => {
         let text = sendToInp.value;
 
+        let sortUser = () => {
+            let list = document.querySelectorAll('.send_to ul li');
+
+            if (list.length) {
+                sendTo.classList.add('active');
+                sendToList.classList.add('active');
+            } else {
+                sendTo.classList.remove('active');
+                sendToList.classList.remove('active');
+            }
+        }
+
         if (text != '') {
             let el = document.createElement('li');
             el.innerHTML = `<p>${text}</p>
@@ -602,6 +651,7 @@ if (sendToInp) {
                 </svg>
             </button>`;
             sendToList.appendChild(el);
+            sortUser();
         }
 
         sendToInp.value = "";
@@ -612,9 +662,11 @@ if (sendToInp) {
                 let btn = li.querySelector('button');
                 btn.onclick = () => {
                     li.remove();
+                    sortUser();
                 }
             })
         }
+        sortUser();
     }
 
     sendToInp.onfocus = () => {
@@ -792,6 +844,49 @@ if (addResponses) {
             addResponses.classList.remove('end-active');
         }, 300);
     }
+}
+
+let mailImages = document.querySelectorAll('.mail .images_item');
+
+if (mailImages.length) {
+    mailImages.forEach(el => {
+        let link = el.querySelector('.images_link'),
+            m = el.querySelector('.download_modal');
+
+        link.onclick = e => {
+            e.preventDefault();
+            m.classList.add('active');
+        }
+    })
+}
+
+let composeImages = document.querySelectorAll('.compose .images_item');
+
+if (composeImages.length) {
+    composeImages.forEach(el => {
+        let link = el.querySelector('.images_link'),
+            m = el.querySelector('.download_modal');
+
+        link.onclick = e => {
+            e.preventDefault();
+            m.classList.add('active');
+        }
+    })
+}
+
+let downloadModals = document.querySelectorAll('.download_modal');
+
+if (downloadModals.length) {
+    downloadModals.forEach(el => {
+        let btn = el.querySelector('.download_modal__close');
+        btn.onclick = () => {
+            el.classList.remove('active');
+            el.classList.add('end-active');
+            setTimeout(() => {
+                el.classList.remove('end-active');
+            }, 300);
+        }
+    })
 }
 
 document.addEventListener('click', (event) => {

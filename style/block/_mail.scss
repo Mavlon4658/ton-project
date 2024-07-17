@@ -56,6 +56,7 @@
 
                 @include media(992) {
                     width: calc(100% - 56px);
+                    gap: 0px;
                 }
 
                 &_top {
@@ -284,8 +285,9 @@
             gap: 8px;
         }
 
-        li {
+        &_item {
             width: calc(25% - 30px / 4);
+            position: relative;
 
             @include media(1300) {
                 width: calc(50% - 5px);
@@ -294,9 +296,21 @@
             @include media(576) {
                 width: 100%;
             }
-        }
 
-        a {
+            &:hover {
+                .images_link {
+                    background: $color-shade-1;
+                }
+                
+                .download_modal {
+                    @include media(-992) {
+                        display: block;
+                    }
+                }
+            }
+        }
+        
+        &_link {
             border-radius: 10px;
             border: 1px solid $color-shade-2;
             padding: 8px 14px;
@@ -306,12 +320,8 @@
             width: 100%;
             transition: .3s ease all;
 
-            &:hover {
-                background: $color-shade-1;
-            }
-
             &:active {
-                background: $color-shade-2;
+                background: $color-shade-2 !important;
             }
 
             .text {
