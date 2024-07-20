@@ -1273,6 +1273,7 @@
     <script>
         tinymce.init({
             selector: 'textarea#edit',
+            toolbar_mode: 'floating',
             plugins:[
                 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
                 'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media', 
@@ -1282,7 +1283,11 @@
             menubar: false,
             statusbar: false,
             content_style: 'body{font-family:Helvetica,Arial,sans-serif; font-size:16px}',
-            mobile: { menubar: true },
+            mobile: {
+                plugins: 'autosave lists autolink',
+                toolbar: 'bold italic underline | alignleft aligncenter alignright alignjustify | fontfamily fontsize | forecolor backcolor | ' +  'bullist numlist outdent indent blockquote | link unlink table | charmap image media | ' + 'code searchreplace undo redo',
+                toolbar_mode: 'floating',
+            }
         })
     </script>
 

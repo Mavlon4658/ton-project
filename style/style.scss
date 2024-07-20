@@ -341,10 +341,15 @@ body {
         border: 1px solid $color-shade-2 !important;
     }
 
-    &-tbtn {
-        // background:red !important;
+    &-promotion {
+        display: none !important;
+    }
+
+    &-menubar {
+        display: none !important;
     }
 }
+
 
 .checkbox {
     user-select: none;
