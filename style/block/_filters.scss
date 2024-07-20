@@ -30,7 +30,7 @@
             align-items: center;
             justify-content: space-between;
             text-align: left;
-            padding: 10px;
+            padding: 10px 15px 10px 10px;
             border-radius: 10px;
             transition: .3s ease all;
 
@@ -53,7 +53,7 @@
             }
 
             .icon {
-                width: 18px;
+                width: auto;
                 height: 18px;
                 display: flex;
                 align-items: center;

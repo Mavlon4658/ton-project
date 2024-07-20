@@ -304,6 +304,7 @@ body {
 
         label {
             margin-bottom: 8px;
+            color: $color-shade-4;
         }
 
         img {
@@ -332,6 +333,16 @@ body {
                 box-shadow: 0 0 8px rgb(67, 151, 229, .2);
             }
         }
+    }
+}
+
+.tox {
+    &-tinymce {
+        border: 1px solid $color-shade-2 !important;
+    }
+
+    &-tbtn {
+        // background:red !important;
     }
 }
 
@@ -1004,7 +1015,11 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 14px;
+
+    @include media(992) {
+        gap: 10px;
+    }
 
     &.active {
         display: flex;
@@ -1038,8 +1053,8 @@ body {
     }
 
     &_item {
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         background: $color-main;
         animation: loader 1.2s ease-in-out infinite;
@@ -1048,6 +1063,12 @@ body {
             &:nth-child(#{$i}) {
                 animation-delay: calc(80ms * $i);
             }
+        }
+
+        @include media(992) {
+            width: 7px;
+            height: 7px;
+            margin-top: -42px;
         }
     }
 }

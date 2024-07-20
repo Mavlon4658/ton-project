@@ -34,7 +34,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px;
+            padding: 10px 15px 10px 10px;
             border-radius: 8px;
             transition: .3s ease all;
             gap: 10px;
@@ -57,6 +57,14 @@
                     font-weight: 600;
                     color: $color-main;
                 }
+            }
+
+            .icon {
+                width: auto;
+                height: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
     }

@@ -350,6 +350,7 @@ body::-webkit-scrollbar {
 }
 .form_text label {
   margin-bottom: 8px;
+  color: rgba(44, 44, 44, 0.65);
 }
 .form_text img {
   width: 100%;
@@ -375,6 +376,9 @@ body::-webkit-scrollbar {
   box-shadow: 0 0 8px rgba(67, 151, 229, 0.2);
 }
 
+.tox-tinymce {
+  border: 1px solid rgba(44, 44, 44, 0.15) !important;
+}
 .checkbox {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -974,7 +978,12 @@ body::-webkit-scrollbar {
   display: none;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 14px;
+}
+@media screen and (max-width: 992px) {
+  .loader {
+    gap: 10px;
+  }
 }
 .loader.active {
   display: flex;
@@ -1004,8 +1013,8 @@ body::-webkit-scrollbar {
   }
 }
 .loader_item {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #000000;
   animation: loader 1.2s ease-in-out infinite;
@@ -1018,6 +1027,13 @@ body::-webkit-scrollbar {
 }
 .loader_item:nth-child(3) {
   animation-delay: 240ms;
+}
+@media screen and (max-width: 992px) {
+  .loader_item {
+    width: 7px;
+    height: 7px;
+    margin-top: -42px;
+  }
 }
 
 .header {
@@ -3624,7 +3640,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 15px 10px 10px;
   border-radius: 8px;
   transition: 0.3s ease all;
   gap: 10px;
@@ -3645,6 +3661,13 @@ body::-webkit-scrollbar {
 .contact__list button .text_left b {
   font-weight: 600;
   color: #000000;
+}
+.contact__list button .icon {
+  width: auto;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .contact_add .modal__body, .contact_edit .modal__body {
   display: flex;
@@ -3820,7 +3843,7 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: space-between;
   border-radius: 8px;
-  padding: 10px;
+  padding: 10px 15px 10px 10px;
   transition: 0.3s ease all;
 }
 .indentities__list_item:hover {
@@ -3839,7 +3862,7 @@ body::-webkit-scrollbar {
   font-weight: 600;
 }
 .indentities__list_item .icon {
-  width: 28px;
+  width: auto;
   height: 18px;
   display: flex;
   align-items: center;
@@ -3884,7 +3907,7 @@ body::-webkit-scrollbar {
   .responses__list {
     height: 100svh;
     overflow-y: scroll;
-    padding: 66px 8px 80px;
+    padding: 66px 6px 80px;
   }
   .responses__list::-webkit-scrollbar {
     display: none;
@@ -3896,7 +3919,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 15px 10px 10px;
   border-radius: 10px;
   transition: 0.3s ease all;
 }
@@ -3917,7 +3940,7 @@ body::-webkit-scrollbar {
   font-weight: 600;
 }
 .responses__list_item .icon {
-  width: 18px;
+  width: auto;
   height: 18px;
   display: flex;
   align-items: center;
@@ -4011,7 +4034,7 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: space-between;
   text-align: left;
-  padding: 10px;
+  padding: 10px 15px 10px 10px;
   border-radius: 10px;
   transition: 0.3s ease all;
 }
@@ -4031,7 +4054,7 @@ body::-webkit-scrollbar {
   font-weight: 600;
 }
 .filters__list_item .icon {
-  width: 18px;
+  width: auto;
   height: 18px;
   display: flex;
   align-items: center;
