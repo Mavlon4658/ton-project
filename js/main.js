@@ -832,6 +832,27 @@ if (downloadModals.length) {
     })
 }
 
+if (document.querySelector('.text-editor')) {
+    tinymce.init({
+        selector: 'textarea#edit',
+        toolbar_mode: 'floating',
+        plugins:[
+            'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+            'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media', 
+            'table', 'emoticons', 'template', 'codesample'
+        ],
+        toolbar: 'bold italic underline | alignleft aligncenter alignright alignjustify | fontfamily fontsize | forecolor backcolor | ' +  'bullist numlist outdent indent blockquote | link unlink table | charmap image media | ' + 'code searchreplace undo redo',
+        menubar: false,
+        statusbar: false,
+        content_style: 'body{font-size:10pt; font-weight: 400;}',
+        mobile: {
+            plugins: 'autosave lists autolink',
+            toolbar: 'bold italic underline | alignleft aligncenter alignright alignjustify | fontfamily fontsize | forecolor backcolor | ' +  'bullist numlist outdent indent blockquote | link unlink table | charmap image media | ' + 'code searchreplace undo redo',
+            toolbar_mode: 'floating',
+        }
+    })
+}
+
 document.addEventListener('click', (event) => {
     if (accountDropdown && accountDropdownList.classList.contains('active') && window.innerWidth > 992) {
         const t1 = event.composedPath().includes(accountDropdown)
